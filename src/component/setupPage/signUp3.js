@@ -6,9 +6,11 @@ export default class signUp3 extends Component{
     super(props)
 
     this.state = {
-      username: '',
-      password: '',
-      repassword: '',
+      name: '',
+      email: '',
+      school: '',
+      major: '',
+      activity: '',
     }
   }
 
@@ -85,24 +87,24 @@ const styles=StyleSheet.create({
 
   textUsernameInput: {
     top: 330,
-    marginLeft: 170,
+    marginLeft: 160,
     marginRight: 60,
     borderBottomWidth: 1,
   },
 
   textPasswordInput: {
     top: 350,
-    marginLeft: 170,
+    marginLeft: 160,
     marginRight: 60,
     borderBottomWidth: 1,
   },
 
   textRePasswordInput: {
     top: 370,
-    marginLeft: 170,
+    marginLeft: 160,
     marginRight: 60,
     borderBottomWidth: 1,
   },
 
 })
-AppRegistry.registerComponent('project1', () => signUp3);
+//AppRegistry.registerComponent('project1', () => signUp3);
