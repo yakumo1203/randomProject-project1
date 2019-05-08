@@ -5,7 +5,6 @@ export default class signUnAfter extends Component{
   render(){
     return(
       <View>
-        <ImageBackground source={require('../project1/ImageForis1.jpg')} style={{width: '100%', height: '100%'}}>
         <View>
           <Text style={styles.text1}>
             Success!
@@ -14,15 +13,34 @@ export default class signUnAfter extends Component{
 
         <View>
           <Text style={styles.text2}>
-            Welcome to FORIS
+            Welcome to FORIS,
           </Text>
         </View>
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('Login')}>
-          <Text style={styles.loginText}>Continue</Text>
+        <View>
+          <Text style={styles.text3}>
+            FORISはあなたの留学を応援します。
+          </Text>
+        </View>
+
+        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('next')}>
+          <Text style={styles.loginText}>Next</Text>
         </TouchableHighlight>
 
-        </ImageBackground>
+        <TouchableHighlight style={styles.registerPage} onPress={() => this.onClickListener('username')}>
+          <Text style={styles.button1}> Change Username</Text>
+        </TouchableHighlight>
+
+
+        <Text style={styles.text4}>
+          By clicking Next, you agree with our
+        </Text>
+
+        <TouchableHighlight style={{alignItems: 'center'}}>
+          <Text style={styles.button2}>
+            UseOfTerms
+          </Text>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -31,15 +49,31 @@ export default class signUnAfter extends Component{
 const styles=StyleSheet.create({
   text1: {
     fontSize: 30,
-    color: 'white',
+    color: 'black',
     top: 200,
     textAlign: 'center',
   },
 
   text2: {
     fontSize: 30,
-    color: 'white',
+    color: 'black',
     top: 250,
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+  },
+
+  text3: {
+    fontSize: 15,
+    color: 'black',
+    top: 300,
+    textAlign: 'center',
+  },
+
+  text4: {
+    fontSize: 10,
+    color: 'gray',
+    top: 500,
+    marginBottom: 10,
     textAlign: 'center',
   },
 
@@ -51,7 +85,7 @@ const styles=StyleSheet.create({
     marginBottom:20,
     width:250,
     borderRadius:30,
-    top: 450,
+    top: 400,
     marginLeft: 60,
   },
 
@@ -70,11 +104,27 @@ const styles=StyleSheet.create({
   },
 
   loginButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#00CCFF',
   },
 
   loginText: {
     color: 'white',
+  },
+
+  registerPage: {
+    top: 400,
+    alignItems: 'center',
+  },
+
+  button1: {
+    color: '#00CCFF',
+  },
+
+  button2: {
+    color: 'black',
+    fontSize: 10,
+    alignItems: 'center',
+    top: 500,
   },
 });
 

@@ -1,101 +1,80 @@
 import React, { Component } from 'react';
-import { Animated, TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-class FadeInView extends Component{
-    state = {
-      fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
-    }
-
-    componentDidMount() {
-    Animated.timing(                  // Animate over time
-      this.state.fadeAnim,            // The animated value to drive
-        {
-          toValue: 1,                   // Animate to opacity: 1 (opaque)
-          duration: 500,              // Make it take a while
-        }
-      ).start();                        // Starts the animation
-    }
-
-    render() {
-    let { fadeAnim } = this.state;
-
-    return (
-          <Animated.View                 // Special animatable View
-            style={{
-              ...this.props.style,
-              opacity: fadeAnim,         // Bind opacity to animated value
-            }}
-          >
-            {this.props.children}
-          </Animated.View>
-      );
-    }
-}
-
-export default class frontPage extends Component{
-    render(){
-      return(
+export default class signUnAfter extends Component{
+  render(){
+    return(
+      <View>
         <View>
-          <ImageBackground source={require('../project1/ImageForis1.jpg')} style={{width: '100%', height: '100%'}}>
-          <Text style={styles.title}>
-            FORIS
+          <Text style={styles.text1}>
+            Success!
           </Text>
-
-          <Text style={styles.sub}>
-            For International Students
-          </Text>
-
-          <FadeInView>
-            <Text style={styles.text1}>
-              一般の方（現在留学されていない方）
-            </Text>
-
-            <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN IN')}>
-              <Text style={styles.loginText}>一般会員</Text>
-            </TouchableHighlight>
-
-            <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN UP')}>
-              <Text style={styles.loginText}>留学生会員</Text>
-            </TouchableHighlight>
-
-            <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN UP')}>
-              <Text style={styles.loginText}>法人</Text>
-            </TouchableHighlight>
-          </FadeInView>
-
-          </ImageBackground>
         </View>
-      );
-    }
+
+        <View>
+          <Text style={styles.text2}>
+            Welcome to FORIS,
+          </Text>
+        </View>
+
+        <View>
+          <Text style={styles.text3}>
+            FORISはあなたの留学を応援します。
+          </Text>
+        </View>
+
+        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('next')}>
+          <Text style={styles.loginText}>Next</Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight style={styles.registerPage} onPress={() => this.onClickListener('username')}>
+          <Text style={styles.button1}> Change Username</Text>
+        </TouchableHighlight>
+
+
+        <Text style={styles.text4}>
+          By clicking Next, you agree with our
+        </Text>
+
+        <TouchableHighlight style={{alignItems: 'center'}}>
+          <Text style={styles.button2}>
+            UseOfTerms
+          </Text>
+        </TouchableHighlight>
+      </View>
+    );
+  }
 }
 
 const styles=StyleSheet.create({
-  title: {
-    fontSize: 50,
-    color: 'white',
-    top: 160,
-    textAlign: 'center',
-  },
-
-  sub: {
-    fontSize: 20,
-    color: 'white',
-    top: 170,
-    textAlign: 'center',
-  },
-
   text1: {
-    fontSize: 15,
-    top: 300,
+    fontSize: 30,
+    color: 'black',
+    top: 200,
     textAlign: 'center',
-    color: 'white',
   },
 
   text2: {
-    fontSize: 15,
-    top: 330,
+    fontSize: 30,
+    color: 'black',
+    top: 250,
     textAlign: 'center',
-    color: 'white',
+    fontFamily: 'Avenir',
+  },
+
+  text3: {
+    fontSize: 15,
+    color: 'black',
+    top: 300,
+    textAlign: 'center',
+  },
+
+  text4: {
+    fontSize: 10,
+    color: 'gray',
+    top: 500,
+    marginBottom: 10,
+    textAlign: 'center',
   },
 
   buttonContainer: {
@@ -103,20 +82,50 @@ const styles=StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:30,
+    marginBottom:20,
     width:250,
     borderRadius:30,
-    top: 300,
+    top: 400,
+    marginLeft: 60,
+  },
+
+  textInputContainer:{
+    borderBottomColor: 'white',
+    backgroundColor: 'white',
+    borderRadius:30,
+    borderBottomWidth: 1,
+    width:250,
+    height:45,
+    marginBottom:20,
+    flexDirection: 'row',
+    alignItems:'center',
+    top: 450,
     marginLeft: 60,
   },
 
   loginButton: {
-    backgroundColor: 'gray',
+    backgroundColor: '#00CCFF',
   },
 
   loginText: {
     color: 'white',
   },
-})
 
-AppRegistry.registerComponent('project1', () => frontPage );
+  registerPage: {
+    top: 400,
+    alignItems: 'center',
+  },
+
+  button1: {
+    color: '#00CCFF',
+  },
+
+  button2: {
+    color: 'black',
+    fontSize: 10,
+    alignItems: 'center',
+    top: 500,
+  },
+});
+
+AppRegistry.registerComponent('project1', () => signUnAfter );
