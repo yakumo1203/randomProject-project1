@@ -1,108 +1,95 @@
 import React, { Component } from 'react';
-import { Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-export default class signUp3 extends Component{
-  constructor(props){
-    super(props)
-
-    this.state = {
-      username: '',
-      password: '',
-      repassword: '',
-    }
-  }
-
-  render(){
-    return(
-      <View>
+export default class frontPage extends Component{
+    render(){
+      return(
         <View>
+          <ImageBackground source={require('../project1/ImageForis1.jpg')} style={{width: '100%', height: '100%'}}>
+          <Text style={styles.title}>
+            FORIS
+          </Text>
+
+          <Text style={styles.sub}>
+            For International Students
+          </Text>
+
           <Text style={styles.text1}>
-            SIGN UP
+            一般の方（現在留学されていない方）
           </Text>
-        </View>
-        <View>
-          <Text style={styles.textUsername}>
-            Username:
-          </Text>
-          <TextInput
-            style={styles.textUsernameInput}
-            placeholder="Type your Username here"
-            returnKeyLabel = {"next"}
-            onChangeText={(text) => this.setState({username: text})}/>
-          <Text style={styles.textPassword}>
-            Password:
-          </Text>
-          <TextInput
-            style={styles.textPasswordInput}
-            placeholder="Type your Password here"
-            returnKeyLabel = {"next"}
-            onChangeText={(text) => this.setState({password: text})}/>
-          <Text style={styles.textRePassword}>
-            RePassword:
-          </Text>
-          <TextInput
-            style={styles.textRePasswordInput}
-            placeholder="Type your Password here again"
-            returnKeyLabel = {"next"}
-            onChangeText={(text) => this.setState({repassword: text})}/>
 
-          <View style={{top: 450}}>
-            <Button onPress={this._onPressButton} title="Start your journey" color='blue'/>
+          <View>
+            <Text style={styles.text2}>
+              現在留学中の方
+            </Text>
           </View>
+
+          <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN IN')}>
+            <Text style={styles.loginText}>一般会員</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN UP')}>
+            <Text style={styles.loginText}>留学生会員</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN UP')}>
+            <Text style={styles.loginText}>法人</Text>
+          </TouchableHighlight>
+
+          </ImageBackground>
         </View>
-      </View>
-    );
-  }
+      );
+    }
 }
 
 const styles=StyleSheet.create({
-  text1: {
-    fontSize: 40,
+  title: {
+    fontSize: 50,
+    color: 'white',
+    top: 160,
     textAlign: 'center',
-    top: 150,
   },
 
-  textUsername: {
+  sub: {
+    fontSize: 20,
+    color: 'white',
+    top: 170,
+    textAlign: 'center',
+  },
+
+  text1: {
     fontSize: 15,
-    marginLeft: 60,
-    color: 'gray',
-    top: 350,
+    top: 300,
+    textAlign: 'center',
+    color: 'white',
   },
 
-  textPassword: {
+  text2: {
     fontSize: 15,
-    marginLeft: 60,
-    color: 'gray',
-    top: 370,
-  },
-
-  textRePassword: {
-    fontSize: 15,
-    marginLeft: 60,
-    color: 'gray',
-    top: 390,
-  },
-
-  textUsernameInput: {
     top: 330,
-    marginLeft: 170,
-    marginRight: 60,
-    borderBottomWidth: 1,
+    textAlign: 'center',
+    color: 'white',
   },
 
-  textPasswordInput: {
-    top: 350,
-    marginLeft: 170,
-    marginRight: 60,
-    borderBottomWidth: 1,
+  buttonContainer: {
+    height:45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:30,
+    width:250,
+    borderRadius:30,
+    top: 300,
+    marginLeft: 60,
   },
 
-  textRePasswordInput: {
-    top: 370,
-    marginLeft: 170,
-    marginRight: 60,
-    borderBottomWidth: 1,
+  loginButton: {
+    backgroundColor: 'gray',
   },
 
+  loginText: {
+    color: 'white',
+  },
 })
-AppRegistry.registerComponent('project1', () => signUp3);
+
+AppRegistry.registerComponent('project1', () => frontPage );

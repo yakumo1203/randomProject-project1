@@ -1,45 +1,77 @@
 import React, { Component } from 'react';
-import { TouchableElement, Text, View, AppRegistry, Image, Animated, TouchableOpacity, ImageBackground, StyleSheet, Button} from 'react-native';
+import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-const styles=StyleSheet.create({
-  head1: {
-    fontSize: 50,
-    color: 'black',
-    alignItems: 'center',
-    top: 135,
-  },
-  head2: {
-    fontSize: 16,
-    color: 'black',
-    alignItems: 'center',
-    top: 155,
-  },
-});
+export default class frontPage extends Component{
+    render(){
+      return(
+        <View>
+          <ImageBackground source={require('../project1/ImageForis1.jpg')} style={{width: '100%', height: '100%'}}>
+          <Text style={styles.title}>
+            FORIS
+          </Text>
 
-export default class frontPage extends Component {
-  render() {
-    return (
-      <View style={{alignItems: 'center'}}>
-        <ImageBackground source={{uri: 'https://facebook.github.io/react/logo-og.png'}} style={{width: '100%', height: '100%'}} imageStyle={{opacity: 0.3}}>
-        <View style={{alignItems: 'center'}}>
-          <Text style={styles.head1}>FORIS</Text>
-          <Text style={styles.head2}>For International Students</Text>
+          <Text style={styles.sub}>
+            For International Students
+          </Text>
+
+          <Text style={styles.text}>
+            留学に、革命を。
+          </Text>
+
+          <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN IN')}>
+            <Text style={styles.loginText}>Sign in</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN UP')}>
+            <Text style={styles.loginText}>Sign up</Text>
+          </TouchableHighlight>
+          </ImageBackground>
         </View>
-        <View style={{top: 420}}>
-          <Button onPress={this._onPressButton} title="LOGIN" color='black'/>
-          </View>
-          <View style={{top: 450}}>
-          <Button onPress={this._onPressButton} title="SIGN UP" color='black'/>
-          </View>
-          <View style={{top: 460}}>
-             <Button onPress={() => this.props.navigation.navigate('./project1/111.js')} title="*Use of Terms" color='blue' />
-          </View>
-        </ImageBackground>
-      </View>
-    );
-  }
+      );
+    }
 }
 
+const styles=StyleSheet.create({
+  title: {
+    fontSize: 50,
+    color: 'white',
+    top: 160,
+    textAlign: 'center',
+  },
 
+  sub: {
+    fontSize: 20,
+    color: 'white',
+    top: 170,
+    textAlign: 'center',
+  },
 
-//AppRegistry.registerComponent('project1', () => frontPage);
+  text: {
+    fontSize: 30,
+    top: 300,
+    textAlign: 'center',
+    color: 'white',
+  },
+
+  buttonContainer: {
+    height:45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:20,
+    width:250,
+    borderRadius:30,
+    top: 400,
+    marginLeft: 60,
+  },
+
+  loginButton: {
+    backgroundColor: 'gray',
+  },
+
+  loginText: {
+    color: 'white',
+  },
+})
+
+//AppRegistry.registerComponent('project1', () => frontPage );
