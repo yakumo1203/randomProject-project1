@@ -128,4 +128,4 @@ const styles=StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('project1', () => signUnAfter );
+//AppRegistry.registerComponent('project1', () => signUnAfter );
