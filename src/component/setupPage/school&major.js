@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-export default class createUsername extends Component{
+export default class schoolMajor extends Component{
   render(){
     return(
       <View>
         <Text style={styles.text1}>
-          USERNAME
-        </Text>
-
-        <Text style={styles.text2}>
-          Create your username for your account. You can always change it later on.
+          SCHOOL
         </Text>
 
         <TextInput
-          style={styles.textUsernameInput}
-          placeholder="Username"
+          style={styles.textUsernameInput1}
+          placeholder="school"
+          returnKeyLabel = {"next"}
+          onChangeText={(text) => this.setState({username: text})}/>
+
+        <Text style={styles.text2}>
+          MAJOR
+        </Text>
+
+        <TextInput
+          style={styles.textUsernameInput2}
+          placeholder="major"
           returnKeyLabel = {"next"}
           onChangeText={(text) => this.setState({username: text})}/>
 
@@ -46,12 +52,12 @@ const styles=StyleSheet.create({
   },
 
   text2: {
-    fontSize: 15,
+    fontSize: 20,
     textAlign: 'center',
     marginLeft: 60,
     marginRight: 60,
     color: 'black',
-    top: 300,
+    top: 310,
   },
 
   text3: {
@@ -61,7 +67,14 @@ const styles=StyleSheet.create({
     color: 'gray',
   },
 
-  textUsernameInput: {
+  textUsernameInput1: {
+    top: 250,
+    marginLeft: 60,
+    marginRight: 60,
+    borderBottomWidth: 1,
+  },
+
+  textUsernameInput2: {
     top: 350,
     marginLeft: 60,
     marginRight: 60,
@@ -76,7 +89,7 @@ const styles=StyleSheet.create({
     marginBottom:20,
     width:250,
     borderRadius:30,
-    top: 400,
+    top: 450,
     marginLeft: 60,
   },
 
@@ -96,4 +109,4 @@ const styles=StyleSheet.create({
     fontFamily: 'Avenir',
   },
 })
-AppRegistry.registerComponent('project1', () => createUsername );
+//AppRegistry.registerComponent('project1', () => schoolMajor );

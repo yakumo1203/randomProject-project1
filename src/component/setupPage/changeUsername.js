@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-export default class createUsername extends Component{
+export default class changeUsername extends Component{
   render(){
     return(
       <View>
         <Text style={styles.text1}>
-          USERNAME
+          CHANGE USERNAME
         </Text>
 
         <Text style={styles.text2}>
-          Create your username for your account. You can always change it later on.
+          Change your username for your account. You can always change it later on.
         </Text>
 
         <TextInput
@@ -21,14 +21,6 @@ export default class createUsername extends Component{
 
         <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('next')}>
           <Text style={styles.loginText}>Next</Text>
-        </TouchableHighlight>
-
-        <Text style={styles.text3}>
-          Already have an account?
-        </Text>
-
-        <TouchableHighlight onPress={() => this.onClickListener('next')}>
-          <Text style={styles.textButton}>Log in </Text>
         </TouchableHighlight>
 
       </View>
@@ -52,13 +44,6 @@ const styles=StyleSheet.create({
     marginRight: 60,
     color: 'black',
     top: 300,
-  },
-
-  text3: {
-    fontSize: 10,
-    top: 550,
-    marginLeft: 80,
-    color: 'gray',
   },
 
   textUsernameInput: {
@@ -87,13 +72,5 @@ const styles=StyleSheet.create({
   loginText: {
     color: 'white',
   },
-
-  textButton: {
-    color: 'black',
-    fontSize: 10,
-    top: 538,
-    marginLeft: 250,
-    fontFamily: 'Avenir',
-  },
 })
-AppRegistry.registerComponent('project1', () => createUsername );
+AppRegistry.registerComponent('project1', () => changeUsername );
