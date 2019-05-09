@@ -96,4 +96,4 @@ const styles=StyleSheet.create({
     fontFamily: 'Avenir',
   },
 })
-AppRegistry.registerComponent('project1', () => createUsername );
+//AppRegistry.registerComponent('project1', () => createUsername );
