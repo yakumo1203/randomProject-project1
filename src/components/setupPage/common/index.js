@@ -1,1 +1,2 @@
-export * from './CreateAccoutInput';
+export * from './CreateAccountInput';
+export * from './EditUserName';

@@ -9,9 +9,9 @@ const CreateAccountInput = ({ label, placeholder, onChangeText, topMargin }) => 
       <Text style={textStyle}>{label}</Text>
       <TextInput
         style = {inputStyle}
-        placeholder = {placeholder},
-        returnKeyLabel = {'next'},
-        autoCorrect = {false},
+        placeholder = {placeholder}
+        returnKeyLabel = {'next'}
+        autoCorrect = {false}
         onChangeText = {onChangeText}
       />
     </View>
@@ -33,4 +33,4 @@ const styles = {
   }
 };
 
-export { ProfileUserInput };
+export { CreateAccountInput };

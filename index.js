@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
-import CreateUserName from './src/components/setupPage/CreateUsername'
+import React from 'react';
+import { View, AppRegistry } from 'react-native';
+import App from './src/App';
 
-AppRegistry.registerComponent('project1', () => CreateUserName );
+AppRegistry.registerComponent('randomProject-project1', () => App );
