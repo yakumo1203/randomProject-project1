@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import {
+  TouchableHighlight,
+  Alert,
+  ScrollView,
+  ImageBackground,
+  Image,
+  Text,
+  View,
+  AppRegistry,
+  StyleSheet,
+  Button,
+  TextInput
+} from 'react-native';
 
-export default class createUsername extends Component{
+class CreateUserName extends Component{
   render(){
     return(
       <View>
@@ -96,4 +108,5 @@ const styles=StyleSheet.create({
     fontFamily: 'Avenir',
   },
 })
-//AppRegistry.registerComponent('project1', () => createUsername );
+
+export default CreateUserName
