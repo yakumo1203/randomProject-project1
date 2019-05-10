@@ -10,19 +10,16 @@
     "firebase": "^6.0.0",
     "react": "16.8.3",
     "react-native": "0.59.5",
-<<<<<<< HEAD
-    "react-native-gifted-spinner": "^0.1.0"
-=======
+    "react-native-gifted-spinner": "^0.1.0",
     "react-native-elements": "^1.1.0",
     "react-navigation": "^3.9.1"
->>>>>>> bf902c006ee0b685e3a3d09bbd61233019e0e97e
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
     "@babel/runtime": "7.4.4",
     "babel-jest": "24.7.1",
     "jest": "24.7.1",
-    "metro-react-native-babel-preset": "0.54.0",
+    "babel-preset-react-native" : "4.0.0",
     "react-test-renderer": "16.8.3"
   },
   "jest": {
