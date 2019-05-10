@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 const EditUserName = ({ placeholder, headerText, subHeaderText, onChangeText }) => {
-  const { text1, text2, text3, textUsernameInput, buttonContainer, loginButton, textButton } = styles;
+  const { text1, text2, text3, textUsernameInput, buttonContainer, loginButton, textButton, loginText } = styles;
 
   return(
       <View>
@@ -22,9 +22,8 @@ const EditUserName = ({ placeholder, headerText, subHeaderText, onChangeText }) 
         />
         <TouchableHighlight
           style={[styles.buttonContainer, styles.loginButton]}
-          onPress={() => this.onClickListener('next')}
-        >
-          <Text style={ color: 'white' }>Next</Text>
+          onPress={() => this.onClickListener('next')}>
+          <Text style={loginText}>Next</Text>
         </TouchableHighlight>
       </View>
     );
@@ -66,6 +65,9 @@ const styles = {
   },
   loginButton: {
     backgroundColor: '#00CCFF',
+  },
+  loginText: {
+    color: 'white'
   }
 };
 
