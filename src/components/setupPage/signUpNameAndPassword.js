@@ -103,4 +103,3 @@ const styles=StyleSheet.create({
     color: '#00CCFF',
   },
 })
-AppRegistry.registerComponent('project1', () => NameAndPassword );

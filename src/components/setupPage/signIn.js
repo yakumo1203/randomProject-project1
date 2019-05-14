@@ -176,4 +176,3 @@ const styles=StyleSheet.create({
     color: 'white',
   },
 })
-//AppRegistry.registerComponent('project1', () => signIn );

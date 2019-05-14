@@ -15,7 +15,9 @@ class App extends Component {
       storageBucket: "foris-prototype1.appspot.com",
       messagingSenderId: "1056280071440",
       appId: "1:1056280071440:web:feac2b8ef587719b"
-    })
+    });
+
+
   }
 
   render() {
