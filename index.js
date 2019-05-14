@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import React from 'react';
+import { View, AppRegistry } from 'react-native';
+import App from './src/App';
 
+<<<<<<< HEAD
 export default class NameAndPassword extends Component{
   render(){
     return(
@@ -104,3 +106,6 @@ const styles=StyleSheet.create({
   },
 })
 AppRegistry.registerComponent('project1', () => NameAndPassword );
+=======
+AppRegistry.registerComponent('project1', () => App );
+>>>>>>> 0df1de6aad07d4b0cb102c13a9206cadb5ed9be8

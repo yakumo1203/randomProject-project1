@@ -127,5 +127,3 @@ const styles=StyleSheet.create({
     top: 500,
   },
 });
-
-//AppRegistry.registerComponent('project1', () => signUpAfter );
