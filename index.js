@@ -1,34 +1,41 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-export default class createUsername extends Component{
+export default class NameAndPassword extends Component{
   render(){
     return(
       <View>
-        <Text style={styles.text1}>
-          USERNAME
-        </Text>
-
-        <Text style={styles.text2}>
-          Create your username for your account. You can always change it later on.
+        <Text style={styles.title1}>
+          NAME AND PASSWORD
         </Text>
 
         <TextInput
-          style={styles.textUsernameInput}
-          placeholder="Username"
+          style={styles.textInput}
+          placeholder="Full Name"
+          returnKeyLabel = {"next"}
+          onChangeText={(text) => this.setState({fullname: text})}/>
+
+        <TextInput
+          style={styles.textInput}
+          placeholder="Password"
+          secureTextEntry={true}
           returnKeyLabel = {"next"}
           onChangeText={(text) => this.setState({username: text})}/>
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('next')}>
-          <Text style={styles.loginText}>Next</Text>
-        </TouchableHighlight>
-
-        <Text style={styles.text3}>
-          Already have an account?
+        <Text style={styles.text1}>
+          Passwords must include at least 6 characters
         </Text>
 
-        <TouchableHighlight onPress={() => this.onClickListener('next')}>
-          <Text style={styles.textButton}>Log in </Text>
+        <Text style={styles.text2}>
+          Save Password
+        </Text>
+
+        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('next')}>
+          <Text style={styles.loginText}>Continue and Sync Contacts</Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight style={styles.registerPage} onPress={() => this.onClickListener('username')}>
+          <Text style={styles.button1}> Continue without Syncning Contacts</Text>
         </TouchableHighlight>
 
       </View>
@@ -37,35 +44,34 @@ export default class createUsername extends Component{
 }
 
 const styles=StyleSheet.create({
-  text1: {
+  title1: {
     fontSize: 20,
-    textAlign: 'center',
     top: 200,
+    textAlign: 'center',
     color: 'black',
+  },
+
+  textInput: {
+    top: 300,
+    marginLeft: 60,
+    marginRight: 60,
+    marginBottom: 40,
+    borderBottomWidth: 1,
+  },
+
+  text1: {
+    fontSize: 10,
+    top: 270,
+    color: 'red',
+    marginLeft: 60,
     fontFamily: 'Avenir',
   },
 
   text2: {
-    fontSize: 15,
-    textAlign: 'center',
-    marginLeft: 60,
-    marginRight: 60,
-    color: 'black',
-    top: 300,
-  },
-
-  text3: {
     fontSize: 10,
-    top: 550,
-    marginLeft: 80,
-    color: 'gray',
-  },
-
-  textUsernameInput: {
-    top: 350,
-    marginLeft: 60,
-    marginRight: 60,
-    borderBottomWidth: 1,
+    top: 280,
+    color: '#C9C9C9',
+    marginLeft: 100,
   },
 
   buttonContainer: {
@@ -88,12 +94,13 @@ const styles=StyleSheet.create({
     color: 'white',
   },
 
-  textButton: {
-    color: 'black',
-    fontSize: 10,
-    top: 538,
-    marginLeft: 250,
-    fontFamily: 'Avenir',
+  registerPage: {
+    top: 400,
+    alignItems: 'center',
+  },
+
+  button1: {
+    color: '#00CCFF',
   },
 })
-AppRegistry.registerComponent('project1', () => createUsername );
+AppRegistry.registerComponent('project1', () => NameAndPassword );
