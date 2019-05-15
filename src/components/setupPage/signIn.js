@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-export default class signIn extends Component{
+export default class SignIn extends Component {
   constructor(props) {
     super(props);
     state = {
       username: '',
       password: '',
-    }
+    };
   }
 
   onClickListener = (viewId) => {

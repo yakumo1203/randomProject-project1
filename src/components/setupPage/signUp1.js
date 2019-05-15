@@ -1,45 +1,16 @@
 import React, { Component } from 'react';
-import { Animated, TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import { TouchableHighlight, ImageBackground, Text, View, StyleSheet } from 'react-native';
+import FadeInView from './FadeInView';
 
-class FadeInView extends Component{
-    state = {
-      fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
-    }
-
-    componentDidMount() {
-    Animated.timing(                  // Animate over time
-      this.state.fadeAnim,            // The animated value to drive
-        {
-          toValue: 1,                   // Animate to opacity: 1 (opaque)
-          duration: 500,              // Make it take a while
-        }
-      ).start();                        // Starts the animation
-    }
-
+export default class SignUp1 extends Component {
     render() {
-    let { fadeAnim } = this.state;
-
-    return (
-          <Animated.View                 // Special animatable View
-            style={{
-              ...this.props.style,
-              opacity: fadeAnim,         // Bind opacity to animated value
-            }}
-          >
-            {this.props.children}
-          </Animated.View>
-      );
-    }
-}
-
-export default class frontPage extends Component{
-    render(){
-      return(
+      return (
         <View>
-          <ImageBackground source={require('../project1/ImageForis1.jpg')} style={{width: '100%', height: '100%'}}>
-          <Text style={styles.title}>
-            FORIS
-          </Text>
+          <ImageBackground
+            source={('../../img/ImageForis1.jpg')}
+            style={{ width: '100%', height: '100%' }}
+          >
+          <Text style={styles.title}>FORIS</Text>
 
           <Text style={styles.sub}>
             For International Students
@@ -50,11 +21,17 @@ export default class frontPage extends Component{
               一般の方（現在留学されていない方）
             </Text>
 
-            <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN IN')}>
+            <TouchableHighlight
+              style={[styles.buttonContainer, styles.loginButton]}
+              onPress={() => this.onClickListener('SIGN IN')}
+            >
               <Text style={styles.loginText}>一般会員</Text>
             </TouchableHighlight>
 
-            <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('SIGN UP')}>
+            <TouchableHighlight
+              style={[styles.buttonContainer, styles.loginButton]}
+              onPress={() => this.onClickListener('SIGN UP')}
+            >
               <Text style={styles.loginText}>留学生会員</Text>
             </TouchableHighlight>
 
@@ -117,4 +94,4 @@ const styles=StyleSheet.create({
   loginText: {
     color: 'white',
   },
-})
+});

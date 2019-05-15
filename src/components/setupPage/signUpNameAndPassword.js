@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-export default class NameAndPassword extends Component{
+export default class SignUpNameAndPassword extends Component{
   render(){
     return(
       <View>
