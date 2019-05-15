@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TouchableHighlight, ImageBackground, Text, View, StyleSheet } from 'react-native';
 import FadeInView from './FadeInView';
 
-export default class SignUp1 extends Component {
+class SignUp1 extends Component {
     render() {
       return (
         <View>
@@ -95,3 +95,5 @@ const styles=StyleSheet.create({
     color: 'white',
   },
 });
+
+export { SignUp1 };

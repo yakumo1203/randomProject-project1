@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-export default class SignUp2 extends Component{
+class SignUp2 extends Component{
   render(){
     return(
       <View>
@@ -127,3 +127,5 @@ const styles=StyleSheet.create({
     top: 500,
   },
 });
+
+export { SignUp2 };

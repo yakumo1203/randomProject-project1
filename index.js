@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import UseOfTerms from './src/components/setupPage/UseOfTerms';
+import App from './src/App';
 
-AppRegistry.registerComponent('project1', () => UseOfTerms);
+AppRegistry.registerComponent('project1', () => App);

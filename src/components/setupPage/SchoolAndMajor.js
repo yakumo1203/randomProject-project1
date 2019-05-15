@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Text, View, StyleSheet, TextInput } from 'react-native';
 
-export default class SchoolAndMajor extends Component {
+class SchoolAndMajor extends Component {
   render() {
     return (
       <View>
@@ -108,3 +108,5 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
   },
 });
+
+export default SchoolAndMajor;

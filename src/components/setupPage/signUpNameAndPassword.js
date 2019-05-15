@@ -102,4 +102,4 @@ const styles=StyleSheet.create({
   button1: {
     color: '#00CCFF',
   },
-})
+});

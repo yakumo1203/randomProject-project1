@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, ImageBackground, Text, View, StyleSheet } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-export default class FrontPage extends Component {
+class FrontPage extends Component {
     render() {
       return (
         <View>
           <ImageBackground
-            source={('../../img/ImageForis1.jpg')}
+            source={require('../../img/ImageForis1.jpg')}
             style={{ width: '100%', height: '100%' }}
           >
             <Text style={styles.title}>
@@ -23,7 +24,7 @@ export default class FrontPage extends Component {
 
             <TouchableHighlight
               style={[styles.buttonContainer, styles.loginButton]}
-              onPress={() => this.onClickListener('SIGN IN')}
+              onPress={() => this.onClickListener(Actions.signIn())}
             >
               <Text style={styles.loginText}>Sign in</Text>
             </TouchableHighlight>
@@ -82,3 +83,6 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
+
+export default FrontPage;
+// export { FrontPage };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 
-export default class SignIn extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
     state = {
@@ -14,8 +14,8 @@ export default class SignIn extends Component {
     Alert.alert("Warning", "You entered invalid username or password. "+viewId);
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <View>
         <ImageBackground source={require('../project1/ImageForis1.jpg')} style={{width: '100%', height: '100%'}}>
         <Text style={styles.title1}>
@@ -175,4 +175,6 @@ const styles=StyleSheet.create({
   button1: {
     color: 'white',
   },
-})
+});
+
+export default SignIn;
