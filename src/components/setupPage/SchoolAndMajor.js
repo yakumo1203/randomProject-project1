@@ -1,37 +1,36 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import { TouchableHighlight, Text, View, StyleSheet, TextInput } from 'react-native';
 
-export default class schoolMajor extends Component{
-  render(){
-    return(
+export default class SchoolAndMajor extends Component {
+  render() {
+    return (
       <View>
-        <Text style={styles.text1}>
-          SCHOOL
-        </Text>
+        <Text style={styles.text1}>SCHOOL</Text>
 
         <TextInput
           style={styles.textUsernameInput1}
           placeholder="school"
-          returnKeyLabel = {"next"}
-          onChangeText={(text) => this.setState({username: text})}/>
+          returnKeyLabel={'next'}
+          onChangeText={(text) => this.setState({ username: text })}
+        />
 
-        <Text style={styles.text2}>
-          MAJOR
-        </Text>
+        <Text style={styles.text2}>MAJOR</Text>
 
         <TextInput
           style={styles.textUsernameInput2}
           placeholder="major"
-          returnKeyLabel = {"next"}
-          onChangeText={(text) => this.setState({username: text})}/>
+          returnKeyLabel={'next'}
+          onChangeText={(text) => this.setState({ username: text })}
+        />
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('next')}>
+        <TouchableHighlight
+          style={[styles.buttonContainer, styles.loginButton]}
+          onPress={() => this.onClickListener('next')}
+        >
           <Text style={styles.loginText}>Next</Text>
         </TouchableHighlight>
 
-        <Text style={styles.text3}>
-          Already have an account?
-        </Text>
+        <Text style={styles.text3}>Already have an account?</Text>
 
         <TouchableHighlight onPress={() => this.onClickListener('next')}>
           <Text style={styles.textButton}>Log in </Text>
@@ -42,7 +41,7 @@ export default class schoolMajor extends Component{
   }
 }
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
   text1: {
     fontSize: 20,
     textAlign: 'center',
@@ -82,13 +81,13 @@ const styles=StyleSheet.create({
   },
 
   buttonContainer: {
-    height:45,
+    height: 45,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:20,
-    width:250,
-    borderRadius:30,
+    marginBottom: 20,
+    width: 250,
+    borderRadius: 30,
     top: 450,
     marginLeft: 60,
   },
@@ -108,4 +107,4 @@ const styles=StyleSheet.create({
     marginLeft: 250,
     fontFamily: 'Avenir',
   },
-})
+});
