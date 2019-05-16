@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UseOfTerms;
+export { UseOfTerms };

@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 import React, { Component } from 'react';
-import CreateUserName from './components/setupPage/CreateUserName';
-import Router from './Router';
+import { SignIn } from './components/setupPage';
+// import Router from './Router';
 
 class App extends Component {
   state = { loggedIn: null };
@@ -20,7 +20,8 @@ class App extends Component {
 
   render() {
     return (
-      <Router />
+      <SignIn />
+      // <Router />
     );
   }
 }

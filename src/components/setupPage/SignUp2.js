@@ -1,59 +1,45 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import { TouchableHighlight, Text, View, StyleSheet } from 'react-native';
+import { SignInSection } from './common';
 
-class SignUp2 extends Component{
-  render(){
-    return(
+class SignUp2 extends Component {
+  render() {
+    const { text1, text2, text3, text4, button1, button2, registerPage } = styles;
+
+    return (
       <View>
-        <View>
-          <Text style={styles.text1}>
-            Success!
-          </Text>
-        </View>
-
-        <View>
-          <Text style={styles.text2}>
-            Welcome to FORIS,
-          </Text>
-        </View>
-
-        <View>
-          <Text style={styles.text3}>
-            FORISはあなたの留学を応援します。
-          </Text>
-        </View>
-
-        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('next')}>
-          <Text style={styles.loginText}>Next</Text>
+        <Text style={text1}>Success!</Text>
+        <Text style={text2}>Welcome to FORIS,</Text>
+        <Text style={text3}>FORISはあなたの留学を応援します。</Text>
+        <SignInSection
+          text='Sign in'
+          onPress={() => this.onClickListener('next')}
+          top='400'
+        />
+        <TouchableHighlight
+          style={registerPage}
+          onPress={() => this.onClickListener('username')}
+        >
+          <Text style={button1}>Change Username</Text>
         </TouchableHighlight>
-
-        <TouchableHighlight style={styles.registerPage} onPress={() => this.onClickListener('username')}>
-          <Text style={styles.button1}> Change Username</Text>
-        </TouchableHighlight>
-
-
-        <Text style={styles.text4}>
+        <Text style={text4}>
           By clicking Next, you agree with our
         </Text>
-
-        <TouchableHighlight style={{alignItems: 'center'}}>
-          <Text style={styles.button2}>
-            UseOfTerms
-          </Text>
+        <TouchableHighlight style={{ alignItems: 'center' }} >
+          <Text style={button2}>UseOfTerms</Text>
         </TouchableHighlight>
       </View>
     );
   }
 }
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
   text1: {
     fontSize: 30,
     color: 'black',
     top: 200,
     textAlign: 'center',
   },
-
   text2: {
     fontSize: 30,
     color: 'black',
@@ -61,14 +47,12 @@ const styles=StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'Avenir',
   },
-
   text3: {
     fontSize: 15,
     color: 'black',
     top: 300,
     textAlign: 'center',
   },
-
   text4: {
     fontSize: 10,
     color: 'gray',
@@ -76,55 +60,15 @@ const styles=StyleSheet.create({
     marginBottom: 10,
     textAlign: 'center',
   },
-
-  buttonContainer: {
-    height:45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom:20,
-    width:250,
-    borderRadius:30,
-    top: 400,
-    marginLeft: 60,
-  },
-
-  textInputContainer:{
-    borderBottomColor: 'white',
-    backgroundColor: 'white',
-    borderRadius:30,
-    borderBottomWidth: 1,
-    width:250,
-    height:45,
-    marginBottom:20,
-    flexDirection: 'row',
-    alignItems:'center',
-    top: 450,
-    marginLeft: 60,
-  },
-
-  loginButton: {
-    backgroundColor: '#00CCFF',
-  },
-
-  loginText: {
-    color: 'white',
-  },
-
-  registerPage: {
-    top: 400,
-    alignItems: 'center',
-  },
-
-  button1: {
-    color: '#00CCFF',
-  },
-
   button2: {
     color: 'black',
     fontSize: 10,
     alignItems: 'center',
     top: 500,
+  },
+  registerPage: {
+   top: 400,
+   alignItems: 'center',
   },
 });
 

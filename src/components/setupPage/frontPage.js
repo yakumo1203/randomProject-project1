@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, ImageBackground, Text, View, StyleSheet } from 'react-native';
+import { ImageBackground, Text, View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { SignInSection } from './common';
 
 class FrontPage extends Component {
     render() {
@@ -10,31 +11,22 @@ class FrontPage extends Component {
             source={require('../../img/ImageForis1.jpg')}
             style={{ width: '100%', height: '100%' }}
           >
-            <Text style={styles.title}>
-              FORIS
-            </Text>
+            <Text style={styles.title}>FORIS</Text>
 
-            <Text style={styles.sub}>
-              For International Students
-            </Text>
+            <Text style={styles.sub}>For International Students</Text>
 
-            <Text style={styles.text}>
-              留学に、革命を。
-              </Text>
+            <Text style={styles.text}>留学に、革命を。</Text>
 
-            <TouchableHighlight
-              style={[styles.buttonContainer, styles.loginButton]}
-              onPress={() => this.onClickListener(Actions.signIn())}
-            >
-              <Text style={styles.loginText}>Sign in</Text>
-            </TouchableHighlight>
-
-            <TouchableHighlight
-              style={[styles.buttonContainer, styles.loginButton]}
-              onPress={() => this.onClickListener('SIGN UP')}
-            >
-              <Text style={styles.loginText}>Sign up</Text>
-            </TouchableHighlight>
+            <SignInSection
+              text='Log in'
+              onPress={() => Actions.signIn()}
+              top='400'
+            />
+            <SignInSection
+              text='Create user'
+              onPress={() => Actions.signUp()}
+              top='400'
+            />
           </ImageBackground>
         </View>
       );
@@ -84,5 +76,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FrontPage;
-// export { FrontPage };
+export { FrontPage };
