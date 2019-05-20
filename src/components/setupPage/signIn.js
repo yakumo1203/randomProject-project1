@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Actions } from 'react-native-router-flux';
 import { ImageBackground, Image, Text, View, StyleSheet, TextInput, TouchableHighlight } from 'react-native';
-import { SignInSection } from './common';
+import { SignInSection, GoBack } from './common';
+import Router from '../../Router';
 
 class SignIn extends Component {
   state = { username: '', password: '' };
@@ -14,6 +16,7 @@ class SignIn extends Component {
         style={{ width: '100%', height: '100%' }}
       >
         <View /* style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', height: '100%' }} */>
+
           <Text style={title1}>Sign in{'\n'}for your own account</Text>
 
           <Text style={text2}>
@@ -54,9 +57,9 @@ class SignIn extends Component {
 
           <TouchableHighlight
             style={{ top: 220, alignItems: 'center' }}
-            onPress={() => this.onClickListener('username')}
+            onPress={() => Actions.signUp1()}
           >
-            <Text style={{ color: 'black' }} >Already have an accout?</Text>
+            <Text style={{ color: 'black' }} >Don't have an accout?</Text>
           </TouchableHighlight>
         </View>
       </ImageBackground>
