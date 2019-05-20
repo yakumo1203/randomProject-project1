@@ -22,17 +22,17 @@ class SignUp1 extends Component {
             <SignInSection
               text='一般会員'
               onPress={() => Action.signUp1()}
-              style={{ top: 300 }}
+              signInStyle={{ top: 300 }}
             />
             <SignInSection
               text='留学生会員'
               onPress={() => Action.signUp1()}
-              style={{ top: 300 }}
+              signInStyle={{ top: 300 }}
             />
             <SignInSection
               text='法人'
               onPress={() => Action.signUp1()}
-              style={{ top: 300 }}
+              signInStyle={{ top: 300 }}
             />
           </FadeInView>
 

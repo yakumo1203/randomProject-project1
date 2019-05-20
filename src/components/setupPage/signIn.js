@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ImageBackground, Image, Text, View, StyleSheet, TextInput } from 'react-native';
+import { ImageBackground, Image, Text, View, StyleSheet, TextInput, TouchableHighlight } from 'react-native';
 import { SignInSection } from './common';
 
 class SignIn extends Component {
@@ -9,11 +9,11 @@ class SignIn extends Component {
     const { title1, text2, text3, textInputContainer, inputs, inputIcon } = styles;
 
     return (
-      <View>
-        <ImageBackground
-          source={require('../../img/ImageForis1.jpg')}
-          style={{ width: '100%', height: '100%' }}
-        >
+      <ImageBackground
+        source={require('../../img/ImageForis1.jpg')}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <View /* style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', height: '100%' }} */>
           <Text style={title1}>Sign in{'\n'}for your own account</Text>
 
           <Text style={text2}>
@@ -49,26 +49,22 @@ class SignIn extends Component {
           <SignInSection
             text='Sign in'
             onPress={() => this.onClickListener('Login')}
-            style={{ top: 220 }}
+            signInStyle={{ top: 220 }}
           />
 
-          <View>
-            <Text style={text3}>
-              Don't have an account?
-            </Text>
-          </View>
-          <SignInSection
-            text='Dont have an account?'
-            onPress={() => this.onClickListener('goToRegister')}
-            style={{ top: 220 }}
-          />
-        </ImageBackground>
-      </View>
+          <TouchableHighlight
+            style={{ top: 220, alignItems: 'center' }}
+            onPress={() => this.onClickListener('username')}
+          >
+            <Text style={{ color: 'black' }} >Already have an accout?</Text>
+          </TouchableHighlight>
+        </View>
+      </ImageBackground>
     );
   }
 }
 
-const styles = {
+const styles = StyleSheet.create({
   title1: {
     fontSize: 50,
     textAlign: 'center',
@@ -112,6 +108,6 @@ const styles = {
     marginLeft: 60,
     color: 'white',
   },
-};
+});
 
 export default SignIn;

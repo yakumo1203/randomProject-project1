@@ -32,7 +32,7 @@ class SignUpNameAndPassword extends Component {
         <SignInSection
           text='Continue and sync contacts'
           onPress={() => this.onClickListener('next')}
-          top='400'
+          signInStyle={{ top: 400 }}
         />
 
         <TouchableHighlight

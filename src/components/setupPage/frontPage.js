@@ -21,12 +21,12 @@ class FrontPage extends Component {
             <SignInSection
               text='Log in'
               onPress={() => Actions.signIn()}
-              style={{ top: 400 }}
+              signInStyle={{ top: 400 }}
             />
             <SignInSection
               text='Create user'
               onPress={() => Actions.signUp1()}
-              style={{ top: 400 }}
+              signInStyle={{ top: 400 }}
             />
           </ImageBackground>
         </View>

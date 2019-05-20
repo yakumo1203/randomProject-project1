@@ -1,10 +1,10 @@
 import React from 'react';
 import { TouchableHighlight, Text } from 'react-native';
 
-const SignInSection = ({ text, onPress }) => {
+const SignInSection = ({ text, onPress, signInStyle }) => {
   return (
     <TouchableHighlight
-      style={styles.loginButton}
+      style={[styles.loginButton, signInStyle]}
       onPress={onPress}
     >
       <Text style={{ color: 'white' }}>{text}</Text>

@@ -12,9 +12,9 @@ class SignUp2 extends Component {
         <Text style={text2}>Welcome to FORIS,</Text>
         <Text style={text3}>FORISはあなたの留学を応援します。</Text>
         <SignInSection
-          text='Sign in'
+          text='Next'
           onPress={() => this.onClickListener('next')}
-          top='400'
+          signInStyle={{ top: 400 }}
         />
         <TouchableHighlight
           style={registerPage}
