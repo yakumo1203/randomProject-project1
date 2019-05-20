@@ -8,7 +8,7 @@ class SignIn extends Component {
   state = { username: '', password: '' };
 
   render() {
-    const { title1, text2, text3, textInputContainer, inputs, inputIcon } = styles;
+    const { title1, text2, textInputContainer, inputs, inputIcon } = styles;
 
     return (
       <ImageBackground
@@ -104,12 +104,6 @@ const styles = StyleSheet.create({
     height: 30,
     marginLeft: 15,
     justifyContent: 'center'
-  },
-  text3: {
-    fontSize: 15,
-    top: 270,
-    marginLeft: 60,
-    color: 'white',
   },
 });
 
