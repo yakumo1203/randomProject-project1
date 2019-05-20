@@ -1,11 +1,58 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import { ImageBackground, Image, Text, View, StyleSheet, TextInput, TouchableHighlight } from 'react-native';
-import { SignInSection, GoBack } from './common';
+import {
+  ImageBackground,
+  Image,
+  Text,
+  View,
+  StyleSheet,
+  TextInput,
+  TouchableHighlight
+} from 'react-native';
 import Router from '../../Router';
+import { SignInSection, Spinner } from './common';
+import { emailChanged, passwordChanged, loginUser } from '../../actions';
 
 class SignIn extends Component {
-  state = { username: '', password: '' };
+  onEmailChange(text) {
+    this.props.emailChanged(text);
+  }
+
+  onPasswordChange(text) {
+    this.props.passwordChanged(text);
+  }
+
+  onButtonPress() {
+    const { email, password } = this.props;
+    this.props.loginUser({ email, password });
+  }
+
+  renderButton() {
+    if (this.props.loading) {
+      return <Spinner />;
+    }
+
+    return (
+      <SignInSection
+        text='Sign in'
+        onPress={this.onButtonPress.bind(this)}
+        signInStyle={{ top: 220 }}
+      />
+    );
+  }
+
+  renderError() {
+    if (this.props.error) {
+      return (
+        <View>
+          <Text style={styles.errorTextStyle}>
+            {this.props.error}
+          </Text>
+        </View>
+      );
+    }
+  }
 
   render() {
     const { title1, text2, textInputContainer, inputs, inputIcon } = styles;
@@ -15,13 +62,9 @@ class SignIn extends Component {
         source={require('../../img/ImageForis1.jpg')}
         style={{ width: '100%', height: '100%' }}
       >
-        <View /* style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)', height: '100%' }} */>
-
+        <View>
           <Text style={title1}>Sign in{'\n'}for your own account</Text>
-
-          <Text style={text2}>
-            Enter your username and password.
-          </Text>
+          <Text style={text2}>Enter your Email and password.</Text>
 
           <View style={textInputContainer}>
             <Image
@@ -30,9 +73,10 @@ class SignIn extends Component {
             />
             <TextInput
               style={inputs}
-              placeholder='username'
+              placeholder='Email'
               returnKeyLabel={'next'}
-              onChangeText={(username) => this.setState({ username })}
+              value={this.props.email}
+              onChangeText={this.onEmailChange.bind(this)}
             />
           </View>
 
@@ -46,14 +90,16 @@ class SignIn extends Component {
               placeholder="password"
               secureTextEntry
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({ password })}
+              value={this.props.password}
+              onChangeText={this.onPasswordChange.bind(this)}
             />
           </View>
-          <SignInSection
-            text='Sign in'
-            onPress={() => this.onClickListener('Login')}
-            signInStyle={{ top: 220 }}
-          />
+
+          {this.renderError()}
+          
+          <View>
+            {this.renderButton()}
+          </View>
 
           <TouchableHighlight
             style={{ top: 220, alignItems: 'center' }}
@@ -105,6 +151,18 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     justifyContent: 'center'
   },
+  errorTextStyle: {
+    alignSelf: 'center',
+    color: 'red'
+  }
 });
 
-export default SignIn;
+const mapStateToProps = ({ auth }) => {
+  const { email, password, error, loading } = auth;
+  return { email, password, error, loading };
+};
+
+export default connect(
+  mapStateToProps,
+  { emailChanged, passwordChanged, loginUser }
+)(SignIn);
