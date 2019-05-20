@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
-import { Alert, ImageBackground, Image, Text, View, StyleSheet, TextInput } from 'react-native';
+import { ImageBackground, Image, Text, View, StyleSheet, TextInput } from 'react-native';
 import { SignInSection } from './common';
 
 class SignIn extends Component {
-  constructor(props) {
-    super(props);
-    state = {
-      username: '',
-      password: '',
-    };
-  }
-
-  onClickListener = (viewId) => {
-    Alert.alert("Warning", "You entered invalid username or password. "+viewId);
-  }
+  state = { username: '', password: '' };
 
   render() {
     const { title1, text2, text3, textInputContainer, inputs, inputIcon } = styles;
@@ -24,7 +14,7 @@ class SignIn extends Component {
           source={require('../../img/ImageForis1.jpg')}
           style={{ width: '100%', height: '100%' }}
         >
-          <Text style={title1}>Sign in<br />for your own account</Text>
+          <Text style={title1}>Sign in{'\n'}for your own account</Text>
 
           <Text style={text2}>
             Enter your username and password.
@@ -59,7 +49,7 @@ class SignIn extends Component {
           <SignInSection
             text='Sign in'
             onPress={() => this.onClickListener('Login')}
-            top='220'
+            style={{ top: 220 }}
           />
 
           <View>
@@ -70,7 +60,7 @@ class SignIn extends Component {
           <SignInSection
             text='Dont have an account?'
             onPress={() => this.onClickListener('goToRegister')}
-            top='220'
+            style={{ top: 220 }}
           />
         </ImageBackground>
       </View>
@@ -78,7 +68,7 @@ class SignIn extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = {
   title1: {
     fontSize: 50,
     textAlign: 'center',
@@ -122,6 +112,6 @@ const styles = StyleSheet.create({
     marginLeft: 60,
     color: 'white',
   },
-});
+};
 
-export { SignIn };
+export default SignIn;

@@ -8,7 +8,7 @@ class SignUp1 extends Component {
       return (
         <View>
           <ImageBackground
-            source={('../../img/ImageForis1.jpg')}
+            source={require('../../img/ImageForis1.jpg')}
             style={{ width: '100%', height: '100%' }}
           >
           <Text style={styles.title}>FORIS</Text>
@@ -22,17 +22,17 @@ class SignUp1 extends Component {
             <SignInSection
               text='一般会員'
               onPress={() => Action.signUp1()}
-              top='300'
+              style={{ top: 300 }}
             />
             <SignInSection
               text='留学生会員'
               onPress={() => Action.signUp1()}
-              top='300'
+              style={{ top: 300 }}
             />
             <SignInSection
               text='法人'
               onPress={() => Action.signUp1()}
-              top='300'
+              style={{ top: 300 }}
             />
           </FadeInView>
 
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { SignUp1 };
+export default SignUp1;

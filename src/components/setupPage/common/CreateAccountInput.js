@@ -6,13 +6,13 @@ const CreateAccountInput = ({ label, placeholder, onChangeText, topMargin }) => 
 
   return (
     <View>
-      <Text style={textStyle}>{label}</Text>
+      <Text style={[{ top: { topMargin } + 20 }, textStyle]}>{label}</Text>
       <TextInput
-        style = {inputStyle}
-        placeholder = {placeholder}
-        returnKeyLabel = {'next'}
-        autoCorrect = {false}
-        onChangeText = {onChangeText}
+        style={[{ top: { topMargin } }, inputStyle]}
+        placeholder={placeholder}
+        returnKeyLabel={'next'}
+        autoCorrect={false}
+        onChangeText={onChangeText}
       />
     </View>
   );
@@ -23,13 +23,11 @@ const styles = {
     fontSize: 15,
     marginLeft: 60,
     color: 'gray',
-    top: {topMargin + 20}
   },
   inputStyle: {
     marginLeft: 130,
     marginRight: 60,
     borderBottomWidth: 1,
-    top: {topMargin}
   }
 };
 

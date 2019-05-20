@@ -27,7 +27,7 @@ class SchoolAndMajor extends Component {
         <SignInSection
           text='next'
           onPress={() => this.onClickListener('next')}
-          top='450'
+          style={{ top: 450 }}
         />
 
         <Text style={styles.text3}>Already have an account?</Text>

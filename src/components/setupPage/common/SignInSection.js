@@ -1,33 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TouchableHighlight, Text } from 'react-native';
 
-const SignInSection = ({ text, onPress, top }) = {
-  const { loginText, loginButton } = styles;
-
+const SignInSection = ({ text, onPress }) => {
   return (
     <TouchableHighlight
-      style={loginButton}
+      style={styles.loginButton}
       onPress={onPress}
     >
-      <Text style={loginText}>{text}</Text>
-    </TouchableHighLight>
+      <Text style={{ color: 'white' }}>{text}</Text>
+    </TouchableHighlight>
   );
-}
+};
 
 const styles = {
-  loginText: {
-    color: 'black',
-  },
   loginButton: {
-    height:45,
+    height: 45,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:20,
-    width:250,
-    borderRadius:30,
-    top: parseInt({top}, 10),
+    marginBottom: 20,
+    width: 250,
+    borderRadius: 30,
     marginLeft: 60,
-    color: 'white'
-  }
+    backgroundColor: 'gray'
+  },
 };
+
+export { SignInSection };

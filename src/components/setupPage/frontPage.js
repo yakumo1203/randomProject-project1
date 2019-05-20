@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ImageBackground, Text, View, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import Router from '../../Router';
 import { SignInSection } from './common';
 
 class FrontPage extends Component {
@@ -20,12 +21,12 @@ class FrontPage extends Component {
             <SignInSection
               text='Log in'
               onPress={() => Actions.signIn()}
-              top='400'
+              style={{ top: 400 }}
             />
             <SignInSection
               text='Create user'
-              onPress={() => Actions.signUp()}
-              top='400'
+              onPress={() => Actions.signUp1()}
+              style={{ top: 400 }}
             />
           </ImageBackground>
         </View>
@@ -40,40 +41,21 @@ const styles = StyleSheet.create({
     top: 160,
     textAlign: 'center',
   },
-
   sub: {
     fontSize: 20,
     color: 'white',
     top: 170,
     textAlign: 'center',
   },
-
   text: {
     fontSize: 30,
     top: 300,
     textAlign: 'center',
     color: 'white',
   },
-
-  buttonContainer: {
-    height: 45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-    width: 250,
-    borderRadius: 30,
-    top: 400,
-    marginLeft: 60,
-  },
-
-  loginButton: {
-    backgroundColor: 'gray',
-  },
-
   loginText: {
     color: 'white',
   },
 });
 
-export { FrontPage };
+export default FrontPage;
