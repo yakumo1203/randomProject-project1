@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
-import { EditUserName } from './common';
+import { EditUserName, } from './common';
 
 class CreateUserName extends Component{
   state = { username: '' };
@@ -14,7 +14,6 @@ class CreateUserName extends Component{
           subHeaderText='Change your username for your account. You can always change it later on.'
           onChangeText={username => this.setState({ username })}
         />
-
         <Text style={styles.textStyle}>
           Already have an account?
         </Text>
@@ -43,4 +42,4 @@ const styles = {
   }
 };
 
-export default CreateUserName;
+export { CreateUserName };

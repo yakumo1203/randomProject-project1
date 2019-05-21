@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   TouchableHighlight,
   Text,
   View,
-  Button,
   TextInput
 } from 'react-native';
 
 const EditUserName = ({ placeholder, headerText, subHeaderText, onChangeText }) => {
-  const { text1, text2, text3, textUsernameInput, buttonContainer, loginButton, textButton, loginText } = styles;
+  const { text1, text2, textUsernameInput, buttonContainer, loginButton, loginText } = styles;
 
-  return(
+  return (
       <View>
-        <Text style={styles.text1}>{headerText}</Text>
-        <Text style={styles.text2}>{subHeaderText}</Text>
+        <Text style={text1}>{headerText}</Text>
+        <Text style={text2}>{subHeaderText}</Text>
         <TextInput
-          style={styles.textUsernameInput}
+          style={textUsernameInput}
           placeholder={placeholder}
-          returnKeyLabel = {"next"}
+          returnKeyLabel={'next'}
           onChangeText={onChangeText}
         />
         <TouchableHighlight
-          style={[styles.buttonContainer, styles.loginButton]}
-          onPress={() => this.onClickListener('next')}>
+          style={[buttonContainer, loginButton]}
+          onPress={() => this.onClickListener('next')}
+        >
           <Text style={loginText}>Next</Text>
         </TouchableHighlight>
       </View>
@@ -53,13 +53,13 @@ const styles = {
     borderBottomWidth: 1,
   },
   buttonContainer: {
-    height:45,
+    height: 45,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:20,
-    width:250,
-    borderRadius:30,
+    marginBottom: 20,
+    width: 250,
+    borderRadius: 30,
     top: 400,
     marginLeft: 60,
   },

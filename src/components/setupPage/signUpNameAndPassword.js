@@ -1,41 +1,45 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import { TouchableHighlight, Text, View, StyleSheet, TextInput } from 'react-native';
+import { SignInSection } from './common';
 
-export default class NameAndPassword extends Component{
-  render(){
-    return(
+class SignUpNameAndPassword extends Component {
+  render() {
+    const { title1, textInput, text1, text2, registerPage, button1 } = styles;
+
+    return (
       <View>
-        <Text style={styles.title1}>
-          NAME AND PASSWORD
-        </Text>
+        <Text style={title1}>NAME AND PASSWORD</Text>
 
         <TextInput
-          style={styles.textInput}
+          style={textInput}
           placeholder="Full Name"
-          returnKeyLabel = {"next"}
-          onChangeText={(text) => this.setState({fullname: text})}/>
-
+          returnKeyLabel={'next'}
+          onChangeText={(text) => this.setState({ fullname: text })}
+        />
         <TextInput
-          style={styles.textInput}
+          style={textInput}
           placeholder="Password"
-          secureTextEntry={true}
-          returnKeyLabel = {"next"}
-          onChangeText={(text) => this.setState({username: text})}/>
+          secureTextEntry
+          returnKeyLabel={'next'}
+          onChangeText={(text) => this.setState({ username: text })}
+        />
 
-        <Text style={styles.text1}>
+        <Text style={text1}>
           Passwords must include at least 6 characters
         </Text>
+        <Text style={text2}>Save Password</Text>
 
-        <Text style={styles.text2}>
-          Save Password
-        </Text>
+        <SignInSection
+          text='Continue and sync contacts'
+          onPress={() => this.onClickListener('next')}
+          signInStyle={{ top: 400 }}
+        />
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('next')}>
-          <Text style={styles.loginText}>Continue and Sync Contacts</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight style={styles.registerPage} onPress={() => this.onClickListener('username')}>
-          <Text style={styles.button1}> Continue without Syncning Contacts</Text>
+        <TouchableHighlight
+          style={registerPage}
+          onPress={() => this.onClickListener('username')}
+        >
+          <Text style={button1}> Continue without Syncning Contacts</Text>
         </TouchableHighlight>
 
       </View>
@@ -43,14 +47,13 @@ export default class NameAndPassword extends Component{
   }
 }
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
   title1: {
     fontSize: 20,
     top: 200,
     textAlign: 'center',
     color: 'black',
   },
-
   textInput: {
     top: 300,
     marginLeft: 60,
@@ -58,7 +61,6 @@ const styles=StyleSheet.create({
     marginBottom: 40,
     borderBottomWidth: 1,
   },
-
   text1: {
     fontSize: 10,
     top: 270,
@@ -66,40 +68,19 @@ const styles=StyleSheet.create({
     marginLeft: 60,
     fontFamily: 'Avenir',
   },
-
   text2: {
     fontSize: 10,
     top: 280,
     color: '#C9C9C9',
     marginLeft: 100,
   },
-
-  buttonContainer: {
-    height:45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom:20,
-    width:250,
-    borderRadius:30,
-    top: 400,
-    marginLeft: 60,
-  },
-
-  loginButton: {
-    backgroundColor: '#00CCFF',
-  },
-
-  loginText: {
-    color: 'white',
-  },
-
   registerPage: {
     top: 400,
     alignItems: 'center',
   },
-
   button1: {
     color: '#00CCFF',
   },
-})
+});
+
+export { SignUpNameAndPassword };

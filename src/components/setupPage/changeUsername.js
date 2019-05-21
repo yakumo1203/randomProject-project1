@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
+import { View } from 'react-native';
 import { EditUserName } from './common';
 
-class ChangeUserName extends Component{
+class ChangeUserName extends Component {
   state = { username: '' };
 
   render() {
@@ -19,4 +19,4 @@ class ChangeUserName extends Component{
   }
 }
 
-export default ChangeUserName;
+export { ChangeUserName };

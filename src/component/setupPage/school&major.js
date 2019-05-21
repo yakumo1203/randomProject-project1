@@ -109,3 +109,4 @@ const styles=StyleSheet.create({
     fontFamily: 'Avenir',
   },
 })
+//AppRegistry.registerComponent('project1', () => schoolMajor );
