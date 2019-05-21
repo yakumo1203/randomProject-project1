@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Actions } from 'react-native-router-flux';
 import { TouchableHighlight, Text, View, StyleSheet } from 'react-native';
 import { SignInSection } from './common';
+import Router from '../../Router';
 
 class SignUp2 extends Component {
   render() {
@@ -13,19 +15,22 @@ class SignUp2 extends Component {
         <Text style={text3}>FORISはあなたの留学を応援します。</Text>
         <SignInSection
           text='Next'
-          onPress={() => this.onClickListener('next')}
+          onPress={() => Actions.main()}
           signInStyle={{ top: 400 }}
         />
         <TouchableHighlight
           style={registerPage}
-          onPress={() => this.onClickListener('username')}
+          onPress={() => Actions.changeUsername()}
         >
           <Text style={button1}>Change Username</Text>
         </TouchableHighlight>
         <Text style={text4}>
           By clicking Next, you agree with our
         </Text>
-        <TouchableHighlight style={{ alignItems: 'center' }} >
+        <TouchableHighlight
+          style={{ alignItems: 'center' }}
+          onPress={() => Actions.useOfTerms()}
+        >
           <Text style={button2}>UseOfTerms</Text>
         </TouchableHighlight>
       </View>
@@ -72,4 +77,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { SignUp2 };
+export default SignUp2;

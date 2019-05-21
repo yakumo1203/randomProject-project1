@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Action } from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 import { ImageBackground, Text, View, StyleSheet } from 'react-native';
 import { FadeInView, SignInSection } from './common';
+import Router from '../../Router';
 
 class SignUp1 extends Component {
     render() {
@@ -21,17 +22,17 @@ class SignUp1 extends Component {
             </Text>
             <SignInSection
               text='一般会員'
-              onPress={() => Action.signUp1()}
+              onPress={() => Actions.signUpNameAndPassword()}
               signInStyle={{ top: 300 }}
             />
             <SignInSection
               text='留学生会員'
-              onPress={() => Action.signUp1()}
+              onPress={() => Actions.signUpNameAndPassword()}
               signInStyle={{ top: 300 }}
             />
             <SignInSection
               text='法人'
-              onPress={() => Action.signUp1()}
+              onPress={() => Actions.signUpNameAndPassword()}
               signInStyle={{ top: 300 }}
             />
           </FadeInView>

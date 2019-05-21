@@ -96,7 +96,7 @@ class SignIn extends Component {
           </View>
 
           {this.renderError()}
-          
+
           <View>
             {this.renderButton()}
           </View>

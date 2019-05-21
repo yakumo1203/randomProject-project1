@@ -31,7 +31,7 @@ export const loginUser = ({ email, password }) => {
       .catch((error) => {
         console.log(error);
 
-        loginUserFail(dispatch)
+        loginUserFail(dispatch);
     });
   };
 };
@@ -43,7 +43,7 @@ const loginUserSuccess = (dispatch, user) => {
   });
 
   Actions.main();
-}
+};
 
 const loginUserFail = (dispatch, user) => {
   dispatch({ type: LOGIN_USER_FAIL });

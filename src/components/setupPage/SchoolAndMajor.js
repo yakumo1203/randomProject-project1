@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Actions } from 'react-native-router-flux';
 import { TouchableHighlight, Text, View, StyleSheet, TextInput } from 'react-native';
 import { SignInSection } from './common';
+import Router from '../../Router';
 
 class SchoolAndMajor extends Component {
   render() {
@@ -32,7 +34,8 @@ class SchoolAndMajor extends Component {
 
         <Text style={styles.text3}>Already have an account?</Text>
 
-        <TouchableHighlight onPress={() => this.onClickListener('next')}>
+        <TouchableHighlight
+          onPress={() => this.onClickListener('next')}>
           <Text style={styles.textButton}>Log in </Text>
         </TouchableHighlight>
 
@@ -84,4 +87,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { SchoolAndMajor };
+export default SchoolAndMajor;

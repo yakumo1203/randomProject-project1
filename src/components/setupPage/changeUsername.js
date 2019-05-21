@@ -19,4 +19,4 @@ class ChangeUserName extends Component {
   }
 }
 
-export { ChangeUserName };
+export default ChangeUserName;

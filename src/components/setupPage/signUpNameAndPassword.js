@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Actions } from 'react-native-router-flux';
 import { TouchableHighlight, Text, View, StyleSheet, TextInput } from 'react-native';
 import { SignInSection } from './common';
+import Router from '../../Router';
 
 class SignUpNameAndPassword extends Component {
   render() {
@@ -37,9 +39,9 @@ class SignUpNameAndPassword extends Component {
 
         <TouchableHighlight
           style={registerPage}
-          onPress={() => this.onClickListener('username')}
+          onPress={() => Actions.schoolAndMajor()}
         >
-          <Text style={button1}> Continue without Syncning Contacts</Text>
+          <Text style={button1}>Continue without Syncning Contacts</Text>
         </TouchableHighlight>
 
       </View>
@@ -83,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { SignUpNameAndPassword };
+export default SignUpNameAndPassword;
