@@ -7,13 +7,19 @@
     "test": "jest"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@shoutem/ui": "^0.23.20",
     "firebase": "^6.0.0",
+=======
+    "firebase": "^6.0.2",
+>>>>>>> ba513c947bdb088126525baa02e4e00cd6f5f81d
     "react": "16.8.3",
-    "react-native": "0.59.5",
+    "react-native": "^0.59.8",
     "react-native-elements": "^1.1.0",
+    "react-native-firebase": "^5.3.1",
     "react-native-gesture-handler": "^1.2.1",
     "react-native-gifted-spinner": "^0.1.0",
+    "react-native-navigation": "^2.19.1",
     "react-native-router-flux": "^4.0.6",
     "react-native-spinkit": "^1.3.0",
     "react-native-vector-icons": "^6.4.2",
