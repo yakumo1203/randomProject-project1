@@ -7,12 +7,8 @@
     "test": "jest"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@shoutem/ui": "^0.23.20",
-    "firebase": "^6.0.0",
-=======
     "firebase": "^6.0.2",
->>>>>>> ba513c947bdb088126525baa02e4e00cd6f5f81d
     "react": "16.8.3",
     "react-native": "^0.59.8",
     "react-native-elements": "^1.1.0",
