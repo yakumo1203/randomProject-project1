@@ -23,7 +23,7 @@ const RouterComponent = () => {
           <Scene key="useOfTerms" component={UseOfTerms} />
         </Scene>
         <Scene key="main">
-          <Scene key="placeHolder" component={PlaceHolder} hideNavBar initial />
+          <Scene key="placeHolder" component={PlaceHolder} initial />
         </Scene>
       </Scene>
     </Router>
