@@ -15,6 +15,7 @@ class SignUp2 extends Component {
         <Text style={text3}>FORISはあなたの留学を応援します。</Text>
         <SignInSection
           text='Next'
+          signInStyle={{ backgroundColor: '#00CCFF' }}
           onPress={() => Actions.main()}
           signInStyle={{ top: 400 }}
         />
