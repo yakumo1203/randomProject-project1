@@ -44,5 +44,3 @@ export default class App extends React.Component {
   );
   }
 }
-
-//AppRegistry.registerComponent('project1', () => App);
