@@ -1,18 +1,17 @@
-import React from 'react';
-import { FlatList } from 'react-native';
-
-// Import getNews function from news.js
+import React, { Component } from 'react';
+import { FlatList, View } from 'react-native';
+import { Header, SearchBar } from 'react-native-elements';
 import { getNews } from './News.js';
-// We'll get to this one later
 import Article from './Article.js';
+import SearchBarElement from './SearchBarElement';
 
-export default class App extends React.Component {
+class Main extends Component {
   constructor(props) {
     super(props);
     this.state = { articles: [], refreshing: true };
     this.fetchNews = this.fetchNews.bind(this);
   }
-  // Called after a component is mounted
+
   componentDidMount() {
     this.fetchNews();
    }
@@ -34,13 +33,24 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <FlatList
-        data={this.state.articles}
-        renderItem={({ item }) => <Article article={item} />}
-        keyExtractor={item => item.url}
-        refreshing={this.state.refreshing}
-        onRefresh={this.handleRefresh.bind(this)}
-      />
-  );
+      <View>
+        <Header
+          placement='left'
+          leftComponent={{ icon: 'menu', color: '#00CCFF' }}
+          centerComponent={{ text: 'FORIS', style: { color: '#00CCFF' } }}
+          rightComponent={<SearchBarElement />}
+          containerStyle={{ backgroundColor: '#fff' }}
+        />
+        <FlatList
+          data={this.state.articles}
+          renderItem={({ item }) => <Article article={item} />}
+          keyExtractor={item => item.url}
+          refreshing={this.state.refreshing}
+          onRefresh={this.handleRefresh.bind(this)}
+        />
+      </View>
+    );
   }
 }
+
+export default Main;
