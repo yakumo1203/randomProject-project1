@@ -1,10 +1,10 @@
 import React from 'react';
-import { FlatList, AppRegistry } from 'react-native';
+import { FlatList } from 'react-native';
 
 // Import getNews function from news.js
-import { getNews } from './src/components/info/News.js';
+import { getNews } from './News.js';
 // We'll get to this one later
-import Article from './src/components/info/Article.js';
+import Article from './Article.js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -45,4 +45,4 @@ export default class App extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('project1', () => App);
+//AppRegistry.registerComponent('project1', () => App);
