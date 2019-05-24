@@ -3,7 +3,6 @@ import { Router, Scene } from 'react-native-router-flux';
 import FrontPage from './components/setupPage/FrontPage';
 import SignIn from './components/setupPage/SignIn';
 import SignUp2 from './components/setupPage/SignUp2';
-import PlaceHolder from './components/main/PlaceHolder';
 import ChangeUsername from './components/setupPage/ChangeUsername';
 import CreateUserName from './components/setupPage/CreateUserName';
 import SignUp1 from './components/setupPage/SignUp1';
@@ -24,7 +23,7 @@ const RouterComponent = () => {
           <Scene key="useOfTerms" component={UseOfTerms} />
         </Scene>
         <Scene key="main">
-          <Scene key="main" component={Main} title='FORIS' initial />
+          <Scene key="main" component={Main} hideNavBar initial />
         </Scene>
       </Scene>
     </Router>
