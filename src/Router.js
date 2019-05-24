@@ -8,6 +8,7 @@ import ChangeUsername from './components/setupPage/ChangeUsername';
 import CreateUserName from './components/setupPage/CreateUserName';
 import SignUp1 from './components/setupPage/SignUp1';
 import UseOfTerms from './components/setupPage/UseOfTerms';
+import Main from './components/main/info/Main';
 
 const RouterComponent = () => {
   return (
@@ -23,7 +24,7 @@ const RouterComponent = () => {
           <Scene key="useOfTerms" component={UseOfTerms} />
         </Scene>
         <Scene key="main">
-          <Scene key="placeHolder" component={PlaceHolder} initial />
+          <Scene key="main" component={Main} title='FORIS' initial />
         </Scene>
       </Scene>
     </Router>
