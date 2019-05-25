@@ -63,7 +63,7 @@ class SignIn extends Component {
         style={{ width: '100%', height: '100%' }}
       >
         <View>
-          <Text style={title1}>Sign in{'\n'}for your own account</Text>
+          <Text style={title1}>Sign in</Text>
           <Text style={text2}>Enter your Email and password.</Text>
 
           <View style={textInputContainer}>
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   title1: {
     fontSize: 50,
     textAlign: 'center',
-    top: 80,
+    top: 160,
     color: 'white',
   },
   text2: {
