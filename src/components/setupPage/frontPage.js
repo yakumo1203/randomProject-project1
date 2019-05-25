@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   sub: {
     fontSize: 20,
     color: 'white',
-    top: 220,
+    top: 170,
     textAlign: 'center',
   },
   text: {
