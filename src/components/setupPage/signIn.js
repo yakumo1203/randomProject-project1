@@ -102,7 +102,7 @@ class SignIn extends Component {
           </View>
 
           <TouchableHighlight
-            style={{ top: 220, alignItems: 'center' }}
+            style={{ top: 280, alignItems: 'center' }}
             onPress={() => Actions.signUp1()}
           >
             <Text style={{ color: 'black' }} >Don't have an accout?</Text>
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   text2: {
     fontSize: 18,
     textAlign: 'center',
-    top: 120,
+    top: 180,
     color: 'white',
   },
   textInputContainer: {
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    top: 180,
+    top: 220,
     marginLeft: 60,
   },
   inputs: {
