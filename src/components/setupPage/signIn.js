@@ -63,7 +63,7 @@ class SignIn extends Component {
         style={{ width: '100%', height: '100%' }}
       >
         <View>
-          <Text style={title1}>Sign in{'\n'}for your own account</Text>
+          <Text style={title1}>Sign in</Text>
           <Text style={text2}>Enter your Email and password.</Text>
 
           <View style={textInputContainer}>
@@ -102,7 +102,7 @@ class SignIn extends Component {
           </View>
 
           <TouchableHighlight
-            style={{ top: 220, alignItems: 'center' }}
+            style={{ top: 280, alignItems: 'center' }}
             onPress={() => Actions.signUp1()}
           >
             <Text style={{ color: 'black' }} >Don't have an accout?</Text>
@@ -117,13 +117,13 @@ const styles = StyleSheet.create({
   title1: {
     fontSize: 50,
     textAlign: 'center',
-    top: 80,
+    top: 160,
     color: 'white',
   },
   text2: {
     fontSize: 18,
     textAlign: 'center',
-    top: 120,
+    top: 180,
     color: 'white',
   },
   textInputContainer: {
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    top: 180,
+    top: 220,
     marginLeft: 60,
   },
   inputs: {

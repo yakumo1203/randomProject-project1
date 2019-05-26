@@ -1,4 +1,27 @@
-import { AppRegistry } from 'react-native';
-import App from './src/App';
+import React, { Component } from 'react';
+import { View, AppRegistry, StyleSheet, Image, TouchableHighlight } from 'react-native';
 
-AppRegistry.registerComponent('project1', () => App);
+export default class homeImage extends Component {
+  render() {
+    return (
+      <View>
+        <TouchableHighlight onPress={this._onPressButton}>
+          <Image
+            style={styles.button}
+            title='General'
+            source={require('./src/img/FORIS_HomeGeneral.jpg')}
+          />
+        </TouchableHighlight>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  button: {
+    width: '100%',
+    height: '62%',
+  },
+});
+
+AppRegistry.registerComponent('project1', () => homeImage);
