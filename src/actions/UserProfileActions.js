@@ -9,7 +9,11 @@ import {
 } from './types.js';
 import Router from '../Router';
 
-const isValidPassword = (password) => (password.length > 6);
+const isValidSignUpInfo = (password) => (password.length > 6);
+
+const actionCodeSettings = {
+  handleCodeInApp: true,
+};
 
 export const userEmailChanged = (text) => {
   return {
@@ -25,12 +29,16 @@ export const userPasswordChanged = (text) => {
   };
 };
 
-export const userPasswordCreate = ({ password }) => {
+export const userPasswordCreate = ({ email, password }) => {
   return (dispatch) => {
-    isValidPassword(password)
+    isValidSignUpInfo(email, password)
       .then(() => {
-        dispatch({ type: USER_PASSWORD_CREATE_SUCCESS, payload: password });
-        Actions.signUp2();
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then(() => {
+
+            Actions.signUp2();
+          })
+          .catch((error) => console.log(error));
       })
       .catch(() => dispatch({ type: USER_PASSWORD_CREATE_FAIL }));
     };
