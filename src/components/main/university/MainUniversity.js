@@ -5,7 +5,7 @@ import Category from './Category.js';
 class universityFront extends Component {
   render() {
     return (
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
         <View>
           <View style={{ height: 50, backgroundColor: 'white', borderBottomWidth: 1, borderBottomColor: '#dddddd' }}>
             <Text style={{ fontSize: 30,
