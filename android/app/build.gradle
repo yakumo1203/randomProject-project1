@@ -102,7 +102,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.project1"
+        applicationId "com.foris.project1"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -138,6 +138,9 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-firebase')
+    implementation project(':react-native-photo-view')
+    implementation project(':react-native-linear-gradient')
     implementation project(':react-native-share')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-spinkit')

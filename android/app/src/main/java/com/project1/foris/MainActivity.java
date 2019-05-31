@@ -1,4 +1,4 @@
-package com.project1;
+package com.foris.project1;
 
 import com.facebook.react.ReactActivity;
 
