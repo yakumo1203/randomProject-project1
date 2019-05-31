@@ -26,7 +26,7 @@ const RouterComponent = () => {
         </Scene>
         <Scene key="main" tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }}>
           <Scene key="Info" component={Main} hideNavBar initial />
-          <Scene key="University" component={universityFront} hideNavBar initial />
+          <Scene key="University" component={universityFront} hideNavBar />
         </Scene>
       </Scene>
     </Router>
