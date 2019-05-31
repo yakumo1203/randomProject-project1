@@ -69,7 +69,7 @@ class SignIn extends Component {
           <View style={textInputContainer}>
             <Image
               style={inputIcon}
-              source={{ uri: 'https://png.icons8.com/message/ultraviolet/50/3498db' }}
+              source={{ uri: 'https://img.icons8.com/color/48/000000/secured-letter.png' }}
             />
             <TextInput
               style={inputs}
@@ -83,7 +83,7 @@ class SignIn extends Component {
           <View style={textInputContainer}>
             <Image
               style={inputIcon}
-              source={{ uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db' }}
+              source={{ uri: 'https://img.icons8.com/color/48/000000/lock-2.png' }}
             />
             <TextInput
               style={inputs}
