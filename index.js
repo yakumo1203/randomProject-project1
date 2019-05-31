@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import { SafeAreaView, AppRegistry, ScrollView, View, Text } from 'react-native';
 import Category from './src/components/main/university/Category.js';
@@ -82,3 +83,9 @@ export default class universityFront extends Component {
 }
 
 AppRegistry.registerComponent('project1', () => universityFront);
+=======
+import { AppRegistry } from 'react-native';
+import App from './src/App';
+
+AppRegistry.registerComponent('project1', () => App);
+>>>>>>> 2479c655cbe999ab3d847a2a8d1601173f32932a

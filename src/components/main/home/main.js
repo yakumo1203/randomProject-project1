@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TouchableHighlight, Alert, ScrollView, ImageBackground, Image, Text, View, AppRegistry, StyleSheet, Button, TextInput } from 'react-native';
 //import Slideshow from 'react-native-image-slider-show';
 
-export default class information extends Component{
+export default class Main extends Component{
   render(){
     return(
       <ScrollView>
@@ -50,5 +50,3 @@ const styles=StyleSheet.create({
     fontSize: 60,
   },
 })
-
-AppRegistry.registerComponent('project1', () => information);

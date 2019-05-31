@@ -1,29 +1,47 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { TouchableHighlight, Text, View, StyleSheet, TextInput } from 'react-native';
-import { userProfileCreate, userEmailChanged, userPasswordChanged } from '../../actions';
-import { SignInSection } from './common';
+import { Button } from 'react-native-elements';
+import { SignInSection, Spinner } from './common';
 import Router from '../../Router';
+import {
+  signupUser,
+  signupEmailChanged,
+  signupPasswordChanged
+} from '../../actions';
 
 class SignUp1 extends Component {
-  onUserEmailChanged(text) {
-    this.props.userEmailChanged(text);
+  onEmailChange(text) {
+    this.props.signupEmailChanged(text);
   }
 
-  onUserPasswordChanged(text) {
-    this.props.userPasswordChanged(text);
+  onPasswordChange(text) {
+    this.props.signupPasswordChanged(text);
   }
 
   onButtonPress() {
     const { email, password } = this.props;
-    this.props.userProfileCreate({ email, password });
+    this.props.signupUser({ email, password });
+  }
+
+  renderButton() {
+    if (this.props.loading) {
+      return <Spinner />;
+    }
+    return (
+      <Button
+        title='Sign Up'
+        type='outline'
+        onPress={this.onButtonPress.bind(this)}
+      />
+    );
   }
 
   renderError() {
     if (this.props.error) {
       return (
-        <View style={{ backgroundColor: 'white' }}>
-          <Text style={styles.errorStyle}>
+        <View style={styles.errorText}>
+          <Text style={{ color: 'red' }}>
             {this.props.error}
           </Text>
         </View>
@@ -41,14 +59,14 @@ class SignUp1 extends Component {
         <TextInput
           style={textInput}
           placeholder="user@email.com"
-          onChangeText={this.onUserEmailChanged.bind(this)}
+          onChangeText={this.onEmailChange.bind(this)}
           value={this.props.email}
         />
         <TextInput
           style={textInput}
           placeholder="Password"
           secureTextEntry
-          onChangeText={this.onUserPasswordChanged.bind(this)}
+          onChangeText={this.onPasswordChange.bind(this)}
           value={this.props.password}
         />
 
@@ -96,17 +114,19 @@ const styles = StyleSheet.create({
   button1: {
     color: '#00CCFF',
   },
+  errorText: {
+    top: 265,
+    alignSelf: 'center'
+  }
 });
 
-const mapStateToProps = (userProfile) => {
-  const { email, password } = userProfile;
-  return { email, password };
+const mapStateToProps = ({ signUp }) => {
+  const { email, password, loading, error } = signUp;
+  return { email, password, loading, error };
 };
 
-export default connect(
-  mapStateToProps, {
-  userProfileCreate,
-  userEmailChanged,
-  userPasswordChanged
-  }
-)(SignUp1);
+export default connect(mapStateToProps, {
+  signupEmailChanged,
+  signupPasswordChanged,
+  signupUser
+})(SignUp1);
