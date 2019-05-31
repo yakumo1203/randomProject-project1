@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { SafeAreaView, AppRegistry, ScrollView, View, Text } from 'react-native';
-import Category from './src/components/main/university/Category.js';
+import Category from './Category.js';
 
-export default class universityFront extends Component {
+class universityFront extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
@@ -26,13 +26,13 @@ export default class universityFront extends Component {
             <View style={{ height: 200, marginTop: 20 }}>
               <ScrollView horizontal={true}
                           showsHorizontalScrollIndicator={false}>
-                <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                           name="Kansus State University"/>
-                <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                           name="Kansus State University"/>
-                <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                           name="Kansus State University"/>
-                <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                           name="Kansus State University"/>
               </ScrollView>
             </View>
@@ -44,13 +44,13 @@ export default class universityFront extends Component {
               <View style={{ height: 200, marginTop: 20 }}>
                 <ScrollView horizontal={true}
                             showsHorizontalScrollIndicator={false}>
-                  <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                             name="Kansus State University"/>
-                  <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                             name="Kansus State University"/>
-                  <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                             name="Kansus State University"/>
-                  <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                             name="Kansus State University"/>
                 </ScrollView>
               </View>
@@ -63,13 +63,13 @@ export default class universityFront extends Component {
               <View style={{ height: 200, marginTop: 20 }}>
                 <ScrollView horizontal={true}
                             showsHorizontalScrollIndicator={false}>
-                  <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                             name="Kansus State University"/>
-                  <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                             name="Kansus State University"/>
-                  <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                             name="Kansus State University"/>
-                  <Category imageUri={require('./src/img/FORIS_Aviation.jpg')}
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
                             name="Kansus State University"/>
                 </ScrollView>
               </View>
@@ -81,4 +81,4 @@ export default class universityFront extends Component {
   }
 }
 
-AppRegistry.registerComponent('project1', () => universityFront);
+export default universityFront;
