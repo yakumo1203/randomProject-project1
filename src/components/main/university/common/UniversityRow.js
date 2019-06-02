@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import Category from './Category.js';
+import { Category } from '../common';
 
-const UniversityRow = ({ text, imgUri, universityRowStyle }) => {
+const UniversityRow = ({ header, text, imgUri, universityRowStyle }) => {
   const { containerStyle, textStyle } = styles;
 
   return (
@@ -14,24 +14,24 @@ const UniversityRow = ({ text, imgUri, universityRowStyle }) => {
           showsHorizontalScrollIndicator={false}
         >
           <Category
-            imageUri={require(imgUri)}
-            name="Kansas State University"
+            imageUri={imgUri}
+            name={header}
           />
           <Category
-            imageUri={require(imgUri)}
-            name="Kansas State University"
+            imageUri={imgUri}
+            name={header}
           />
           <Category
-            imageUri={require(imgUri)}
-            name="Kansas State University"
+            imageUri={imgUri}
+            name={header}
           />
           <Category
-            imageUri={require(imgUri)}
-            name="Kansas State University"
+            imageUri={imgUri}
+            name={header}
           />
           <Category
-            imageUri={require(imgUri)}
-            name="Kansas State University"
+            imageUri={imgUri}
+            name={header}
           />
         </ScrollView>
       </View>

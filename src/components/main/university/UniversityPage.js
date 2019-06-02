@@ -17,18 +17,21 @@ class UniversityPage extends Component {
           <View>
             <UniversityRow
               text='今ホットな大学'
-              imgUri='../../../img/FORIS_Aviation.jpg'
+              header='Kansas State University'
+              imgUri={require('../../../img/FORIS_Aviation.jpg')}
             />
 
             <UniversityRow
               text='あなたにおすすめ'
-              imgUri='../../../img/FORIS_Aviation.jpg'
+              header='Kansas State University'
+              imgUri={require('../../../img/FORIS_Aviation.jpg')}
               universityRowStyle={{ paddingTop: 0, marginTop: 40 }}
             />
-            
+
             <UniversityRow
               text='あなたが見た大学'
-              imgUri='../../../img/FORIS_Aviation.jpg'
+              header='Kansas State University'
+              imgUri={require('../../../img/FORIS_Aviation.jpg')}
               universityRowStyle={{ paddingTop: 0, marginTop: 40 }}
             />
           </View>
