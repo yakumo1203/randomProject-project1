@@ -25,7 +25,7 @@ class UniversityPage extends Component {
               imgUri='../../../img/FORIS_Aviation.jpg'
               universityRowStyle={{ paddingTop: 0, marginTop: 40 }}
             />
-
+            
             <UniversityRow
               text='あなたが見た大学'
               imgUri='../../../img/FORIS_Aviation.jpg'

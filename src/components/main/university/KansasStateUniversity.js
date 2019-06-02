@@ -8,7 +8,7 @@ class KansasStateUniversity extends Component {
         <ScrollView>
           <View style={{ backgroundColor: 'white', paddingTop: 20 }}>
             <View style={{ height: 200, width: '100%'}}>
-              <Image source={}
+              <Image source={require('../../../img/FORIS_Aviation.jpg')}
                     style={{ height: '100%', width: '100%' }} />
             </View>
             <View style={{ borderBottomWidth: 1, borderBottomColor: '#dddddd'}}>

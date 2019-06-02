@@ -13,7 +13,7 @@ import CreateUserName from './components/setupPage/CreateUserName';
 import SignUp1 from './components/setupPage/SignUp1';
 import UseOfTerms from './components/setupPage/UseOfTerms';
 import Main from './components/main/info/Main';
-import universityFront from './components/main/university/MainUniversity';
+import UniversityPage from './components/main/university/UniversityPage';
 import KansasStateUniversity from './components/main/university/KansasStateUniversity';
 
 
@@ -32,7 +32,7 @@ const RouterComponent = () => {
         </Scene>
         <Scene key="main" tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }}>
           <Scene key="Info" component={Main} hideNavBar navBar={NewsNavBar} />
-          <Scene key="University" component={universityFront} hideNavBar />
+          <Scene key="University" component={UniversityPage} hideNavBar />
           <Scene key='kansasStateUniversity' component={KansasStateUniversity} />
         </Scene>
       </Scene>
