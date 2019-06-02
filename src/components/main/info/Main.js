@@ -34,13 +34,6 @@ class MainInformation extends Component {
   render() {
     return (
       <View>
-        <Header
-          placement='left'
-          leftComponent={{ icon: 'menu', color: '#00CCFF' }}
-          centerComponent={{ text: 'FORIS', style: { color: '#00CCFF' } }}
-          rightComponent={<SearchBarElement />}
-          containerStyle={{ backgroundColor: '#fff' }}
-        />
         <FlatList
           data={this.state.articles}
           renderItem={({ item }) => <Article article={item} />}

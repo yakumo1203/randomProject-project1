@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
-import { SafeAreaView, AppRegistry, ScrollView, View, Text } from 'react-native';
+import { SafeAreaView, ScrollView, View, Text } from 'react-native';
 import Category from './Category.js';
 
 class universityFront extends Component {
@@ -19,23 +19,25 @@ class universityFront extends Component {
         </View>
 
         <ScrollView scrollEventThrottle={16}>
-          <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
-            <Text style={{ fontSize: 15, fontWeight: '500', paddingHorizontal: 20, color: 'gray' }}>
-              最近見た大学
-            </Text>
+          <View>
+            <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
+              <Text style={{ fontSize: 15, fontWeight: '500', paddingHorizontal: 20, color: 'gray' }}>
+                最近見た大学
+              </Text>
 
-            <View style={{ height: 200, marginTop: 20 }}>
-              <ScrollView horizontal={true}
-                          showsHorizontalScrollIndicator={false}>
-                <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
-                          name="Kansus State University"/>
-                <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
-                          name="Kansus State University"/>
-                <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
-                          name="Kansus State University"/>
-                <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
-                          name="Kansus State University"/>
-              </ScrollView>
+              <View style={{ height: 200, marginTop: 20 }}>
+                <ScrollView horizontal={true}
+                            showsHorizontalScrollIndicator={false}>
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
+                            name="Kansus State University"/>
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
+                            name="Kansus State University"/>
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
+                            name="Kansus State University"/>
+                  <Category imageUri={require('../../../img/FORIS_Aviation.jpg')}
+                            name="Kansus State University"/>
+                </ScrollView>
+              </View>
             </View>
 
             <View style={{ flex: 1, backgroundColor: 'white', marginTop: 40 }}>
@@ -75,7 +77,6 @@ class universityFront extends Component {
                 </ScrollView>
               </View>
             </View>
-          </View>
         </ScrollView>
       </SafeAreaView>
     );

@@ -27,6 +27,9 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		148F681B14524B24B8463BB0 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8E4A460C064604B370D2BF /* libBVLinearGradient.a */; };
 		1CB14E858E9C4BD2887584E6 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DB05941EA942EAA8E083C0 /* libRNGestureHandler-tvOS.a */; };
+		1D003AD222A3681B0039A16C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D67D4FB229F790B00DE7D66 /* GoogleService-Info.plist */; };
+		1D003B0522A3681B0039A16C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D67D4FB229F790B00DE7D66 /* GoogleService-Info.plist */; };
+		1D003B0622A3681C0039A16C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D67D4FB229F790B00DE7D66 /* GoogleService-Info.plist */; };
 		1D67D52E229F790B00DE7D66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D67D4FB229F790B00DE7D66 /* GoogleService-Info.plist */; };
 		26501114B1664E27949A880E /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30F129904AAB4B4EBD9D2CE7 /* FontAwesome5_Solid.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -1527,6 +1530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D003AD222A3681B0039A16C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1571,6 +1575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				1D003B0522A3681B0039A16C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1578,6 +1583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D003B0622A3681C0039A16C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
