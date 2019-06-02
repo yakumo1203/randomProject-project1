@@ -37,4 +37,4 @@ const styles = {
   }
 };
 
-export default Category;
+export { Category };

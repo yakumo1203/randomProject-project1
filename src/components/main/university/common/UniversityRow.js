@@ -2,11 +2,11 @@ import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import Category from './Category.js';
 
-const UniversityRow = ({ text, imgUri }) => {
+const UniversityRow = ({ text, imgUri, universityRowStyle }) => {
   const { containerStyle, textStyle } = styles;
 
   return (
-    <View style={[containerStyle]}>
+    <View style={[containerStyle, universityRowStyle]}>
       <Text style={textStyle}>{text}</Text>
       <View style={{ height: 200, marginTop: 20 }}>
         <ScrollView
@@ -14,23 +14,23 @@ const UniversityRow = ({ text, imgUri }) => {
           showsHorizontalScrollIndicator={false}
         >
           <Category
-            imageUri={imgUri}
+            imageUri={require(imgUri)}
             name="Kansas State University"
           />
           <Category
-            imageUri={imgUri}
+            imageUri={require(imgUri)}
             name="Kansas State University"
           />
           <Category
-            imageUri={imgUri}
+            imageUri={require(imgUri)}
             name="Kansas State University"
           />
           <Category
-            imageUri={imgUri}
+            imageUri={require(imgUri)}
             name="Kansas State University"
           />
           <Category
-            imageUri={imgUri}
+            imageUri={require(imgUri)}
             name="Kansas State University"
           />
         </ScrollView>
@@ -53,4 +53,4 @@ const styles = {
   },
 };
 
-export default UniversityRow;
+export { UniversityRow };
