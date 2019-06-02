@@ -10,7 +10,18 @@ import {
 } from './types';
 import Router from '../Router';
 
-const actionCodeSettings = { handleCodeInApp: true };
+const actionCodeSettings = {
+  handleCodeInApp: true,
+  iOS: {
+    bundleId: 'com.foris.project1'
+  },
+  android: {
+    bundleId: 'com.foris.project1',
+    installApp: true,
+    minimumVersion: '12'
+  },
+  dynamicLinkDomain: 'foris.page.link/foris'
+};
 
 const isValidSignUpInfo = (email, password) => {
   /* check if username and email are unique */
