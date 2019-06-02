@@ -30,9 +30,11 @@ const RouterComponent = () => {
           <Scene key="signUp1" component={SignUp1} />
           <Scene key="useOfTerms" component={UseOfTerms} />
         </Scene>
-        <Scene key="main" tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }}>
-          <Scene key="Info" component={Main} hideNavBar navBar={NewsNavBar} />
-          <Scene key="University" component={UniversityPage} hideNavBar />
+        <Scene key="main" hideNavBar>
+          <Scene key="tabBar"tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }} >
+            <Scene key="Info" component={Main} hideNavBar navBar={NewsNavBar} />
+            <Scene key="University" component={UniversityPage} hideNavBar initial />
+          </Scene>
           <Scene key='kansasStateUniversity' component={KansasStateUniversity} />
         </Scene>
       </Scene>

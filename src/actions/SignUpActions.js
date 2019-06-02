@@ -10,18 +10,19 @@ import {
 } from './types';
 import Router from '../Router';
 
-const actionCodeSettings = {
-  handleCodeInApp: true,
-  iOS: {
-    bundleId: 'com.foris.project1'
-  },
-  android: {
-    bundleId: 'com.foris.project1',
-    installApp: true,
-    minimumVersion: '12'
-  },
-  dynamicLinkDomain: 'foris.page.link/foris'
-};
+// const actionCodeSettings = {
+//   url: 'https://www.foris.com/?email=' + firebase.auth().currentUser.email,
+//   handleCodeInApp: true,
+//   iOS: {
+//     bundleId: 'com.foris.project1'
+//   },
+//   android: {
+//     bundleId: 'com.foris.project1',
+//     installApp: true,
+//     minimumVersion: '12'
+//   },
+//   dynamicLinkDomain: 'foris.page.link/foris'
+// };
 
 const isValidSignUpInfo = (email, password) => {
   /* check if username and email are unique */
@@ -53,18 +54,34 @@ export const signupPasswordChanged = (text) => {
   };
 };
 
+// export const signupUser = ({ email, password }) => {
+//   return (dispatch) => {
+//     dispatch({ type: SIGNUP_USER });
+//     console.log(`${email}, ${password}`);
+//
+//     if (isValidSignUpInfo(email, password)) {
+//       firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
+//         .then(() => {
+//           firebase.auth().createUserWithEmailAndPassword(email, password)
+//             .then((user) => signupUserSuccess(dispatch, user))
+//             .catch((error) => signupUserFail(dispatch, error));
+//       });
+//     } else {
+//       const error = 'Invalid password and email... for now, invalid password length';
+//       signupUserFail(dispatch, error);
+//     }
+//   };
+// };
+
 export const signupUser = ({ email, password }) => {
   return (dispatch) => {
     dispatch({ type: SIGNUP_USER });
     console.log(`${email}, ${password}`);
 
     if (isValidSignUpInfo(email, password)) {
-      firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
-        .then(() => {
-          firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((user) => signupUserSuccess(dispatch, user))
-            .catch((error) => signupUserFail(dispatch, error));
-      });
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then((user) => signupUserSuccess(dispatch, user))
+          .catch((error) => signupUserFail(dispatch, error));
     } else {
       const error = 'Invalid password and email... for now, invalid password length';
       signupUserFail(dispatch, error);
@@ -77,8 +94,7 @@ const signupUserSuccess = (dispatch, user) => {
     type: SIGNUP_USER_SUCCESS,
     payload: user
   });
-
-  Actions.home();
+  Actions.main();
 };
 
 const signupUserFail = (dispatch, error) => {
