@@ -9,6 +9,7 @@ import SignUp1 from './components/setupPage/SignUp1';
 import UseOfTerms from './components/setupPage/UseOfTerms';
 import Main from './components/main/info/Main';
 import universityFront from './components/main/university/MainUniversity';
+// import KansasStateUniversity from './components/main/university/KansasStateUniversity';
 
 
 const RouterComponent = () => {

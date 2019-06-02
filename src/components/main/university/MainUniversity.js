@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Actions } from 'react-native-router-flux';
 import { SafeAreaView, AppRegistry, ScrollView, View, Text } from 'react-native';
 import Category from './Category.js';
 
