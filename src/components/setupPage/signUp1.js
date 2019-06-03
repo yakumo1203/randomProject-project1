@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { TouchableHighlight, Text, View, StyleSheet, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 import { SignInSection, Spinner } from './common';
-import Router from '../../Router';
+// import Router from '../../Router';
 import {
   signupUser,
   signupEmailChanged,

@@ -1,5 +1,10 @@
 import React from 'react';
-import { Router, Scene, Text } from 'react-native-router-flux';
+import { Router, Scene } from 'react-native-router-flux';
+
+// Other imports
+import { NewsNavBar } from './NavBars';
+
+// Imports for each scene used
 import FrontPage from './components/setupPage/FrontPage';
 import SignIn from './components/setupPage/SignIn';
 import SignUp2 from './components/setupPage/SignUp2';
@@ -8,8 +13,8 @@ import CreateUserName from './components/setupPage/CreateUserName';
 import SignUp1 from './components/setupPage/SignUp1';
 import UseOfTerms from './components/setupPage/UseOfTerms';
 import Main from './components/main/info/Main';
-import universityFront from './components/main/university/MainUniversity';
-// import KansasStateUniversity from './components/main/university/KansasStateUniversity';
+import UniversityPage from './components/main/university/UniversityPage';
+import KansasStateUniversity from './components/main/university/KansasStateUniversity';
 
 
 const RouterComponent = () => {
@@ -25,9 +30,12 @@ const RouterComponent = () => {
           <Scene key="signUp1" component={SignUp1} />
           <Scene key="useOfTerms" component={UseOfTerms} />
         </Scene>
-        <Scene key="main" tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }}>
-          <Scene key="Info" component={Main} hideNavBar initial />
-          <Scene key="University" component={universityFront} hideNavBar />
+        <Scene key="main" hideNavBar>
+          <Scene key="tabBar" tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }} >
+            <Scene key="Info" component={Main} navBar={NewsNavBar} />
+            <Scene key="University" component={UniversityPage}initial />
+          </Scene>
+          <Scene key='kansasStateUniversity' component={KansasStateUniversity} />
         </Scene>
       </Scene>
     </Router>
