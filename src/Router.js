@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
 
 // Other imports
-import NewsNavBar from './NavBars';
+import { NewsNavBar } from './NavBars';
 
 // Imports for each scene used
 import FrontPage from './components/setupPage/FrontPage';
@@ -31,9 +31,9 @@ const RouterComponent = () => {
           <Scene key="useOfTerms" component={UseOfTerms} />
         </Scene>
         <Scene key="main" hideNavBar>
-          <Scene key="tabBar"tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }} >
-            <Scene key="Info" component={Main} hideNavBar navBar={NewsNavBar} />
-            <Scene key="University" component={UniversityPage} hideNavBar initial />
+          <Scene key="tabBar" tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }} >
+            <Scene key="Info" component={Main} navBar={NewsNavBar} />
+            <Scene key="University" component={UniversityPage}initial />
           </Scene>
           <Scene key='kansasStateUniversity' component={KansasStateUniversity} />
         </Scene>
