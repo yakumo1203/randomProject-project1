@@ -16,7 +16,14 @@ class Apply extends Component {
   }
 
   handleSlide = type => {
-    let { active, xTabOne, xTabTwo, translateX, translateXTabOne, translateXTabTwo } = this.state;
+    let { active,
+          xTabOne,
+          xTabTwo,
+          translateX,
+          translateXTabOne,
+          translateXTabTwo
+        } = this.state;
+
     Animated.spring(translateX, {
       toValue: type,
       duration: 100,
@@ -48,14 +55,28 @@ class Apply extends Component {
 
   render() {
 
-    let { xTabOne, xTabTwo, translateX, active, translateXTabOne, translateXTabTwo, translateY } = this.state;
+    let { xTabOne,
+          xTabTwo,
+          translateX,
+          active,
+          translateXTabOne,
+          translateXTabTwo,
+          translateY
+        } = this.state;
 
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ width: '90%', marginLeft: 'auto', marginRight: 'auto' }}>
-          <View style={{ width: '70%', marginLeft: 'auto', marginRight: 'auto', flexDirection: 'row', marginTop: 80, marginBottom: 20, height: 36, position: 'relative' }}>
-            <Animated.View style={{ position: 'absolute', width: '50%', height: '100%', top: 0, left: 0, backgroundColor: '#00ccff', borderRadius: 4,
-                                    transform: [{ translateX }]}}/>
+        <View style={styles.overAll}>
+          <View style={styles.twoButtonArea}>
+            <Animated.View style={{ position: 'absolute',
+                                    width: '50%',
+                                    height: '100%',
+                                    top: 0,
+                                    left: 0,
+                                    backgroundColor: '#00ccff',
+                                    borderRadius: 4,
+                                    transform: [{ translateX }] }} />
+
               <TouchableOpacity style={{ flex: 1, alignItems: 'center', justifyContent: 'center', borderWidth: 1,
                                         borderColor: '#00ccff', borderRightWidth: 0, borderTopRightWidth: 0,
                                         borderBottomRightRadius: 0, borderRadius: 4 }}
@@ -94,3 +115,22 @@ class Apply extends Component {
 }
 
 export default Apply;
+
+const styles=StyleSheet.create({
+  overAll: {
+    width: '90%',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+
+  twoButtonArea: {
+    width: '70%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    flexDirection: 'row',
+    marginTop: 80,
+    marginBottom: 20,
+    height: 36,
+    position: 'relative'
+  },
+})
