@@ -16,6 +16,7 @@ import Main from './components/main/info/Main';
 import UniversityPage from './components/main/university/UniversityPage';
 import KansasStateUniversity from './components/main/university/KansasStateUniversity';
 import AuthLoading from './components/setupPage/AuthLoading';
+import Apply from './components/main/Apply/MainApply';
 
 const RouterComponent = () => {
   return (
@@ -35,6 +36,7 @@ const RouterComponent = () => {
           <Scene key="tabBar" tabs tabBarStyle={{ backgroundColor: '#FFFFFF' }} hideNavBar>
             <Scene key="Info" component={Main} navBar={NewsNavBar} />
             <Scene key="University" component={UniversityPage} hideNavBar initial />
+            <Scene key="Apply" component={Apply} hideNavBar />
           </Scene>
           <Scene key='kansasStateUniversity' component={KansasStateUniversity} />
         </Scene>

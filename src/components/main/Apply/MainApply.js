@@ -52,8 +52,8 @@ class Apply extends Component {
 
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ width: '70%', marginLeft: 'auto', marginRight: 'auto' }}>
-          <View style={{ flexDirection: 'row', marginTop: 80, marginBottom: 20, height: 36, position: 'relative' }}>
+        <View style={{ width: '90%', marginLeft: 'auto', marginRight: 'auto' }}>
+          <View style={{ width: '70%', marginLeft: 'auto', marginRight: 'auto', flexDirection: 'row', marginTop: 80, marginBottom: 20, height: 36, position: 'relative' }}>
             <Animated.View style={{ position: 'absolute', width: '50%', height: '100%', top: 0, left: 0, backgroundColor: '#00ccff', borderRadius: 4,
                                     transform: [{ translateX }]}}/>
               <TouchableOpacity style={{ flex: 1, alignItems: 'center', justifyContent: 'center', borderWidth: 1,
