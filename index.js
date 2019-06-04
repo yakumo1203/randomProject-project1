@@ -12,6 +12,7 @@ export default class Apply extends Component {
     translateX: new Animated.Value(0),
     translateXTabOne: new Animated.Value(0),
     translateXTabTwo: new Animated.Value(width),
+    translateY: -1000,
   }
 
   handleSlide = type => {
@@ -47,7 +48,7 @@ export default class Apply extends Component {
 
   render() {
 
-    let { xTabOne, xTabTwo, translateX, active, translateXTabOne, translateXTabTwo } = this.state;
+    let { xTabOne, xTabTwo, translateX, active, translateXTabOne, translateXTabTwo, translateY } = this.state;
 
     return (
       <View style={{ flex: 1 }}>
@@ -73,11 +74,16 @@ export default class Apply extends Component {
           </View>
 
           <ScrollView>
-            <Animated.View style={{ alignItems: 'center', justifyContent: 'center', transform: [{ translateX: translateXTabOne }] }}>
-              <Text>ownonownfocn </Text>
+            <Animated.View style={{ alignItems: 'center', justifyContent: 'center', transform: [{ translateX: translateXTabOne }]}}
+                           onLayout={event => this.setState({ translateY: event.nativeEvent.layout.height })} >
+              <Text>
+                誠に申し訳ありませんが、このサービスは開始されておりません。
+                できる限り早くスタート致しますので、よろしくお願いいたします。
+              </Text>
             </Animated.View>
 
-            <Animated.View style={{ alignItems: 'center', justifyContent: 'center', transform: [{ translateX: translateXTabTwo }] }}>
+            <Animated.View style={{ alignItems: 'center', justifyContent: 'center', transform: [{ translateX: translateXTabTwo },
+                                  { translateY: -translateY }] }}>
               <Text>wjncowneoubou </Text>
             </Animated.View>
           </ScrollView>
