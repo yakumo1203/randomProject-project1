@@ -28,7 +28,7 @@ class KansasStateUniversity extends Component {
             <View style={{ width: '90%', marginLeft: 0, marginRight: 'auto' }}>
               <View style={{ flexDirection: 'row', marginTop: 40, marginButtom: 20,
                             height: 36, position: 'relative' }}>
-                <View style={{ position: 'absolute', width: '20%', height: '100%', top: 0, left: 0, backgroundColor: '#00ccff' }}>
+                <View style={{ position: 'absolute', width: '20%', height: '100%', top: 0, left: 0, backgroundColor: '#00ccff' }}/>
                   <TouchableHighlight
                                       style={{ flex: 1, justifyContent: 'center',
                                               alignItems: 'center', borderWidth: 1,
@@ -44,7 +44,6 @@ class KansasStateUniversity extends Component {
                     <Text> 施設　</Text>
                   </TouchableHighlight>
 
-              </View>
             </View>
            </View>
           </View>

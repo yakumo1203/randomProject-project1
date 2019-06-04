@@ -3,7 +3,7 @@ import { AppRegistry, View, Text, TouchableOpacity, StyleSheet, Animated, Scroll
 
 const { width } = Dimensions.get('window');
 
-export default class Apply extends Component {
+class Apply extends Component {
 
   state = {
     active: 0,
@@ -87,4 +87,4 @@ export default class Apply extends Component {
   }
 }
 
-AppRegistry.registerComponent('project1', () => Apply);
+export default Apply;

@@ -51,7 +51,7 @@ const styles = {
   headerTextStyle: {
     fontSize: 30,
     color: 'gray',
-    fontWeight: 500,
+    fontWeight: '500',
     marginLeft: 20
   }
 };
