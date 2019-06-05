@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { AppRegistry, View, Text, TouchableOpacity, StyleSheet, Animated, ScrollView, Image, Dimensions } from 'react-native';
+import { AppRegistry, TouchableHighlight, View, Text, TouchableOpacity, StyleSheet, Animated, ScrollView, Image, Dimensions } from 'react-native';
+import SeminorElement from './SeminorElements';
 
 const { width } = Dimensions.get('window');
 
@@ -103,9 +104,23 @@ class Apply extends Component {
               </Text>
             </Animated.View>
 
-            <Animated.View style={{ alignItems: 'center', justifyContent: 'center', transform: [{ translateX: translateXTabTwo },
+            <Animated.View style={{ justifyContent: 'center', transform: [{ translateX: translateXTabTwo },
                                   { translateY: -translateY }] }}>
-              <Text>wjncowneoubou </Text>
+
+              <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray' }} />
+              <SeminorElement
+                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
+                seminorTitle="ボスキャリ対策講座"
+                seminorText="10000￥"
+              />
+
+              <View style={styles.borderBetweenSeminor} />
+              <SeminorElement
+                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
+                seminorTitle="ビジネスマナー対策講座"
+                seminorText="10000yen"
+              />
+
             </Animated.View>
           </ScrollView>
         </View>
@@ -116,7 +131,7 @@ class Apply extends Component {
 
 export default Apply;
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
   overAll: {
     width: '90%',
     marginLeft: 'auto',
@@ -133,4 +148,11 @@ const styles=StyleSheet.create({
     height: 36,
     position: 'relative'
   },
+
+  borderBetweenSeminor: {
+    borderBottomWidth: 1,
+    borderBottomColor: 'gray',
+    paddingTop: 20,
+  },
+
 })
