@@ -100,8 +100,10 @@ class Apply extends Component {
                            onLayout={event => this.setState({ translateY: event.nativeEvent.layout.height })} >
               <Text>
                 誠に申し訳ありませんが、このサービスは開始されておりません。
-                できる限り早くスタート致しますので、よろしくお願いいたします。
+                できる限り早くスタート致しますので、もう暫くお待ちください。
+                よろしくお願い申し上げます。
               </Text>
+              <Text style={{ alignItems: 'center' }}>FORIS</Text>
             </Animated.View>
 
             <Animated.View style={{ justifyContent: 'center', transform: [{ translateX: translateXTabTwo },
@@ -121,6 +123,36 @@ class Apply extends Component {
                 seminorText="10000yen"
               />
 
+              <View style={styles.borderBetweenSeminor} />
+              <SeminorElement
+                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
+                seminorTitle="ビジネスマナー対策講座"
+                seminorText="10000yen"
+              />
+
+              <View style={styles.borderBetweenSeminor} />
+              <SeminorElement
+                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
+                seminorTitle="ビジネスマナー対策講座"
+                seminorText="10000yen"
+              />
+
+              <View style={styles.borderBetweenSeminor} />
+              <SeminorElement
+                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
+                seminorTitle="ビジネスマナー対策講座"
+                seminorText="10000yen"
+              />
+
+              <View style={styles.borderBetweenSeminor} />
+              <SeminorElement
+                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
+                seminorTitle="ビジネスマナー対策講座"
+                seminorText="10000yen"
+              />
+
+
+              <View style={{ paddingBottom: 100 }} />
             </Animated.View>
           </ScrollView>
         </View>
@@ -155,4 +187,4 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
 
-})
+});

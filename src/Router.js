@@ -37,6 +37,7 @@ const RouterComponent = () => {
             <Scene key="Info" component={Main} navBar={NewsNavBar} />
             <Scene key="University" component={UniversityPage} hideNavBar initial />
             <Scene key="Apply" component={Apply} hideNavBar />
+            <Scene key="Kansas" component={KansasStateUniversity} hideNavBar />
           </Scene>
           <Scene key='kansasStateUniversity' component={KansasStateUniversity} />
         </Scene>

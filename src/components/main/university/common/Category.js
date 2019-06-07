@@ -6,7 +6,7 @@ class Category extends Component {
     const { containerStyle, imageStyle } = styles;
 
     return (
-      <TouchableHighlight onPress={() => this.asu()}>
+      <TouchableHighlight onPress={() => this.props.univ()} >
         <View style={containerStyle}>
           <View style={{ flex: 2 }}>
             <Image

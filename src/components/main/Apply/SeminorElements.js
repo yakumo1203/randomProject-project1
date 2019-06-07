@@ -5,7 +5,7 @@ class SeminorElement extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <TouchableHighlight onPress={() => this.dsno()} >
+        <TouchableHighlight onPress={() => this.dsno()} > 
           <View style={styles.divisionBetweenImageAndText}>
 
             <Image source={this.props.seminorImage}

@@ -29,8 +29,7 @@ class KansasStateUniversity extends Component {
               <View style={{ flexDirection: 'row', marginTop: 40, marginButtom: 20,
                             height: 36, position: 'relative' }}>
                 <View style={{ position: 'absolute', width: '20%', height: '100%', top: 0, left: 0, backgroundColor: '#00ccff' }}/>
-                  <TouchableHighlight
-                                      style={{ flex: 1, justifyContent: 'center',
+                  <TouchableHighlight style={{ flex: 1, justifyContent: 'center',
                                               alignItems: 'center', borderWidth: 1,
                                               borderColor: '#dddddd', borderRightWidth: 0,
                                               borderTopRightWidth: 0, borderBottomRightRadius: 0 }}>
@@ -42,6 +41,28 @@ class KansasStateUniversity extends Component {
                                               borderColor: '#dddddd', borderRightWidth: 0,
                                               borderTopRightWidth: 0, borderBottomRightRadius: 0 }}>
                     <Text> 施設　</Text>
+                  </TouchableHighlight>
+
+                  <TouchableHighlight style={{ flex: 1, justifyContent: 'center',
+                                              alignItems: 'center', borderWidth: 1,
+                                              borderColor: '#dddddd', borderRightWidth: 0,
+                                              borderTopRightWidth: 0, borderBottomRightRadius: 0 }}>
+                    <Text> 専攻　</Text>
+                  </TouchableHighlight>
+
+                  <TouchableHighlight style={{ flex: 1, justifyContent: 'center',
+                                              alignItems: 'center', borderWidth: 1,
+                                              borderColor: '#dddddd', borderRightWidth: 0,
+                                              borderTopRightWidth: 0, borderBottomRightRadius: 0 }}>
+                    <Text> 準備　</Text>
+                  </TouchableHighlight>
+
+                  <TouchableHighlight style={{ flex: 1, justifyContent: 'center',
+                                              alignItems: 'center', borderWidth: 1,
+                                              borderColor: '#dddddd', borderRightWidth: 1,
+                                              borderLeftWidth: 1,
+                                              borderTopLeftWidth: 0, borderBottomLeftRadius: 0 }}>
+                    <Text> ユーザー　</Text>
                   </TouchableHighlight>
 
             </View>
