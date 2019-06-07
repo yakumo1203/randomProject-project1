@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, Image, Text, SafeAreaView, ScrollView, View, TouchableHighlight } from 'react-native';
 
-export default class homeFront extends Component {
+class homeFront extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#dddddd' }}>
@@ -13,7 +13,7 @@ export default class homeFront extends Component {
 
           <View style={{ flex: 1, flexDirection: 'column' }}>
             <View style={{ flex: 1, flexDirection: 'row' }}>
-              <View>
+              <View style={{ height: 200, width: '50%' }}>
                 <TouchableHighlight onPress={() => this.iuwfoub() }>
                   <Image source={require('./src/img/FORIS_Aviation.jpg')}
                          style={{ height: 200, width: '50%' }}/>
@@ -39,4 +39,4 @@ export default class homeFront extends Component {
   }
 }
 
-AppRegistry.registerComponent('project1', () => homeFront);
+export default homeFront;

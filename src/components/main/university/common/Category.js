@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
-import { Image, View, Text } from 'react-native';
+import { Image, View, Text, TouchableHighlight } from 'react-native';
 
 class Category extends Component {
   render() {
     const { containerStyle, imageStyle } = styles;
 
     return (
-      <View style={containerStyle}>
-        <View style={{ flex: 2 }}>
-          <Image
-            source={this.props.imageUri}
-            style={imageStyle}
-          />
+      <TouchableHighlight onPress={() => this.asu()}>
+        <View style={containerStyle}>
+          <View style={{ flex: 2 }}>
+            <Image
+              source={this.props.imageUri}
+              style={imageStyle}
+            />
+          </View>
+          <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
+            <Text> {this.props.name} </Text>
+          </View>
         </View>
-        <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
-          <Text> {this.props.name} </Text>
-        </View>
-      </View>
+      </TouchableHighlight>
     );
   }
 }
