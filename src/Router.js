@@ -2,7 +2,8 @@ import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
 
 // Other imports
-import { NewsNavBar } from './NewsNavBar';
+import NewsNavBar from './NewsNavBar';
+import CustomNavBar from './CustomNavBar';
 
 // Imports for each scene used
 import FrontPage from './components/setupPage/FrontPage';
