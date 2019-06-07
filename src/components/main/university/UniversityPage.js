@@ -9,9 +9,9 @@ class UniversityPage extends Component {
 
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={headerContainerStyle}>
-          <Text style={headerTextStyle}> FORIS </Text>
-        </View>
+        {/* <View style={headerContainerStyle}>
+           <Text style={headerTextStyle}> FORIS </Text>
+         </View>*/}
 
         <ScrollView scrollEventThrottle={16}>
           <View>

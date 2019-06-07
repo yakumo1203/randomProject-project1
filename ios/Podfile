@@ -7,6 +7,7 @@ target 'project1' do
   pod 'Firebase'
   pod 'FirebaseAuth', :modular_headers => true
   pod 'Firebase/Core', :modular_headers => true
+  pod 'Firebase/Analytics', '~> 4.2.0'
 
   target 'project1-tvOSTests' do
     inherit! :search_paths
