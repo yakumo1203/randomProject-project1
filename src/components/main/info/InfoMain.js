@@ -5,7 +5,7 @@ import { getNews } from './News.js';
 import Article from './Article.js';
 import SearchBarElement from './SearchBarElement';
 
-class MainInformation extends Component {
+class InfoMain extends Component {
   constructor(props) {
     super(props);
     this.state = { articles: [], refreshing: true };
@@ -46,4 +46,4 @@ class MainInformation extends Component {
   }
 }
 
-export default MainInformation;
+export default InfoMain;

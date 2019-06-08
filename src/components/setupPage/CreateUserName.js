@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 import { EditUserName, } from './common';
-import { Actions } from 'react-native-router-flux';
-import Router from '../../Router';
 
 class CreateUserName extends Component{
   state = { username: '' };
@@ -21,7 +19,7 @@ class CreateUserName extends Component{
         </Text>
 
         <TouchableHighlight
-          onPress={() => Actions.signIn()}
+          onPress={() => this.props.navigation.navigate('SignIn')}
         >
           <Text style={styles.textButton}>Log in</Text>
         </TouchableHighlight>

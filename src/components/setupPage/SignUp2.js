@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Actions } from 'react-native-router-flux';
 import { TouchableHighlight, Text, View, StyleSheet } from 'react-native';
 import { SignInSection } from './common';
-import Router from '../../Router';
 
 class SignUp2 extends Component {
   render() {
     const { text1, text2, text3, text4, button1, button2, registerPage } = styles;
+    const { navigate } = this.props.navigation;
 
     return (
       <View>
@@ -16,12 +15,12 @@ class SignUp2 extends Component {
         <SignInSection
           text='Next'
           signInStyle={{ backgroundColor: '#00CCFF' }}
-          onPress={() => Actions.main()}
+          onPress={() => navigate('InfoMain')}
           signInStyle={{ top: 400 }}
         />
         <TouchableHighlight
           style={registerPage}
-          onPress={() => Actions.changeUsername()}
+          onPress={() => navigate('ChangeUserName')}
         >
           <Text style={button1}>Change Username</Text>
         </TouchableHighlight>
@@ -30,7 +29,7 @@ class SignUp2 extends Component {
         </Text>
         <TouchableHighlight
           style={{ alignItems: 'center' }}
-          onPress={() => Actions.useOfTerms()}
+          onPress={() => navigate('UseOfTerms')}
         >
           <Text style={button2}>UseOfTerms</Text>
         </TouchableHighlight>

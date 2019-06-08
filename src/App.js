@@ -4,7 +4,7 @@ import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
-import Router from './Router';
+import AppContainer from './Navigation';
 
 class App extends Component {
   state = { loggedIn: null };
@@ -27,7 +27,7 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <Router />
+        <AppContainer />
       </Provider>
     );
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux';
 import { getUserToken } from '../../actions';
 
 class AuthLoading extends React.Component {
@@ -10,12 +9,13 @@ class AuthLoading extends React.Component {
     }
 
     bootstrapAsync = () => {
-
         this.props.getUserToken().then(() => {
             if (this.props.token !== null) {
-              Actions.main();
+              console.log('hello from AuthLoading');
+              this.props.navigation.navigate('InfoMain');
             } else {
-              Actions.setupPage();
+              console.log('not logged in');
+              this.props.navigation.navigate('FrontPage');
             }
         })
             .catch(error => {

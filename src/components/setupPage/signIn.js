@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux';
 import {
   ImageBackground,
   Image,
@@ -10,7 +9,6 @@ import {
   TextInput,
   TouchableHighlight
 } from 'react-native';
-import Router from '../../Router';
 import { SignInSection, Spinner } from './common';
 import { emailChanged, passwordChanged, loginUser } from '../../actions';
 
@@ -103,7 +101,7 @@ class SignIn extends Component {
 
           <TouchableHighlight
             style={{ top: 280, alignItems: 'center' }}
-            onPress={() => Actions.signUp1()}
+            onPress={() => this.props.navigation.navigate('SignUp1')}
           >
             <Text style={{ color: 'black' }} >Don't have an accout?</Text>
           </TouchableHighlight>
