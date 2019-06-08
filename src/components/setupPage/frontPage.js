@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { ImageBackground, Text, View, StyleSheet } from 'react-native';
-import { Actions } from 'react-native-router-flux';
-import Router from '../../Router';
 import { SignInSection } from './common';
 
 class FrontPage extends Component {
@@ -20,12 +18,12 @@ class FrontPage extends Component {
 
             <SignInSection
               text='Log in'
-              onPress={() => Actions.signIn()}
+              onPress={() => this.props.navigation.navigate('SignIn')}
               signInStyle={{ top: 400 }}
             />
             <SignInSection
               text='Create user'
-              onPress={() => Actions.signUp1()}
+              onPress={() => this.props.navigation.navigate('SignUp1')}
               signInStyle={{ top: 400 }}
             />
           </ImageBackground>

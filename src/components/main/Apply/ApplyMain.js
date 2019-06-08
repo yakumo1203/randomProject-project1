@@ -4,7 +4,7 @@ import SeminorElement from './SeminorElements';
 
 const { width } = Dimensions.get('window');
 
-class Apply extends Component {
+class ApplyMain extends Component {
 
   state = {
     active: 0,
@@ -160,7 +160,7 @@ class Apply extends Component {
   }
 }
 
-export default Apply;
+export default ApplyMain;
 
 const styles = StyleSheet.create({
   overAll: {

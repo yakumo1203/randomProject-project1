@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Actions } from 'react-native-router-flux';
 import { SafeAreaView, ScrollView, View, Text } from 'react-native';
 import { UniversityRow } from './common';
 

@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import { Actions } from 'react-native-router-flux';
 import {
   SIGNUP_USERNAME_CHANGED,
   SIGNUP_EMAIL_CHANGED,
@@ -8,7 +7,6 @@ import {
   SIGNUP_USER_SUCCESS,
   SIGNUP_USER_FAIL
 } from './types';
-import Router from '../Router';
 
 // const actionCodeSettings = {
 //   url: 'https://www.foris.com/?email=' + firebase.auth().currentUser.email,
@@ -94,7 +92,7 @@ const signupUserSuccess = (dispatch, user) => {
     type: SIGNUP_USER_SUCCESS,
     payload: user
   });
-  Actions.main();
+  this.props.navigation.navigate('InfoMain');
 };
 
 const signupUserFail = (dispatch, error) => {
