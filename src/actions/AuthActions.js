@@ -7,32 +7,24 @@ import {
   LOGIN_USER
 } from './types';
 
-export const emailChanged = (text) => {
-  return {
+export const emailChanged = (text) => ({
     type: EMAIL_CHANGED,
     payload: text
-  };
-};
+});
 
-export const passwordChanged = (text) => {
-  return {
+export const passwordChanged = (text) => ({
     type: PASSWORD_CHANGED,
     payload: text
-  };
-};
+});
 
-export const loginUser = ({ email, password }) => {
-  return (dispatch) => {
+export const loginUser = ({ email, password }) => (dispatch) => {
     dispatch({ type: LOGIN_USER });
-
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((user) => loginUserSuccess(dispatch, user))
       .catch((error) => {
         console.log(error);
-
         loginUserFail(dispatch);
-    });
-  };
+  });
 };
 
 const loginUserSuccess = (dispatch, user) => {
@@ -43,6 +35,6 @@ const loginUserSuccess = (dispatch, user) => {
   this.props.navigation.navigate('SignUp2');
 };
 
-const loginUserFail = (dispatch, user) => {
+const loginUserFail = (dispatch) => {
   dispatch({ type: LOGIN_USER_FAIL });
-}
+};
