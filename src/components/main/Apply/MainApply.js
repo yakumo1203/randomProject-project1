@@ -152,7 +152,6 @@ class Apply extends Component {
               />
 
 
-              <View style={{ paddingBottom: 100 }} />
             </Animated.View>
           </ScrollView>
         </View>
@@ -184,7 +183,6 @@ const styles = StyleSheet.create({
   borderBetweenSeminor: {
     borderBottomWidth: 1,
     borderBottomColor: 'gray',
-    paddingTop: 20,
   },
 
 });
