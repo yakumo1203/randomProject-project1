@@ -167,7 +167,7 @@ const AccountNavigator = createStackNavigator({
 });
 
 const AccountFlow = createStackNavigator({
-    Home: {
+    Account: {
       screen: AccountNavigator,
       navigationOptions: {
         header: null,
