@@ -3,7 +3,12 @@ import {
   createBottomTabNavigator,
   createSwitchNavigator,
   createAppContainer
- } from 'react-navigation';
+} from 'react-navigation';
+
+import React from 'react';
+
+import { Icon } from 'native-base';
+
 
 // Importing all screens used in navigation
 // setupPage
@@ -16,6 +21,9 @@ import UseOfTerms from './components/setupPage/UseOfTerms';
 import CreateUserName from './components/setupPage/CreateUserName';
 import ChangeUserName from './components/setupPage/ChangeUserName';
 
+//main/home
+import homeGeneralSNS from './components/main/home/GeneralSNS';
+
 // main/info
 import InfoMain from './components/main/info/InfoMain';
 
@@ -23,8 +31,10 @@ import InfoMain from './components/main/info/InfoMain';
 import UniversityPage from './components/main/university/UniversityPage';
 
 // main/apply
-import ApplyMain from './components/main/apply/ApplyMain';
+import Apply from './components/main/Apply/MainApply';
 
+// main/account
+import MainAccount from './components/main/account/MainAccount';
 
 // AuthFlow
 const AuthLoadingNavigator = createStackNavigator(
@@ -71,6 +81,26 @@ const AuthFlow = createSwitchNavigator(
 
 // Main
 // ---Info
+const HomeNavigator = createStackNavigator({
+  homeGeneralSNS: {
+    screen: homeGeneralSNS,
+    navigationOptions: {
+      header: null,
+    }
+  }
+});
+
+const HomeFlow = createStackNavigator({
+    Home: {
+      screen: HomeNavigator,
+      navigationOptions: {
+        header: null,
+      }
+    }
+  },
+  { initialRouterName: 'Home' }
+);
+
 const InfoNavigator = createStackNavigator({
   InfoMain: { screen: InfoMain }
 });
@@ -107,7 +137,7 @@ const UniversityFlow = createStackNavigator(
 // ---apply
 const ApplyNavigator = createStackNavigator({
     ApplyMain: {
-      screen: ApplyMain,
+      screen: Apply,
       navigationOptions: {
         header: null
       }
@@ -126,13 +156,36 @@ const ApplyFlow = createStackNavigator(
   { initialRouterName: 'Apply' }
 );
 
+// ---account
+const AccountNavigator = createStackNavigator({
+  Account: {
+    screen: MainAccount,
+    navigationOptions: {
+      header: null,
+    }
+  }
+});
+
+const AccountFlow = createStackNavigator({
+    Home: {
+      screen: AccountNavigator,
+      navigationOptions: {
+        header: null,
+      }
+    }
+  },
+  { initialRouterName: 'Account' }
+);
+
 const BottomTabNavigator = createBottomTabNavigator(
   {
+    Home: HomeFlow,
     Info: InfoFlow,
     University: UniversityFlow,
-    Apply: ApplyFlow
+    Apply: ApplyFlow,
+    Account: AccountFlow,
   },
-  { initialRouteName: 'Info' }
+  { initialRouteName: 'Home' }
 );
 
 const AppNavigator = createSwitchNavigator(
