@@ -31,7 +31,7 @@ import InfoMain from './components/main/info/InfoMain';
 import UniversityPage from './components/main/university/UniversityPage';
 
 // main/apply
-import Apply from './components/main/Apply/MainApply';
+import ApplyMain from './components/main/apply/ApplyMain';
 
 // main/account
 import MainAccount from './components/main/account/MainAccount';
@@ -137,7 +137,7 @@ const UniversityFlow = createStackNavigator(
 // ---apply
 const ApplyNavigator = createStackNavigator({
     ApplyMain: {
-      screen: Apply,
+      screen: ApplyMain,
       navigationOptions: {
         header: null
       }
