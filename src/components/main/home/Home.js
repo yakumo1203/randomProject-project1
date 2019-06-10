@@ -1,42 +1,48 @@
 import React, { Component } from 'react';
 import { AppRegistry, Image, Text, SafeAreaView, ScrollView, View, TouchableHighlight } from 'react-native';
+import TimedSlideshow from 'react-native-timed-slideshow';
 
 class homeFront extends Component {
   render() {
-    return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#dddddd' }}>
-        <ScrollView>
-            <TouchableHighlight onPress={() => this.iuwfoub() }>
-              <Image source={require('./src/img/FORIS_HomeGeneral.jpg')}
-                     style={{ height: 200, width: '100%' }}/>
-            </TouchableHighlight>
+		const items = [
+			{
+				uri: require('../../../img/FORIS_General2.jpg'),
+				title: "General",
+				text: "Minnesota, USA",
+			},
+			{
+				uri: require('../../../img/FORIS_Aviation2.jpg'),
+				title: "Aviation",
+				text: "Val di Sole, Italy",
+				duration: 5000
+			},
+      {
+				uri: require('../../../img/FORIS_ComputerScience.jpg'),
+				title: "Computer Science",
+				text: "Val di Sole, Italy",
+				duration: 5000
+			},
+      {
+				uri: require('../../../img/FORIS_Aerospace.jpg'),
+				title: "Aerospace Engineering",
+				text: "Val di Sole, Italy",
+				duration: 5000
+			},
+			{
+				uri: require('../../../img/FORIS_Aviation.jpg'),
+				title: "Aviation",
+				text: "Alps",
+				fullWidth: true
+			}
+		]
 
-          <View style={{ flex: 1, flexDirection: 'column' }}>
-            <View style={{ flex: 1, flexDirection: 'row' }}>
-              <View style={{ height: 200, width: '50%' }}>
-                <TouchableHighlight onPress={() => this.iuwfoub() }>
-                  <Image source={require('./src/img/FORIS_Aviation.jpg')}
-                         style={{ height: 200, width: '50%' }}/>
-                </TouchableHighlight>
-
-                <TouchableHighlight onPress={() => this.iuwfoub() }>
-                  <Image source={require('./src/img/FORIS_HomeGeneral.jpg')}
-                         style={{ height: 200, width: '50%' }}/>
-                </TouchableHighlight>
-              </View>
-            </View>
-
-            <View>
-              <TouchableHighlight onPress={() => this.iuwfoub() }>
-                <Image source={require('./src/img/FORIS_HomeGeneral.jpg')}
-                       style={{ height: 200, width: '50%' }}/>
-              </TouchableHighlight>
-            </View>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    );
-  }
+		return (
+			<TimedSlideshow
+				items={items}
+        showProgressBar={false}
+			/>
+		);
+	}
 }
 
 export default homeFront;

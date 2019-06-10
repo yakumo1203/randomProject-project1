@@ -45,14 +45,14 @@ class MainAccount extends Component {
   }
 
   renderSection = () => {
-    if (this.state.activeIndex === 0) {
+    if (this.state.activeIndex === 1) {
       return (
         <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
           {this.renderSectionOne()}
         </View>
       )
     }
-    else if (this.state.activeIndex === 1) {
+    else if (this.state.activeIndex === 0) {
       return (
         <View>
           <CardComponent imageSource="1" likes="100" />
@@ -67,54 +67,55 @@ class MainAccount extends Component {
     return (
       <Container style={{ flex: 1, backgroundColor: 'white' }} >
         <Header>
-          <Left><Icon name="ios-camera-outline" style={{ paddingLeft: 10 }}></Icon></Left>
-          <Body><Text>FORIS General</Text></Body>
-          <Right><EntypoIcon name="back-in-time" style={{ paddingRight: 10, fontSize: 32 }}></EntypoIcon></Right>
+          <Right><Icon name="ios-list" style={{ paddingRight: 10, fontSize: 32 }}></Icon></Right>
         </Header>
 
         <Content>
           <View style={{ paddingTop: 10 }}>
             <View style={{ flexDirection: 'row' }}>
 
-              <View style={{ flex: 1, alignItems: 'center' }}>
+              <View style={{ flex: 1, paddingLeft: 20 }}>
                 <Image source={require('../../../img/FORIS_Aviation.jpg')}
                        style={{ width: 75, height: 75, borderRadius: 37.5 }} />
               </View>
 
-              <View style={{ flex: 3 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                  <View>
-                    <Text>20</Text>
-                    <Text style={{ fontSize: 10, color: 'gray' }}>posts</Text>
-                  </View>
-                  <View>
-                    <Text>200</Text>
-                    <Text style={{ fontSize: 10, color: 'gray' }}>followers</Text>
-                  </View>
-                  <View>
-                    <Text>167</Text>
-                    <Text style={{ fontSize: 10, color: 'gray' }}>following</Text>
-                  </View>
+              <View style={{ flex: 2, flexDirection: 'column', paddingTop: 5 }}>
+                <View>
+                  <Text style={{ fontWeight: 'bold' }}>
+                    Yakumo Asano
+                  </Text>
 
-                  <View style={{ flexDirection: 'row', paddingTop: 10 }}>
-                    <Button bordered dark style={{ flex: 3, marginLeft: 10, justifyContent: 'center', height: 30 }}>
-                      <Text>Edit Profile</Text>
+                  <Text style={{ fontSize: 10, color: 'gray' }}>
+                    Seattle Central College / Computer Science
+                  </Text>
+                </View>
+
+                <View style={{ flex: 1 }}>
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingTop: 10 }}>
+                    <View>
+                      <Text>200</Text>
+                      <Text style={{ fontSize: 10, color: 'gray' }}>followers  </Text>
+                    </View>
+                    <View>
+                      <Text>167</Text>
+                      <Text style={{ fontSize: 10, color: 'gray' }}>following</Text>
+                    </View>
+                    <Button bordered dark style={{ flex: 2, marginLeft: 10, justifyContent: 'center', height: 30, marginRight: 10, borderColor: 'gray' }}>
+                      <Text style={{ color: 'gray' }}>Edit Profile</Text>
                     </Button>
-
-                    <Button bordered dark style={{ flex: 1, height: 30, marginRight: 10, marginLeft: 5, justifyContent: 'center' }}>
-                      <Icon name="setting" />
-                    </Button>
                   </View>
-
                 </View>
               </View>
             </View>
 
-            <View style={{ paddingBottom: 10, paddingHorizontal: 10 }}>
-              <Text style={{ fontWeight: 'bold' }}>Yakumo Asano</Text>
+          <View style={{ flexDirection: 'row' }}>
+            <View style={{ paddingBottom: 10, paddingHorizontal: 10, paddingTop: 10, paddingLeft: 10 }}>
+              <Text style={{ fontWeight: 'bold' }}>Yakumo1203</Text>
               <Text> My school is Seattle Central College </Text>
               <Text> studyabroadsguide.com </Text>
             </View>
+          </View>
+
           </View>
 
           <View>
@@ -122,19 +123,19 @@ class MainAccount extends Component {
                            borderBottomColor: '#eae5e5' }}>
 
               <Button transparent onPress={() => this.segmentClicked(0)} active={this.state.activeIndex === 0}>
-                <Icon name="ios-apps-outline" style={[this.state.activeIndex === 0 ? {} : { color: 'gray' }]} />
+                <Icon name="md-home" style={[this.state.activeIndex === 0 ? {} : { color: 'gray' }]} />
               </Button>
 
               <Button transparent onPress={() => this.segmentClicked(1)} active={this.state.activeIndex === 1}>
-                <Icon name="ios-apps-outline" style={[this.state.activeIndex === 1 ? {} : { color: 'gray' }]} />
+                <Icon name="ios-apps" style={[this.state.activeIndex === 1 ? {} : { color: 'gray' }]} />
               </Button>
 
               <Button transparent onPress={() => this.segmentClicked(2)} active={this.state.activeIndex === 2}>
-                <Icon name="ios-apps-outline" style={[this.state.activeIndex === 2 ? {} : { color: 'gray' }]} />
+                <Icon name="ios-apps" style={[this.state.activeIndex === 2 ? {} : { color: 'gray' }]} />
               </Button>
 
               <Button transparent onPress={() => this.segmentClicked(3)} active={this.state.activeIndex === 3}>
-                <Icon name="ios-apps-outline" style={[this.state.activeIndex === 3 ? {} : { color: 'gray' }]} />
+                <Icon name="ios-apps" style={[this.state.activeIndex === 3 ? {} : { color: 'gray' }]} />
               </Button>
 
             </View>

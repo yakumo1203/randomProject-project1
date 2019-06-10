@@ -7,7 +7,7 @@ import {
 
 import React from 'react';
 
-import { Icon } from 'native-base';
+import { Icon } from 'react-native-elements';
 
 
 // Importing all screens used in navigation
@@ -22,7 +22,7 @@ import CreateUserName from './components/setupPage/CreateUserName';
 import ChangeUserName from './components/setupPage/ChangeUserName';
 
 //main/home
-import homeGeneralSNS from './components/main/home/GeneralSNS';
+import homeFront from './components/main/home/Home';
 
 // main/info
 import InfoMain from './components/main/info/InfoMain';
@@ -82,8 +82,8 @@ const AuthFlow = createSwitchNavigator(
 // Main
 // ---Info
 const HomeNavigator = createStackNavigator({
-  homeGeneralSNS: {
-    screen: homeGeneralSNS,
+  homeFront: {
+    screen: homeFront,
     navigationOptions: {
       header: null,
     }

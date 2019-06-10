@@ -33,7 +33,7 @@ class InfoMain extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{ backgroundColor: 'black' }}>
         <FlatList
           data={this.state.articles}
           renderItem={({ item }) => <Article article={item} />}

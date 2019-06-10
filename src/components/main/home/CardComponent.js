@@ -16,37 +16,11 @@ class CardComponent extends Component {
           <Left>
             <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
             <Body>
-              <Text>Yakumo</Text>
-              <Text note> Dec 3, 1998</Text>
+              <Text>Yakumo Asano</Text>
+              <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
+              <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle, WA</Text>
             </Body>
           </Left>
-        </CardItem>
-
-        <CardItem cardBody>
-          <Image source={images[this.props.imageSource]}
-                 style={{ height: 200, width: null, flex: 1 }} />
-        </CardItem>
-
-        <CardItem style={{ height: 45 }}>
-          <Left>
-
-            <Button transparent>
-              <Icon name="ios-heart-outline" style={{ color: 'black' }} />
-            </Button>
-
-            <Button transparent>
-              <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
-            </Button>
-
-            <Button transparent>
-              <Icon name="ios-send-outline" style={{ color: 'black' }} />
-            </Button>
-
-          </Left>
-        </CardItem>
-
-        <CardItem style={{ height: 35 }}>
-          <Text>{this.props.likes}</Text>
         </CardItem>
 
         <CardItem>
@@ -65,6 +39,26 @@ class CardComponent extends Component {
             </Text>
           </Body>
         </CardItem>
+
+        <CardItem cardBody>
+          <Image source={images[this.props.imageSource]}
+                 style={{ height: 200, width: null, flex: 1 }} />
+        </CardItem>
+
+        <CardItem style={{ height: 45 }}>
+          <Left style={{ paddingLeft: 10 }}>
+            <Button transparent>
+              <Icon name="ios-heart" style={{ color: 'black' }} />
+            </Button>
+            <Text>100</Text>
+
+            <Button transparent style={{ paddingLeft: 30 }}>
+              <Icon name="ios-chatbubbles" style={{ color: 'black' }} />
+            </Button>
+          </Left>
+
+        </CardItem>
+
       </Card>
     )
   }
