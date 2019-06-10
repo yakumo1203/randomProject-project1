@@ -22,7 +22,7 @@ import CreateUserName from './components/setupPage/CreateUserName';
 import ChangeUserName from './components/setupPage/ChangeUserName';
 
 //main/home
-import homeFront from './components/main/home/Home';
+import HomeMain from './components/main/home/HomeMain';
 
 // main/info
 import InfoMain from './components/main/info/InfoMain';
@@ -82,8 +82,8 @@ const AuthFlow = createSwitchNavigator(
 // Main
 // ---Info
 const HomeNavigator = createStackNavigator({
-  homeFront: {
-    screen: homeFront,
+  HomeMain: {
+    screen: HomeMain,
     navigationOptions: {
       header: null,
     }
