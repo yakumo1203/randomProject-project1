@@ -92,7 +92,7 @@ const signupUserSuccess = (dispatch, user) => {
     type: SIGNUP_USER_SUCCESS,
     payload: user
   });
-  this.props.navigation.navigate('InfoMain');
+  this.props.navigation.navigate('HomeMain');
 };
 
 const signupUserFail = (dispatch, error) => {
