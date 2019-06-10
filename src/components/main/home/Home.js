@@ -28,12 +28,6 @@ class homeFront extends Component {
 				text: "宇宙工学専用SNS",
 				duration: 5000
 			},
-			{
-				uri: require('../../../img/FORIS_Aviation.jpg'),
-				title: "Aviation",
-				text: "Alps",
-				fullWidth: true
-			}
 		]
 
 		return (

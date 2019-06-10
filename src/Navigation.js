@@ -80,7 +80,7 @@ const AuthFlow = createSwitchNavigator(
 );
 
 // Main
-// ---Info
+// ---Home
 const HomeNavigator = createStackNavigator({
   homeFront: {
     screen: homeFront,
@@ -101,6 +101,7 @@ const HomeFlow = createStackNavigator({
   { initialRouterName: 'Home' }
 );
 
+// ---Info
 const InfoNavigator = createStackNavigator({
   InfoMain: { screen: InfoMain }
 });
