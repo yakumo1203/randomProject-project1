@@ -12,7 +12,7 @@ class AuthLoading extends React.Component {
         this.props.getUserToken().then(() => {
             if (this.props.token !== null) {
               console.log('hello from AuthLoading');
-              this.props.navigation.navigate('InfoMain');
+              this.props.navigation.navigate('HomeMain');
             } else {
               console.log('not logged in');
               this.props.navigation.navigate('FrontPage');
