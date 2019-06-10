@@ -31,7 +31,7 @@ import InfoMain from './components/main/info/InfoMain';
 import UniversityPage from './components/main/university/UniversityPage';
 
 // main/apply
-import Apply from './components/main/Apply/MainApply';
+import ApplyMain from './components/main/apply/ApplyMain';
 
 // main/account
 import MainAccount from './components/main/account/MainAccount';
@@ -98,7 +98,7 @@ const HomeFlow = createStackNavigator({
       }
     }
   },
-  { initialRouterName: 'Home' }
+  { initialRouteName: 'Home' }
 );
 
 const InfoNavigator = createStackNavigator({
@@ -114,7 +114,7 @@ const InfoFlow = createStackNavigator(
       }
     }
   },
-  { initialRouterName: 'Info' }
+  { initialRouteName: 'Info' }
 );
 
 // ---University
@@ -136,8 +136,8 @@ const UniversityFlow = createStackNavigator(
 
 // ---apply
 const ApplyNavigator = createStackNavigator({
-    MainApply: {
-      screen: Apply,
+    ApplyMain: {
+      screen: ApplyMain,
       navigationOptions: {
         header: null
       }
@@ -153,7 +153,7 @@ const ApplyFlow = createStackNavigator(
       }
     }
   },
-  { initialRouterName: 'Apply' }
+  { initialRouteName: 'Apply' }
 );
 
 // ---account
@@ -174,7 +174,7 @@ const AccountFlow = createStackNavigator({
       }
     }
   },
-  { initialRouterName: 'Account' }
+  { initialRouteName: 'Account' }
 );
 
 const BottomTabNavigator = createBottomTabNavigator(
