@@ -8,24 +8,24 @@ class homeFront extends Component {
 			{
 				uri: require('../../../img/FORIS_General2.jpg'),
 				title: "General",
-				text: "Minnesota, USA",
+				text: "一般用SNS",
 			},
 			{
 				uri: require('../../../img/FORIS_Aviation2.jpg'),
 				title: "Aviation",
-				text: "Val di Sole, Italy",
+				text: "航空学専用SNS",
 				duration: 5000
 			},
       {
 				uri: require('../../../img/FORIS_ComputerScience.jpg'),
 				title: "Computer Science",
-				text: "Val di Sole, Italy",
+				text: "情報など主にプログラミング関係のSNS",
 				duration: 5000
 			},
       {
 				uri: require('../../../img/FORIS_Aerospace.jpg'),
 				title: "Aerospace Engineering",
-				text: "Val di Sole, Italy",
+				text: "宇宙工学専用SNS",
 				duration: 5000
 			},
 			{

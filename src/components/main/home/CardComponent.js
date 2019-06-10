@@ -55,6 +55,7 @@ class CardComponent extends Component {
             <Button transparent style={{ paddingLeft: 30 }}>
               <Icon name="ios-chatbubbles" style={{ color: 'black' }} />
             </Button>
+            <Text>16</Text>
           </Left>
 
         </CardItem>
