@@ -2,10 +2,14 @@ import {
   createStackNavigator,
   createBottomTabNavigator,
   createSwitchNavigator,
-  createAppContainer
+  createAppContainer,
+  DrawerNavigator,
+  createDrawerNavigator,
 } from 'react-navigation';
 
 import React from 'react';
+
+import { Dimensions } from 'react-native';
 
 import { Icon } from 'react-native-elements';
 
@@ -31,10 +35,12 @@ import InfoMain from './components/main/info/InfoMain';
 import UniversityPage from './components/main/university/UniversityPage';
 
 // main/apply
-import ApplyMain from './components/main/apply/ApplyMain';
+import Apply from './components/main/Apply/MainApply';
 
 // main/account
 import MainAccount from './components/main/account/MainAccount';
+import SettingScreen from './components/main/account/SettingScreen';
+import MenuDrawer from './components/main/account/MenuDrawer';
 
 // AuthFlow
 const AuthLoadingNavigator = createStackNavigator(
@@ -101,6 +107,7 @@ const HomeFlow = createStackNavigator({
   { initialRouteName: 'Home' }
 );
 
+
 // ---Info
 const InfoNavigator = createStackNavigator({
   InfoMain: { screen: InfoMain }
@@ -138,7 +145,7 @@ const UniversityFlow = createStackNavigator(
 // ---apply
 const ApplyNavigator = createStackNavigator({
     ApplyMain: {
-      screen: ApplyMain,
+      screen: Apply,
       navigationOptions: {
         header: null
       }
@@ -158,14 +165,31 @@ const ApplyFlow = createStackNavigator(
 );
 
 // ---account
-const AccountNavigator = createStackNavigator({
+const WIDTH = Dimensions.get('window').width;
+
+const DrawerConfig = {
+  drawerWidth: WIDTH * 0.83,
+  contentComponent: ({ navigation }) => {
+    return (<MenuDrawer navigation={navigation} />)
+  }
+};
+
+const AccountNavigator = createDrawerNavigator({
   Account: {
     screen: MainAccount,
     navigationOptions: {
       header: null,
     }
+  },
+  Setting: {
+    screen: SettingScreen,
+    navigationOptions: {
+      header: null,
+    },
   }
-});
+},
+DrawerConfig,
+);
 
 const AccountFlow = createStackNavigator({
     Account: {

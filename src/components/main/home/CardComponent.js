@@ -18,15 +18,15 @@ class CardComponent extends Component {
             <Body>
               <Text>Yakumo Asano</Text>
               <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-              <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle, WA</Text>
+              <Text note style={{ color: 'gray', fontSize: 10 }}>
+                <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
             </Body>
           </Left>
         </CardItem>
 
         <CardItem>
           <Body>
-            <Text>
-              <Text style={{ fontWeight: '900' }}>Yakumo </Text>
+            <Text style={{ fontSize: 15, color: 'gray' }}>
               iyscibwdcibwibuci
               iwbcdcbib
               wuibcubobwco
@@ -48,14 +48,14 @@ class CardComponent extends Component {
         <CardItem style={{ height: 45 }}>
           <Left style={{ paddingLeft: 10 }}>
             <Button transparent>
-              <Icon name="ios-heart" style={{ color: 'black' }} />
+              <Icon name="ios-heart" style={{ color: 'gray' }} />
             </Button>
-            <Text>100</Text>
+            <Text style={{ color: 'gray' }}>100</Text>
 
             <Button transparent style={{ paddingLeft: 30 }}>
-              <Icon name="ios-chatbubbles" style={{ color: 'black' }} />
+              <Icon name="ios-chatbubbles" style={{ color: 'gray' }} />
             </Button>
-            <Text>16</Text>
+            <Text style={{ color: 'gray' }}>16</Text>
           </Left>
 
         </CardItem>
