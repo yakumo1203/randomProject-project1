@@ -35,12 +35,13 @@ import InfoMain from './components/main/info/InfoMain';
 import UniversityPage from './components/main/university/UniversityPage';
 
 // main/apply
-import Apply from './components/main/Apply/MainApply';
+import ApplyMain from './components/main/apply/ApplyMain';
 
 // main/account
 import MainAccount from './components/main/account/MainAccount';
 import SettingScreen from './components/main/account/SettingScreen';
 import MenuDrawer from './components/main/account/MenuDrawer';
+import EditProfile from './components/main/account/EditProfile';
 
 // AuthFlow
 const AuthLoadingNavigator = createStackNavigator(
@@ -145,7 +146,7 @@ const UniversityFlow = createStackNavigator(
 // ---apply
 const ApplyNavigator = createStackNavigator({
     ApplyMain: {
-      screen: Apply,
+      screen: ApplyMain,
       navigationOptions: {
         header: null
       }
@@ -186,6 +187,12 @@ const AccountNavigator = createDrawerNavigator({
     navigationOptions: {
       header: null,
     },
+  },
+  EditProfile: {
+    screen: EditProfile,
+    navigationOptions: {
+      header: null
+    }
   }
 },
 DrawerConfig,

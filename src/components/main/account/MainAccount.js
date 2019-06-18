@@ -109,7 +109,7 @@ class MainAccount extends Component {
                       <Text style={{ fontSize: 10, color: 'gray' }}>following</Text>
                     </View>
                     <Button bordered dark style={{ flex: 2, marginLeft: 10, justifyContent: 'center', height: 30, marginRight: 10, borderColor: 'gray' }}
-                            onPress={() => this.EditProfile()}>
+                            onPress={() => this.props.navigation.navigate('EditProfile')}>
                       <Text style={{ color: 'gray' }}>Edit Profile</Text>
                     </Button>
                   </View>
