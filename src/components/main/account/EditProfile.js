@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
-export default class EditProfile extends Component {
+class EditProfile extends Component {
   render() {
     return (
       <View>
@@ -9,6 +9,8 @@ export default class EditProfile extends Component {
           eeee
         </Text>
       </View>
-    )
+    );
   }
 }
+
+export default EditProfile;

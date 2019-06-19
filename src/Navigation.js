@@ -35,7 +35,7 @@ import InfoMain from './components/main/info/InfoMain';
 import UniversityPage from './components/main/university/UniversityPage';
 
 // main/apply
-import ApplyMain from './components/main/apply/ApplyMain';
+import ApplyMain from './components/main/Apply/ApplyMain';
 
 // main/account
 import MainAccount from './components/main/account/MainAccount';
