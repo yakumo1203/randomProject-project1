@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Linking, TouchableHighlight } from 'react-native';
-import { Text, Button, Card, Divider } from 'react-native-elements';
+import { Text, Button, Card, Divider, Icon } from 'react-native-elements';
 import moment from 'moment';
 
 export default class Article extends React.Component {
@@ -30,17 +30,11 @@ export default class Article extends React.Component {
             uri: urlToImage || defaultImg
           }}
         >
-          <Text style={{ marginBottom: 10 }}>
-            {description || 'Read More..'}
-          </Text>
-          <Divider style={{ backgroundColor: '#dfe6e9' }} />
-          <View
-            style={{ flexDirection: 'row', justifyContent: 'space-between' }}
-          >
-            <Text style={noteStyle}>{source.name.toUpperCase()}</Text>
-            <Text style={noteStyle}>{time}</Text>
-          </View>
+
+          <Button buttonStyle={{ backgroundColor: 'black', borderColor: '#00ccff' }} title="Add to MyLists" titleStyle={{ color: '#00ccff' }}/>
+
         </Card>
+
       </TouchableHighlight>
     );
   }

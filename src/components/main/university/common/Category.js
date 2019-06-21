@@ -6,7 +6,7 @@ class Category extends Component {
     const { containerStyle, imageStyle } = styles;
 
     return (
-      <TouchableHighlight onPress={() => this.props.univ()} >
+      <TouchableHighlight onPress={() => { this.props.navigation.navigate()}}>
         <View style={containerStyle}>
           <View style={{ flex: 2 }}>
             <Image

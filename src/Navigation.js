@@ -33,6 +33,7 @@ import InfoMain from './components/main/info/InfoMain';
 
 // main/university
 import UniversityPage from './components/main/university/UniversityPage';
+import KansasStateUniversity from './components/main/university/KansasStateUniversity';
 
 // main/apply
 import ApplyMain from './components/main/Apply/ApplyMain';
@@ -119,7 +120,7 @@ const InfoFlow = createStackNavigator(
     Info: {
       screen: InfoNavigator,
       navigationOptions: {
-        header: null
+        header: null,
       }
     }
   },
@@ -128,7 +129,7 @@ const InfoFlow = createStackNavigator(
 
 // ---University
 const UniversityNavigator = createStackNavigator({
-  UniversityPage: { screen: UniversityPage }
+  UniversityPage: { screen: UniversityPage },
 });
 
 const UniversityFlow = createStackNavigator(
@@ -142,6 +143,24 @@ const UniversityFlow = createStackNavigator(
   },
   { initialRouterName: 'University' }
 );
+
+//delete later
+const KansasStateUniversityNavigator = createStackNavigator({
+  KansasStateUniversity: { screen: KansasStateUniversity },
+});
+
+const KansasStateUniversityFlow = createStackNavigator(
+  {
+    KansasStateUniversity: {
+      screen: KansasStateUniversityNavigator,
+      navigationOptions: {
+        header: null
+      }
+    }
+  },
+  { initialRouterName: 'KansasStateUniversity' }
+);
+// until here delete
 
 // ---apply
 const ApplyNavigator = createStackNavigator({
@@ -214,6 +233,7 @@ const BottomTabNavigator = createBottomTabNavigator(
     Home: HomeFlow,
     Info: InfoFlow,
     University: UniversityFlow,
+    Kansas: KansasStateUniversityFlow, //delete this sentence later
     Apply: ApplyFlow,
     Account: AccountFlow,
   },
