@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, TouchableHighlight, View, Text, TouchableOpacity, StyleSheet, Animated, ScrollView, Image, Dimensions } from 'react-native';
 import SeminorElement from './SeminorElements';
 
+
 const { width } = Dimensions.get('window');
 
 class ApplyMain extends Component {
@@ -111,6 +112,7 @@ class ApplyMain extends Component {
 
               <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray' }} />
               <SeminorElement
+                seminorNext='KansasStateUniversity'
                 seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
                 seminorTitle="ボスキャリ対策講座"
                 seminorText="10000￥"

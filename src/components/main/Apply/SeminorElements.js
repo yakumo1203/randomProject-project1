@@ -5,7 +5,7 @@ class SeminorElement extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <TouchableHighlight onPress={() => this.dsno()} >
+        <TouchableHighlight transparent onPress={() => {this.props.navigation.navigate('BusinessManner')}}>
           <View style={styles.divisionBetweenImageAndText}>
 
             <Image source={this.props.seminorImage}
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingTop: 20,
     paddingBottom: 20,
+    backgroundColor: 'white',
   },
 
   imageArea: {

@@ -6,19 +6,22 @@ class Category extends Component {
     const { containerStyle, imageStyle } = styles;
 
     return (
-      <TouchableHighlight onPress={() => { this.props.navigation.navigate()}}>
-        <View style={containerStyle}>
-          <View style={{ flex: 2 }}>
-            <Image
-              source={this.props.imageUri}
-              style={imageStyle}
-            />
+
+        <View>
+        <TouchableHighlight onPress={() => { this.props.navigation.navigate()}} underlayColor='white'>
+          <View style={containerStyle}>
+            <View style={{ flex: 2 }}>
+              <Image
+                source={this.props.imageUri}
+                style={imageStyle}
+              />
+            </View>
+            <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
+              <Text> {this.props.name} </Text>
+            </View>
           </View>
-          <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
-            <Text> {this.props.name} </Text>
-          </View>
+        </TouchableHighlight>
         </View>
-      </TouchableHighlight>
     );
   }
 }
@@ -29,7 +32,8 @@ const styles = {
     width: 130,
     marginLeft: 20,
     borderWidth: 0.5,
-    borderColor: '#dddddd'
+    borderColor: '#dddddd',
+    backgroundColor: 'white',
   },
   imageStyle: {
     flex: 1,
