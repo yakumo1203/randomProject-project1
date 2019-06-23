@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, AppRegistry, Image, Text, Dimensions, SafeAreaView, ScrollView, View, TouchableHighlight } from 'react-native';
+import { Actions, Modal, AppRegistry, Image, Text, Dimensions, SafeAreaView, ScrollView, View, TouchableHighlight } from 'react-native';
 import { Right, CardItem, Left, Thumbnail, Body, Button, Icon, Card, Content, Container } from 'native-base';
 
 var { width, height } = Dimensions.get('window');
@@ -37,7 +37,6 @@ class homeFront extends Component {
   renderSection = () => {
     if (this.state.activeIndex === 0) {
       return (
-
         <View>
           <Card>
             <View style={{ flexDirection: 'column' }}>
@@ -177,7 +176,7 @@ class homeFront extends Component {
             </View>
           </Card>
         </View>
-
+        
       )
     }
     else if (this.state.activeIndex === 1) {
@@ -266,7 +265,6 @@ class homeFront extends Component {
         <Content>
         {this.renderSection()}
         </Content>
-
 
       </Container>
 		);

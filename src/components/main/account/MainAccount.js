@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, Dimensions } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 
-import { Icon, Container, Content, Header, Left, Right, Body, Button } from 'native-base';
+import { Icon, Container, Content, Header, Left, Right, Body, Button, Card, CardItem, Thumbnail } from 'native-base';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import CardComponent from '../home/CardComponent';
 
@@ -56,9 +56,143 @@ class MainAccount extends Component {
     else if (this.state.activeIndex === 0) {
       return (
         <View>
-          <CardComponent imageSource="1" likes="100" />
-          <CardComponent imageSource="1" likes="100" />
-          <CardComponent imageSource="3" likes="100" />
+          <Card>
+            <View style={{ flexDirection: 'column' }}>
+
+              <CardItem>
+                <Text style={{ color: 'gray' }}>航空関係</Text>
+              </CardItem>
+
+              <CardItem>
+                <Text style={{ fontWeight: 'bold', fontSize: 20 }}>
+                  グリーンカードを取得する方法は？
+                </Text>
+              </CardItem>
+
+              <CardItem>
+                <Left>
+                  <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                  <Body>
+                    <Text>Yakumo Asano</Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}>
+                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                  </Body>
+                </Left>
+              </CardItem>
+
+              <CardItem>
+                <Text>
+                  sdibvsciwbovbuobvobwoubeo
+                  fwboubwoubcowbcuo
+                  iyscibwdcibwibuciouqdob
+                </Text>
+              </CardItem>
+
+              <CardItem>
+                <Left>
+                  <Text style={{ color: 'gray' }}>Yesterday</Text>
+                </Left>
+
+                <Right>
+                  <Text style={{ color: 'gray' }}>Read more...</Text>
+                </Right>
+              </CardItem>
+
+            </View>
+          </Card>
+
+          <Card>
+            <View style={{ flexDirection: 'column' }}>
+
+              <CardItem>
+                <Text style={{ color: 'gray' }}>航空関係</Text>
+              </CardItem>
+
+              <CardItem>
+                <Text style={{ fontWeight: 'bold', fontSize: 20 }}>
+                  グリーンカードを取得する方法は？
+                </Text>
+              </CardItem>
+
+              <CardItem>
+                <Left>
+                  <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                  <Body>
+                    <Text>Yakumo Asano</Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}>
+                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                  </Body>
+                </Left>
+              </CardItem>
+
+              <CardItem>
+                <Text>
+                  sdibvsciwbovbuobvobwoubeo
+                  fwboubwoubcowbcuo
+                  iyscibwdcibwibuciouqdob
+                </Text>
+              </CardItem>
+
+              <CardItem>
+                <Left>
+                  <Text style={{ color: 'gray' }}>Yesterday</Text>
+                </Left>
+
+                <Right>
+                  <Text style={{ color: 'gray' }}>Read more...</Text>
+                </Right>
+              </CardItem>
+
+            </View>
+          </Card>
+
+          <Card>
+            <View style={{ flexDirection: 'column' }}>
+
+              <CardItem>
+                <Text style={{ color: 'gray' }}>航空関係</Text>
+              </CardItem>
+
+              <CardItem>
+                <Text style={{ fontWeight: 'bold', fontSize: 20 }}>
+                  グリーンカードを取得する方法は？
+                </Text>
+              </CardItem>
+
+              <CardItem>
+                <Left>
+                  <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                  <Body>
+                    <Text>Yakumo Asano</Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}>
+                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                  </Body>
+                </Left>
+              </CardItem>
+
+              <CardItem>
+                <Text>
+                  sdibvsciwbovbuobvobwoubeo
+                  fwboubwoubcowbcuo
+                  iyscibwdcibwibuciouqdob
+                </Text>
+              </CardItem>
+
+              <CardItem>
+                <Left>
+                  <Text style={{ color: 'gray' }}>Yesterday</Text>
+                </Left>
+
+                <Right>
+                  <Text style={{ color: 'gray' }}>Read more...</Text>
+                </Right>
+              </CardItem>
+
+            </View>
+          </Card>
         </View>
       )
     }
