@@ -36,7 +36,7 @@ import UniversityPage from './components/main/university/UniversityPage';
 import KansasStateUniversity from './components/main/university/KansasStateUniversity';
 
 // main/apply
-import ApplyMain from './components/main/Apply/ApplyMain';
+import ApplyMain from './components/main/apply/ApplyMain';
 
 // main/account
 import MainAccount from './components/main/account/MainAccount';
