@@ -264,11 +264,11 @@ class MainAccount extends Component {
                            borderColor: '#eae5e5', borderBottomColor: '#eae5e5' }}>
 
               <Button transparent onPress={() => this.segmentClicked(0)} active={this.state.activeIndex === 0}>
-                <Text style={[this.state.activeIndex === 0 ? { color: '#00ccff' } : { color: 'gray' }]}>Home</Text>
+                <Text style={[this.state.activeIndex === 0 ? { color: '#00ccff' } : { color: 'gray' }]}>Qestions</Text>
               </Button>
 
               <Button transparent onPress={() => this.segmentClicked(1)} active={this.state.activeIndex === 1}>
-                <Text style={[this.state.activeIndex === 1 ? { color: '#00ccff' } : { color: 'gray' }]}>Comments</Text>
+                <Text style={[this.state.activeIndex === 1 ? { color: '#00ccff' } : { color: 'gray' }]}>Answers</Text>
               </Button>
 
               <Button transparent onPress={() => this.segmentClicked(2)} active={this.state.activeIndex === 2}>

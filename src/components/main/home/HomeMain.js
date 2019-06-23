@@ -176,7 +176,7 @@ class homeFront extends Component {
             </View>
           </Card>
         </View>
-        
+
       )
     }
     else if (this.state.activeIndex === 1) {

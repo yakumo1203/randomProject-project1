@@ -38,6 +38,9 @@ class MenuDrawer extends Component {
             {this.navLink('UseOfTerms', 'Use of Terms')}
             {this.navLink('EditProfile', 'Edit Profile')}
           </View>
+          <View style={styles.underlinks}>
+            {this.navLink('Logout', 'Log out')}
+          </View>
          </ScrollView>
 
       </View>
@@ -103,7 +106,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     color: 'gray',
     paddingTop: 10,
-    paddingBottom: 450,
+    paddingBottom: 300,
+  },
+
+  underlinks: {
+    flex: 1,
+    backgroundColor: 'white',
+    color: 'gray',
   },
 
   link: {
