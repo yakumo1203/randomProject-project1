@@ -17,7 +17,7 @@ class KansasStateUniversity extends Component {
       dataSource: [
         {
           title: 'KSU',
-          caption: 'Main Campus',
+          caption: 'Front',
           url: require('../../../img/KansasStateUniversity/KansasStateUniversity1.jpg'),
         },
         {
@@ -26,17 +26,17 @@ class KansasStateUniversity extends Component {
           url: require('../../../img/KansasStateUniversity/KansasStateUniversity2.jpg'),
         },
         {
-          title: 'Title 3',
+          title: 'KSU',
           caption: 'Caption 3',
           url: require('../../../img/KansasStateUniversity/KansasStateUniversity3.jpg'),
         },
         {
-          title: 'Title 4',
+          title: 'KSU',
           caption: 'Caption 4',
           url: require('../../../img/KansasStateUniversity/KansasStateUniversity4.jpg'),
         },
         {
-          title: 'Title 5',
+          title: 'KSU',
           caption: 'Caption 5',
           url: require('../../../img/KansasStateUniversity/KansasStateUniversity5.jpg'),
         },
@@ -234,7 +234,11 @@ class KansasStateUniversity extends Component {
             <View style={{ height: 200, width: '100%'}}>
               <Slideshow dataSource={this.state.dataSource}
                          position={this.state.position}
-                         onPositionChanged={position => this.setState({ position })} />
+                         onPositionChanged={position => this.setState({ position })}
+                         indicatorSelectedColor='#00ccff'
+                         titleStyle={{ color: 'white', fontWeight: '700', textShadowColor: 'black', textShadowOffset: { width: 3, height: 3 }, textShadowRadius: 3}}
+                         captionStyle={{ color: 'white', textShadowColor: 'black', textShadowOffset: { width: 3, height: 3 }, textShadowRadius: 3}}
+                         />
             </View>
             <View style={{ borderBottomWidth: 1, borderBottomColor: '#dddddd'}}>
               <Text style={{ marginLeft: 20, fontSize: 30, fontWeight: '100' }}>

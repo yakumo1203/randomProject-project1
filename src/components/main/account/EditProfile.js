@@ -12,13 +12,8 @@ class EditProfile extends Component {
       password: 'Yakumo19981203',
       school: 'Seattle Central College',
       major: 'Computer Science',
-<<<<<<< HEAD
       birthday: 'December 3rd, 1998',
-    }
-=======
-      birthday: 'December 3rd',
     };
->>>>>>> 28ad821ed59a02a38a94c9430f8e2d3c34087499
   }
 
   render() {
