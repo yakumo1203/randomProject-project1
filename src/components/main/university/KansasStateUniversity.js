@@ -1,18 +1,61 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Button, Linking, Dimensions, TouchableHighlight, ScrollView, AppRegistry, View, SafeAreaView, Image, Text } from 'react-native';
 import { CardItem, Card, CardComponent, Thumbnail, Left, Body, Icon } from 'native-base';
-import TimedSlideshow from 'react-native-timed-slideshow';
+import Slideshow from 'react-native-image-slider-show';
 
 var { width, height } = Dimensions.get('window');
 
 class KansasStateUniversity extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      activeIndex: 0
-    }
+      activeIndex: 0,
+      position: 0,
+      interval: 5000,
+      dataSource: [
+        {
+          title: 'KSU',
+          caption: 'Main Campus',
+          url: require('../../../img/KansasStateUniversity/KansasStateUniversity1.jpg'),
+        },
+        {
+          title: 'KSU',
+          caption: 'Science Building',
+          url: require('../../../img/KansasStateUniversity/KansasStateUniversity2.jpg'),
+        },
+        {
+          title: 'Title 3',
+          caption: 'Caption 3',
+          url: require('../../../img/KansasStateUniversity/KansasStateUniversity3.jpg'),
+        },
+        {
+          title: 'Title 4',
+          caption: 'Caption 4',
+          url: require('../../../img/KansasStateUniversity/KansasStateUniversity4.jpg'),
+        },
+        {
+          title: 'Title 5',
+          caption: 'Caption 5',
+          url: require('../../../img/KansasStateUniversity/KansasStateUniversity5.jpg'),
+        },
+      ],
+    };
+  }
+
+  componentWillMount() {
+    this.setState({
+      interval: setInterval(() => {
+        this.setState({
+          position: this.state.position === this.state.dataSource.length ? 0 : this.state.position + 1
+        });
+      }, 4000)
+    });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval);
   }
 
   segmentClicked = (index) => {
@@ -183,36 +226,15 @@ class KansasStateUniversity extends Component {
   }
 
   render() {
-    const items = [
-			{
-				uri: require('../../../img/FORIS_Aviation.jpg'),
-				title: "Main Campus",
-			},
-			{
-				uri: require('../../../img/FORIS_Aviation2.jpg'),
-				title: "Gym",
-				duration: 5000
-			},
-      {
-				uri: require('../../../img/FORIS_ComputerScience.jpg'),
-				title: "Computer Science",
-				text: "情報など主にプログラミング関係のSNS",
-				duration: 5000
-			},
-      {
-				uri: require('../../../img/FORIS_Aerospace.jpg'),
-				title: "Aerospace Engineering",
-				text: "宇宙工学専用SNS",
-				duration: 5000
-			},
-		]
 
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
         <ScrollView>
           <View style={{ backgroundColor: 'white' }}>
             <View style={{ height: 200, width: '100%'}}>
-              <TimedSlideshow items={items} showProgressBar={false} />
+              <Slideshow dataSource={this.state.dataSource}
+                         position={this.state.position}
+                         onPositionChanged={position => this.setState({ position })} />
             </View>
             <View style={{ borderBottomWidth: 1, borderBottomColor: '#dddddd'}}>
               <Text style={{ marginLeft: 20, fontSize: 30, fontWeight: '100' }}>

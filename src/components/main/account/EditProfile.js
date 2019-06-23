@@ -12,7 +12,7 @@ class EditProfile extends Component {
       password: 'Yakumo19981203',
       school: 'Seattle Central College',
       major: 'Computer Science',
-      birthday: 'December 3rd',
+      birthday: 'December 3rd, 1998',
     }
   }
 

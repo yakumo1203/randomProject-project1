@@ -4,7 +4,9 @@ import { View, ScrollView, Text } from 'react-native';
 class BusinessManner extends Component {
   render() {
     return (
-
+      <View>
+        <Text>jaj</Text>
+      </View>
     )
   }
 }

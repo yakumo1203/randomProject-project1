@@ -36,7 +36,7 @@ class MenuDrawer extends Component {
             {this.navLink('Account', 'Home')}
             {this.navLink('Setting', 'Setting')}
             {this.navLink('UseOfTerms', 'Use of Terms')}
-            {this.navLink('EditProfile', "Edit Profile")}
+            {this.navLink('EditProfile', 'Edit Profile')}
           </View>
          </ScrollView>
 
