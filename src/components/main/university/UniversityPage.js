@@ -19,6 +19,7 @@ class UniversityPage extends Component {
               header='Kansas State University'
               imgUri={require('../../../img/FORIS_Aviation.jpg')}
               univ='KansasStateUniversity'
+              universityPage='KansasStateUniversity'
             />
 
             <UniversityRow

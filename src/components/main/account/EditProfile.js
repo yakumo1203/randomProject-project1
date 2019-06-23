@@ -13,7 +13,7 @@ class EditProfile extends Component {
       school: 'Seattle Central College',
       major: 'Computer Science',
       birthday: 'December 3rd',
-    }
+    };
   }
 
   render() {
@@ -35,9 +35,15 @@ class EditProfile extends Component {
           <Card>
             <View style={{ flex: 1 }}>
               <View style={{ flexDirection: 'column', alignItems: 'center', paddingTop: 5 }}>
-                <Image source={require('../../../img/FORIS_Aviation.jpg')}
-                       style={{ height: 75, width:75, borderRadius: 37.5 }}/>
-                <Text style={{ color: '#00ccff', paddingTop: 10, paddingBottom: 5}}>Chenge My Picture</Text>
+                <Image
+                  source={require('../../../img/FORIS_Aviation.jpg')}
+                  style={{ height: 75, width: 75, borderRadius: 37.5 }}
+                />
+                <Text
+                  style={{ color: '#00ccff', paddingTop: 10, paddingBottom: 5}}
+                >
+                  Chenge My Picture
+                </Text>
               </View>
             </View>
           </Card>

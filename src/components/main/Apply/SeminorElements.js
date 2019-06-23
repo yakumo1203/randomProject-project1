@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { Image, View, StyleSheet, Text, TouchableHighlight } from 'react-native';
 
 class SeminorElement extends Component {
+  constructor(seminorPage) {
+    super();
+    this.seminorPage = seminorPage;
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <TouchableHighlight transparent onPress={() => {this.props.navigation.navigate('BusinessManner')}}>
+        <TouchableHighlight transparent onPress={() => { this.props.navigation.navigate(this.seminorPage); }} >
           <View style={styles.divisionBetweenImageAndText}>
 
             <Image source={this.props.seminorImage}
