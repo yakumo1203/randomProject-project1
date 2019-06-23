@@ -6,13 +6,12 @@ import SeminorElement from './SeminorElements';
 const { width } = Dimensions.get('window');
 
 class ApplyMain extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-      seminorInfo: 'KansasStateUniversity'
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     seminorInfo: ''
+  //   };
+  // }
 
   state = {
     active: 0,
@@ -124,7 +123,7 @@ class ApplyMain extends Component {
                 seminorTitle="ボスキャリ対策講座"
                 seminorText="10000￥"
               >
-                {this.seminorInfo}
+                {this.state.seminorPage}
               </SeminorElement>
 
               <View style={styles.borderBetweenSeminor} />
@@ -132,6 +131,7 @@ class ApplyMain extends Component {
                 seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
                 seminorTitle="ビジネスマナー対策講座"
                 seminorText="10000yen"
+                seminorPage='KansasStateUniversity'
               />
 
               <View style={styles.borderBetweenSeminor} />

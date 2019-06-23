@@ -31,26 +31,20 @@ const isValidSignUpInfo = (email, password) => {
     return false;
 };
 
-export const signupUsernameChanged = (text) => {
-  return {
+export const signupUsernameChanged = (text) => ({
     type: SIGNUP_USERNAME_CHANGED,
     payload: text
-  };
-};
+  });
 
-export const signupEmailChanged = (text) => {
-  return {
+export const signupEmailChanged = (text) => ({
     type: SIGNUP_EMAIL_CHANGED,
     payload: text
-  };
-};
+  });
 
-export const signupPasswordChanged = (text) => {
-  return {
+export const signupPasswordChanged = (text) => ({
     type: SIGNUP_PASSWORD_CHANGED,
     payload: text
-  };
-};
+  });
 
 // export const signupUser = ({ email, password }) => {
 //   return (dispatch) => {
