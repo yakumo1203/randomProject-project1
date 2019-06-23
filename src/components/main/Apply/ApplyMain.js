@@ -6,6 +6,10 @@ import SeminorElement from './SeminorElements';
 const { width } = Dimensions.get('window');
 
 class ApplyMain extends Component {
+  constructor(props) {
+    super(props);
+    this.seminor = 'KansasStateUniversity';
+  }
 
   state = {
     active: 0,
@@ -18,7 +22,7 @@ class ApplyMain extends Component {
   }
 
   handleSlide = type => {
-    let { active,
+    const { active,
           xTabOne,
           xTabTwo,
           translateX,
@@ -57,7 +61,7 @@ class ApplyMain extends Component {
 
   render() {
 
-    let { xTabOne,
+    const { xTabOne,
           xTabTwo,
           translateX,
           active,
@@ -116,7 +120,9 @@ class ApplyMain extends Component {
                 seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
                 seminorTitle="ボスキャリ対策講座"
                 seminorText="10000￥"
-              />
+              >
+                {this.first}
+              </SeminorElement>
 
               <View style={styles.borderBetweenSeminor} />
               <SeminorElement

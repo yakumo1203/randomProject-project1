@@ -12,8 +12,13 @@ class EditProfile extends Component {
       password: 'Yakumo19981203',
       school: 'Seattle Central College',
       major: 'Computer Science',
+<<<<<<< HEAD
       birthday: 'December 3rd, 1998',
     }
+=======
+      birthday: 'December 3rd',
+    };
+>>>>>>> 28ad821ed59a02a38a94c9430f8e2d3c34087499
   }
 
   render() {
@@ -35,9 +40,15 @@ class EditProfile extends Component {
           <Card>
             <View style={{ flex: 1 }}>
               <View style={{ flexDirection: 'column', alignItems: 'center', paddingTop: 5 }}>
-                <Image source={require('../../../img/FORIS_Aviation.jpg')}
-                       style={{ height: 75, width:75, borderRadius: 37.5 }}/>
-                <Text style={{ color: '#00ccff', paddingTop: 10, paddingBottom: 5}}>Chenge My Picture</Text>
+                <Image
+                  source={require('../../../img/FORIS_Aviation.jpg')}
+                  style={{ height: 75, width: 75, borderRadius: 37.5 }}
+                />
+                <Text
+                  style={{ color: '#00ccff', paddingTop: 10, paddingBottom: 5}}
+                >
+                  Chenge My Picture
+                </Text>
               </View>
             </View>
           </Card>
