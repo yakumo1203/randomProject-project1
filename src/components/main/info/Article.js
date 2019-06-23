@@ -31,7 +31,7 @@ export default class Article extends React.Component {
           }}
         >
 
-          <Button buttonStyle={{ backgroundColor: 'black', borderColor: '#00ccff' }} title="Add to MyLists" titleStyle={{ color: '#00ccff' }}/>
+          <Button buttonStyle={{ backgroundColor: 'black', borderColor: '#00ccff' }} icon={{ name: 'add', color: '#00ccff'}} titleStyle={{ color: '#00ccff' }}/>
 
         </Card>
 
