@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, TouchableHighlight, View, Text, TouchableOpacity, StyleSheet, Animated, ScrollView, Image, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Animated, ScrollView, Dimensions } from 'react-native';
 import SeminorElement from './SeminorElements';
 
 
@@ -8,7 +8,10 @@ const { width } = Dimensions.get('window');
 class ApplyMain extends Component {
   constructor(props) {
     super(props);
-    this.seminor = 'KansasStateUniversity';
+    this.state = {
+      
+      seminorInfo: 'KansasStateUniversity'
+    };
   }
 
   state = {
@@ -121,7 +124,7 @@ class ApplyMain extends Component {
                 seminorTitle="ボスキャリ対策講座"
                 seminorText="10000￥"
               >
-                {this.first}
+                {this.seminorInfo}
               </SeminorElement>
 
               <View style={styles.borderBetweenSeminor} />

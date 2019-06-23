@@ -1,37 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Image, View, Text, TouchableHighlight } from 'react-native';
 
-class Category extends Component {
-  constructor(universityPage) {
-    super();
-    this.universityPage = universityPage;
-  }
+const Category = ({ universityPage, imageUri, name, navigation }) => {
+  const { containerStyle, imageStyle } = styles;
 
-  render() {
-    const { containerStyle, imageStyle } = styles;
-    return (
-
-        <View>
-        <TouchableHighlight
-          onPress={() => this.props.navigation.navigate(this.universityPage)}
-          underlayColor='white'
-        >
-          <View style={containerStyle}>
-            <View style={{ flex: 2 }}>
-              <Image
-                source={this.props.imageUri}
-                style={imageStyle}
-              />
-            </View>
-            <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
-              <Text> {this.props.name} </Text>
-            </View>
+  return (
+    <View>
+      <TouchableHighlight
+        onPress={() => this.props.navigation.navigate({ navigation })}
+        underlayColor='white'
+      >
+        <View style={containerStyle}>
+          <View style={{ flex: 2 }}>
+            <Image
+              source={imageUri}
+              style={imageStyle}
+            />
           </View>
-        </TouchableHighlight>
+          <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
+            <Text> {name} </Text>
+          </View>
         </View>
-    );
-  }
-}
+      </TouchableHighlight>
+      </View>
+  );
+};
 
 const styles = {
   containerStyle: {
