@@ -228,12 +228,12 @@ class homeFront extends Component {
               <Modal visible={this.state.pickerDisplayed} animationType={'slide'} transparent >
               <View style={{ marginTop: 20, backgroundColor: 'white', top: 30, bottom: 10, left: 0, right: 0, alignItems: 'center', position: 'absolute'}}>
               {pickerValues.map((value, index) => {
-                return <TouchableHighlight underlayColor='white' key={index} onPress={() => this.setPickerValue(value.value)} style={{ paddingTop: 4, paddingBottom: 4 }}>
+                return <TouchableHighlight underlayColor='white' key={index} onPress={() => this.setPickerValue(value.value)} style={{ paddingTop: 20, paddingBottom: 4 }}>
                         <Text>{value.title}</Text>
                       </TouchableHighlight>
               })}
 
-              <TouchableHighlight onPress={() => this.togglePicker()} style={{ paddingTop: 4, paddingBottom: 4 }}>
+              <TouchableHighlight onPress={() => this.togglePicker()} style={{ paddingTop: 20, paddingBottom: 4 }}>
                 <Text style={{ color: '#00ccff' }}>Cancel</Text>
               </TouchableHighlight>
 

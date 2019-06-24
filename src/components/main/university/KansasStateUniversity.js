@@ -27,17 +27,17 @@ class KansasStateUniversity extends Component {
         },
         {
           title: 'KSU',
-          caption: 'Caption 3',
+          caption: 'Business Building',
           url: require('../../../img/KansasStateUniversity/KansasStateUniversity3.jpg'),
         },
         {
           title: 'KSU',
-          caption: 'Caption 4',
+          caption: 'Engineering Building',
           url: require('../../../img/KansasStateUniversity/KansasStateUniversity4.jpg'),
         },
         {
           title: 'KSU',
-          caption: 'Caption 5',
+          caption: 'Gym Facility',
           url: require('../../../img/KansasStateUniversity/KansasStateUniversity5.jpg'),
         },
       ],
@@ -101,6 +101,7 @@ class KansasStateUniversity extends Component {
     else if (this.state.activeIndex === 2) {
       return (
         <View style={{ paddingLeft: 40, paddingTop: 20 }}>
+          <View><Text style={{ color: 'black', fontWeight: '500', paddingBottom: 10 }}>[Bachelor （学士)]</Text></View>
           <View><Text style={{ color: 'gray' }}> - Accounting(Bachelor of Science) </Text></View>
           <View><Text> </Text></View>
           <View><Text style={{ color: 'gray' }}> - Accounting and Master of Accountancy(Concurrent Bachelor and Master's) </Text></View>

@@ -48,8 +48,76 @@ class MainAccount extends Component {
   renderSection = () => {
     if (this.state.activeIndex === 1) {
       return (
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
-          {this.renderSectionOne()}
+        <View>
+          <Card>
+            <View>
+              <CardItem>
+                <Left>
+                  <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                  <Body>
+                    <Text>Yakumo Asano</Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}>
+                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                  </Body>
+                </Left>
+              </CardItem>
+
+              <CardItem>
+                <Text>
+                  sdibvsciwbovbuobvobwoubeo
+                  fwboubwoubcowbcuo
+                  iyscibwdcibwibuciouqdob
+                </Text>
+              </CardItem>
+
+              <CardItem>
+                <Left>
+                  <Text style={{ color: 'gray' }}>Yesterday</Text>
+                </Left>
+
+                <Right>
+                  <Text style={{ color: 'gray' }}>Read more...</Text>
+                </Right>
+              </CardItem>
+
+            </View>
+          </Card>
+
+          <Card>
+            <View>
+              <CardItem>
+                <Left>
+                  <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                  <Body>
+                    <Text>Yakumo Asano</Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
+                    <Text note style={{ color: 'gray', fontSize: 10 }}>
+                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                  </Body>
+                </Left>
+              </CardItem>
+
+              <CardItem>
+                <Text>
+                  sdibvsciwbovbuobvobwoubeo
+                  fwboubwoubcowbcuo
+                  iyscibwdcibwibuciouqdob
+                </Text>
+              </CardItem>
+
+              <CardItem>
+                <Left>
+                  <Text style={{ color: 'gray' }}>Yesterday</Text>
+                </Left>
+
+                <Right>
+                  <Text style={{ color: 'gray' }}>Read more...</Text>
+                </Right>
+              </CardItem>
+
+            </View>
+          </Card>
         </View>
       )
     }
