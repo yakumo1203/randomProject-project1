@@ -112,7 +112,9 @@ const HomeFlow = createStackNavigator({
 
 // ---Info
 const InfoNavigator = createStackNavigator({
-  InfoMain: { screen: InfoMain }
+  InfoMain: {
+    screen: InfoMain
+   }
 });
 
 const InfoFlow = createStackNavigator(
