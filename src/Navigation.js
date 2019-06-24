@@ -209,9 +209,9 @@ const AccountNavigator = createDrawerNavigator({
   },
   EditProfile: {
     screen: EditProfile,
-    navigationOptions: {
-      header: null
-    }
+    // navigationOptions: {
+    //   header: null
+    // }
   }
 },
 DrawerConfig,

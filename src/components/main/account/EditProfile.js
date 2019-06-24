@@ -22,7 +22,7 @@ class EditProfile extends Component {
 
         <Header>
           <Left>
-            <Text onPress={() => this.kkd()}> Close </Text>
+            <Text onPress={() => this.props.navigation.goBack()}> Close </Text>
           </Left>
           <Body><Text style={{ fontWeight: '300', fontSize: 20 }}>Edit My Profile</Text></Body>
           <Right>
