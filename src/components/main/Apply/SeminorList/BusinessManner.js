@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { View, Text, Image, SafeAreaView, ScrollView } from 'react-native';
 
 class BusinessManner extends Component {
   render() {
     return (
-      <View>
-        <Text>jaj</Text>
-      </View>
+      <SafeAreaView>
+        <ScrollView>
+          <View style={{ flex: 1, height: '30%', width: '100%' }}>
+              <Image source={require('../../../../img/FORIS_BusinessManner.jpg')} />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     )
   }
 }

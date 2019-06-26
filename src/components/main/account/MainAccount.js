@@ -275,13 +275,13 @@ class MainAccount extends Component {
                       onPress={() => this.props.navigation.toggleDrawer()}>
             </Icon>
           </Left>
-          <Body><Text style={{ fontWeight: '700', fontSize: 20 }}>FORIS</Text></Body>
+          <Body><Text style={{ fontWeight: '500', fontSize: 15 }}>Yakumo1203</Text></Body>
           <Right><Icon name="ios-mail" style={{ paddingRight: 10, fontSize: 32, color: 'gray' }}
                        onPress={() => this.props.ss()}></Icon></Right>
         </Header>
 
         <Content>
-          <View style={{ paddingTop: 10 }}>
+          <View style={{ paddingTop: 10, paddingBottom: 15 }}>
             <View style={{ flexDirection: 'row' }}>
 
               <View style={{ flex: 1, paddingLeft: 20 }}>
@@ -319,11 +319,6 @@ class MainAccount extends Component {
               </View>
             </View>
 
-          <View style={{ flexDirection: 'row' }}>
-            <View style={{ paddingBottom: 10, paddingHorizontal: 10, paddingTop: 10, paddingLeft: 10 }}>
-              <Text style={{ fontWeight: 'bold' }}>Yakumo1203</Text>
-            </View>
-          </View>
 
           </View>
 
