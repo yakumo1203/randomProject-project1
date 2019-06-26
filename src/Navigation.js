@@ -37,6 +37,7 @@ import KansasStateUniversity from './components/main/university/KansasStateUnive
 
 // main/apply
 import ApplyMain from './components/main/apply/ApplyMain';
+import BusinessManner from './components/main/apply/BusinessManner';
 
 // main/account
 import MainAccount from './components/main/account/MainAccount';
@@ -168,6 +169,12 @@ const KansasStateUniversityFlow = createStackNavigator(
 const ApplyNavigator = createStackNavigator({
     ApplyMain: {
       screen: ApplyMain,
+      navigationOptions: {
+        header: null
+      }
+    },
+    BusinessManner: {
+      screen: BusinessManner,
       navigationOptions: {
         header: null
       }

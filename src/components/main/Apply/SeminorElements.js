@@ -12,7 +12,7 @@ class SeminorElement extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <TouchableHighlight transparent onPress={() => { this.props.navigation.navigate(this.state.seminorPage); }} >
+        <TouchableHighlight transparent onPress={() => this.props.navigation.navigate('BusinessManner') >
           <View style={styles.divisionBetweenImageAndText}>
 
             <Image source={this.props.seminorImage}
