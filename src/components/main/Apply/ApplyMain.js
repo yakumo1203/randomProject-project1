@@ -122,9 +122,7 @@ class ApplyMain extends Component {
                 seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
                 seminorTitle="ボスキャリ対策講座"
                 seminorText="10000￥"
-              >
-                {this.state.seminorPage}
-              </SeminorElement>
+              />
 
               <View style={styles.borderBetweenSeminor} />
               <SeminorElement
