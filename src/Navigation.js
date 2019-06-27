@@ -40,7 +40,8 @@ import ApplyMain from './components/main/apply/ApplyMain';
 import BusinessManner from './components/main/apply/SeminorList/BusinessManner';
 
 // main/account
-import MainAccount from './components/main/account/MainAccount';
+import Account from './components/main/account/AccountMain';
+//import MainAccount from './components/main/account/MainAccount';
 import SettingScreen from './components/main/account/SettingScreen';
 import MenuDrawer from './components/main/account/MenuDrawer';
 import EditProfile from './components/main/account/EditProfile';
@@ -205,7 +206,7 @@ const DrawerConfig = {
 
 const AccountNavigator = createDrawerNavigator({
   Account: {
-    screen: MainAccount,
+    screen: Account,
     navigationOptions: {
       header: null,
     }

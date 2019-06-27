@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
+import { withNavigation } from 'react-navigation';
 import { Image, View, StyleSheet, Text, TouchableHighlight } from 'react-native';
 
 class SeminorElement extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      seminorPage: this.props.seminorPage,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     seminorPage: this.props.seminorPage,
+  //   };
+  // }
 
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <TouchableHighlight transparent onPress={() => this.props.navigation.navigate('BusinessManner')} >
+        <TouchableHighlight
+          transparent
+          onPress={() => this.props.navigation.navigate('BusinessManner')}
+        >
+
           <View style={styles.divisionBetweenImageAndText}>
 
             <Image source={this.props.seminorImage}
@@ -70,4 +75,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default SeminorElement;
+export default withNavigation(SeminorElement);
