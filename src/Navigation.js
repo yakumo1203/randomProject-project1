@@ -33,7 +33,7 @@ import InfoMain from './components/main/info/InfoMain';
 
 // main/university
 import UniversityPage from './components/main/university/UniversityPage';
-import KansasStateUniversity from './components/main/university/KansasStateUniversity';
+import KansasStateUniversity from './components/main/university/universityLists/KansasStateUniversity';
 
 // main/apply
 import ApplyMain from './components/main/apply/ApplyMain';
@@ -241,7 +241,7 @@ const AccountFlow = createStackNavigator({
 const BottomTabNavigator = createBottomTabNavigator(
   {
     Home: HomeFlow,
-    Info: InfoFlow,
+    Search: InfoFlow,
     University: UniversityFlow,
     Kansas: KansasStateUniversityFlow, //delete this sentence later
     Apply: ApplyFlow,

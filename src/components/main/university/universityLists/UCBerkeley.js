@@ -5,7 +5,7 @@ import Slideshow from 'react-native-image-slider-show';
 
 var { width, height } = Dimensions.get('window');
 
-class KansasStateUniversity extends Component {
+class UCBerkley extends Component {
 
   constructor(props) {
     super(props);
@@ -18,27 +18,27 @@ class KansasStateUniversity extends Component {
         {
           title: 'KSU',
           caption: 'Front',
-          url: require('../../../img/KansasStateUniversity/KansasStateUniversity1.jpg'),
+          url: require('../../../../img/KansasStateUniversity/KansasStateUniversity1.jpg'),
         },
         {
           title: 'KSU',
           caption: 'Science Building',
-          url: require('../../../img/KansasStateUniversity/KansasStateUniversity2.jpg'),
+          url: require('../../../../img/KansasStateUniversity/KansasStateUniversity2.jpg'),
         },
         {
           title: 'KSU',
           caption: 'Business Building',
-          url: require('../../../img/KansasStateUniversity/KansasStateUniversity3.jpg'),
+          url: require('../../../../img/KansasStateUniversity/KansasStateUniversity3.jpg'),
         },
         {
           title: 'KSU',
           caption: 'Engineering Building',
-          url: require('../../../img/KansasStateUniversity/KansasStateUniversity4.jpg'),
+          url: require('../../../../img/KansasStateUniversity/KansasStateUniversity4.jpg'),
         },
         {
           title: 'KSU',
           caption: 'Gym Facility',
-          url: require('../../../img/KansasStateUniversity/KansasStateUniversity5.jpg'),
+          url: require('../../../../img/KansasStateUniversity/KansasStateUniversity5.jpg'),
         },
       ],
     };
@@ -172,7 +172,7 @@ class KansasStateUniversity extends Component {
           <Card>
             <CardItem>
               <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                <Thumbnail source={require('../../../../img/FORIS_HomeGeneral.jpg')} />
                 <Body>
                   <Text>Yakumo Asano</Text>
                   <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
@@ -185,7 +185,7 @@ class KansasStateUniversity extends Component {
           <Card>
             <CardItem>
               <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                <Thumbnail source={require('../../../../img/FORIS_HomeGeneral.jpg')} />
                 <Body>
                   <Text>Yakumo Asano</Text>
                   <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
@@ -198,7 +198,7 @@ class KansasStateUniversity extends Component {
           <Card>
             <CardItem>
               <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                <Thumbnail source={require('../../../../img/FORIS_HomeGeneral.jpg')} />
                 <Body>
                   <Text>Yakumo Asano</Text>
                   <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
@@ -211,7 +211,7 @@ class KansasStateUniversity extends Component {
           <Card>
             <CardItem>
               <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
+                <Thumbnail source={require('../../../../img/FORIS_HomeGeneral.jpg')} />
                 <Body>
                   <Text>Yakumo Asano</Text>
                   <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
@@ -352,4 +352,4 @@ class KansasStateUniversity extends Component {
   }
 }
 
-export default KansasStateUniversity;
+export default UCBerkley;

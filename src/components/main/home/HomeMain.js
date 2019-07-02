@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Actions, Modal, AppRegistry, Image, Text, Dimensions, SafeAreaView, ScrollView, View, TouchableHighlight } from 'react-native';
-import { Right, CardItem, Left, Thumbnail, Body, Button, Icon, Card, Content, Container } from 'native-base';
+import { TouchableOpacity, Actions, Modal, AppRegistry, Image, Text, Dimensions, SafeAreaView, ScrollView, View, TouchableHighlight } from 'react-native';
+import { Fab, Header, Right, CardItem, Left, Thumbnail, Body, Button, Icon, Card, Content, Container } from 'native-base';
 
 var { width, height } = Dimensions.get('window');
 
@@ -38,6 +38,8 @@ class homeFront extends Component {
     if (this.state.activeIndex === 0) {
       return (
         <View>
+        <View>
+        <View style={{ position: 'relative' }}>
           <Card>
 
             <CardItem>
@@ -173,7 +175,8 @@ class homeFront extends Component {
               </Right>
             </CardItem>
           </Card>
-
+        </View>
+        </View>
 
         </View>
       )
@@ -323,6 +326,24 @@ class homeFront extends Component {
     }
   }
 
+  renderSectionPostButton = () => {
+    if (this.state.activeIndex === 0) {
+      return (
+        <TouchableOpacity style={{ height: 50, width: 50, position: 'absolute', bottom: 10, right: 10, backgroundColor: '#00ccff', borderRadius: 30, alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ color: 'white', fontSize: 25 }}> + </Text>
+        </TouchableOpacity>
+      )
+    }
+
+    else if (this.state.activeIndex === 1) {
+      return (
+        <TouchableOpacity style={{ height: 50, width: 50, position: 'absolute', bottom: 10, right: 10, backgroundColor: '#00ccff', borderRadius: 30, alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ color: 'white', fontSize: 20 }}> ? </Text>
+        </TouchableOpacity>
+      )
+    }
+  }
+
   render() {
 
     const pickerValues = [
@@ -384,7 +405,7 @@ class homeFront extends Component {
           </Button>
 
           <Button transparent onPress={() => this.segmentClicked(1)} active={this.state.activeIndex === 1}>
-            <Text style={[this.state.activeIndex === 1 ? { color: '#00ccff' } : { color: 'gray' }]}>Discover</Text>
+            <Text style={[this.state.activeIndex === 1 ? { color: '#00ccff' } : { color: 'gray' }]}>Questions</Text>
           </Button>
 
           <Button transparent onPress={() => this.segmentClicked(2)} active={this.state.activeIndex === 2}>
@@ -392,7 +413,7 @@ class homeFront extends Component {
           </Button>
 
           <Button style={{ backgroundColor: 'white' }}>
-            <Icon name='search' size={10} style={{ color: 'gray', backgroundColor: 'white'}} />
+            <Icon name='mail' size={10} style={{ color: 'gray', backgroundColor: 'white'}} />
           </Button>
 
         </View>
@@ -400,6 +421,9 @@ class homeFront extends Component {
         <Content>
         {this.renderSection()}
         </Content>
+
+        {this.renderSectionPostButton()}
+
 
       </Container>
 		);

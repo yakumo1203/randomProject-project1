@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, Dimensions } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 
-import { Icon, Container, Content, Header, Left, Right, Body, Button, Card, CardItem, Thumbnail } from 'native-base';
+import { TouchableHighlight, Accordion, Icon, Container, Content, Header, Left, Right, Body, Button, Card, CardItem, Thumbnail } from 'native-base';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import CardComponent from '../home/CardComponent';
 
@@ -14,7 +14,7 @@ class Account extends Component {
     super(props)
 
     this.state = {
-      activeIndex: 0
+      activeIndex: 0,
     }
   }
 
@@ -493,7 +493,7 @@ render() {
         </View>
 
         <View style={{ marginTop: -30, alignItems: 'flex-end', marginRight: 10 }}>
-          <Icon name="ios-list" style={{ paddingLeft: 10, fontSize: 25, color: 'gray' }}
+          <Icon name="ios-menu" style={{ paddingLeft: 10, fontSize: 25, color: 'gray' }}
                     onPress={() => this.props.navigation.toggleDrawer()}>
           </Icon>
         </View>
@@ -501,17 +501,23 @@ render() {
         <View style={{ marginTop: -26, alignItems: 'flex-end', paddingRight: 5, marginLeft: '73%' }}>
           <Button bordered dark style={{ width: 60, height: 24, marginRight: 10, borderColor: '#00ccff' }}
                   onPress={() => this.props.navigation.navigate('EditProfile')} >
-            <Text style={{ color: '#00ccff', fontSize: 11, paddingLeft: 14 }}>follow</Text>
+            <Text style={{ color: '#00ccff', fontSize: 11, paddingLeft: 18 }}>Edit</Text>
           </Button>
         </View>
 
         <View style={{ alignItems: 'center', marginTop: 20 }}>
           <Text style={{ fontWeigh: '100', fontSize: 25 }}>Kohei Sano</Text>
           <Text style={{ fontSize: 15, color: 'gray', marginTop: 10 }}>Kansas State University</Text>
+
+          <View style={{ alignItems: 'center' }}>
+            <Button style={{ alignItems: 'center', backgroundColor: 'white' }}>
+              <Icon style={{ alignItems: 'center', color: 'black' }} name='md-arrow-dropdown' fontSize={50} />
+            </Button>
+          </View>
+
           <Text>{'\n'}{'\n'}{'\n'}</Text>
+
         </View>
-
-
 
         <View>
           <View style={{ flexDirection: 'row', justifyContent: 'space-around', borderWidth: 1, borderTopColor: 'black',
@@ -522,7 +528,7 @@ render() {
             </Button>
 
             <Button transparent onPress={() => this.segmentClicked(1)} active={this.state.activeIndex === 1}>
-              <Text style={[this.state.activeIndex === 1 ? { color: '#00ccff' } : { color: 'gray' }]}>Discover</Text>
+              <Text style={[this.state.activeIndex === 1 ? { color: '#00ccff' } : { color: 'gray' }]}>Answers</Text>
             </Button>
 
             <Button transparent onPress={() => this.segmentClicked(2)} active={this.state.activeIndex === 2}>

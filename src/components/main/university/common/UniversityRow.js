@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { Category } from '../common';
 
-const UniversityRow = ({ header, text, imgUri, universityRowStyle, universityPage, navigation }) => {
+const UniversityRow = ({ header, text, imgUri1, imgUri2, imgUri3, imgUri4, imgUri5, universityRowStyle, universityPage, navigation }) => {
   const { containerStyle, textStyle } = styles;
 
   return (
@@ -14,31 +14,31 @@ const UniversityRow = ({ header, text, imgUri, universityRowStyle, universityPag
           showsHorizontalScrollIndicator={false}
         >
           <Category
-            imageUri={imgUri}
+            imageUri={imgUri1}
             name={header}
             navigation={navigation}
             universityPage={universityPage}
           />
           <Category
-            imageUri={imgUri}
+            imageUri={imgUri2}
             name={header}
             navigation={navigation}
             universityPage={universityPage}
           />
           <Category
-            imageUri={imgUri}
+            imageUri={imgUri3}
             name={header}
             navigation={navigation}
             universityPage={universityPage}
           />
           <Category
-            imageUri={imgUri}
+            imageUri={imgUri4}
             name={header}
             navigation={navigation}
             universityPage={universityPage}
           />
           <Category
-            imageUri={imgUri}
+            imageUri={imgUri5}
             name={header}
             navigation={navigation}
             universityPage={universityPage}

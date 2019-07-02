@@ -10,9 +10,13 @@ class UniversityPage extends Component {
         <ScrollView scrollEventThrottle={16}>
           <View>
             <UniversityRow
-              text='今ホットな大学'
+              text='あなたが見た大学'
               header='Kansas State University'
-              imgUri={require('../../../img/FORIS_Aviation.jpg')}
+              imgUri1={require('../../../img/UniversityOfWashington/FORIS_UW2.jpg')}
+              imgUri2={require('../../../img/ArizonaStateUniversity/FORIS_ASU.jpg')}
+              imgUri3={require('../../../img/Embry-RiddleAeronauticalUniversity/FORIS_ERAU.jpg')}
+              imgUri4={require('../../../img/SeattleUniversity/FORIS_SU.jpg')}
+              imgUri5={require('../../../img/UCBerkeley/FORIS_UCBerkeley.png')}
               universityPage='KansasStateUniversity'
               navigation={this.props.navigation}
             />
@@ -20,7 +24,11 @@ class UniversityPage extends Component {
             <UniversityRow
               text='あなたにおすすめ'
               header='Kansas State University'
-              imgUri={require('../../../img/FORIS_Aviation.jpg')}
+              imgUri1={require('../../../img/KansasStateUniversity/FORIS_KSU.jpg')}
+              imgUri2={require('../../../img/StateUniversityNewYork/FORIS_SUNY.jpg')}
+              imgUri3={require('../../../img/ArkansasStateUniversity/FORIS_ArkansasSU.jpg')}
+              imgUri4={require('../../../img/UCLosAngeles/FORIS_UCLA.jpg')}
+              imgUri5={require('../../../img/KansasStateUniversity/FORIS_KSU.jpg')}
               universityPage='KansasStateUniversity'
               universityRowStyle={{ paddingTop: 0, marginTop: 40 }}
               navigation={this.props.navigation}

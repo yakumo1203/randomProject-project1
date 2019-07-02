@@ -28,10 +28,10 @@ const Category = ({ universityPage, imageUri, name, navigation }) => {
 
 const styles = {
   containerStyle: {
-    height: 200,
+    height: 300,
     width: 130,
     marginLeft: 20,
-    borderWidth: 0.5,
+    borderWidth: 0,
     borderColor: '#dddddd',
     backgroundColor: 'white',
   },
