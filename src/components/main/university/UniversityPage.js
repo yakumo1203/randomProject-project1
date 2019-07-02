@@ -14,7 +14,7 @@ class UniversityPage extends Component {
               header='Kansas State University'
               imgUri={require('../../../img/FORIS_Aviation.jpg')}
               universityPage='KansasStateUniversity'
-              navigation={this.props.navigation}
+              navigation='KansasStateUniversity';
             />
 
             <UniversityRow
@@ -23,7 +23,7 @@ class UniversityPage extends Component {
               imgUri={require('../../../img/FORIS_Aviation.jpg')}
               universityPage='KansasStateUniversity'
               universityRowStyle={{ paddingTop: 0, marginTop: 40 }}
-              navigation={this.props.navigation}
+              navigation='KansasStateUniversity';
             />
 
             <UniversityRow
