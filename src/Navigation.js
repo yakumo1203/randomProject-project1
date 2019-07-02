@@ -241,9 +241,11 @@ const AccountFlow = createStackNavigator({
 const BottomTabNavigator = createBottomTabNavigator(
   {
     Home: HomeFlow,
+<<<<<<< HEAD
     Search: InfoFlow,
+=======
+>>>>>>> 8242f2ac439635d7e8c0e3ccdfef42b06d0698df
     University: UniversityFlow,
-    Kansas: KansasStateUniversityFlow, //delete this sentence later
     Apply: ApplyFlow,
     Account: AccountFlow,
   },
