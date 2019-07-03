@@ -24,6 +24,12 @@ class Account extends Component {
     })
   }
 
+  iconClicked = (index) => {
+    this.setState({
+      hideAndShowIndex: index,
+    })
+  }
+
   renderSectionOne = () => {
     return images.map((image, index) => (
         <View key={index} style={[{ width: (width) / 3 }, { height: (width) / 3 },
@@ -34,6 +40,16 @@ class Account extends Component {
           />
         </View>
       ))
+  }
+
+  rednerIcon = () => {
+    if (this.state.hideAndShowIndex === 1) {
+      return (
+        <View>
+          <Text>as</Text>
+        </View>
+      )
+    }
   }
 
   renderSection = () => {
@@ -509,11 +525,6 @@ render() {
           <Text style={{ fontWeigh: '100', fontSize: 25 }}>Kohei Sano</Text>
           <Text style={{ fontSize: 15, color: 'gray', marginTop: 10 }}>Kansas State University</Text>
 
-          <View style={{ alignItems: 'center' }}>
-            <Button style={{ alignItems: 'center', backgroundColor: 'white' }}>
-              <Icon style={{ alignItems: 'center', color: 'black' }} name='md-arrow-dropdown' fontSize={50} />
-            </Button>
-          </View>
 
           <Text>{'\n'}{'\n'}{'\n'}</Text>
 
