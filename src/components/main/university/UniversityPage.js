@@ -18,7 +18,7 @@ class UniversityPage extends Component {
               imgUri4={require('../../../img/SeattleUniversity/FORIS_SU.jpg')}
               imgUri5={require('../../../img/UCBerkeley/FORIS_UCBerkeley.png')}
               universityPage='KansasStateUniversity'
-              navigation='KansasStateUniversity';
+              navigation='KansasStateUniversity'
             />
 
             <UniversityRow
@@ -31,7 +31,7 @@ class UniversityPage extends Component {
               imgUri5={require('../../../img/KansasStateUniversity/FORIS_KSU.jpg')}
               universityPage='KansasStateUniversity'
               universityRowStyle={{ paddingTop: 0, marginTop: 40 }}
-              navigation='KansasStateUniversity';
+              navigation='KansasStateUniversity'
             />
 
             <UniversityRow
