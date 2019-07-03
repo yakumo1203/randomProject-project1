@@ -243,6 +243,7 @@ const BottomTabNavigator = createBottomTabNavigator(
     Home: HomeFlow,
     Search: InfoFlow,
     University: UniversityFlow,
+    Kansas: KansasStateUniversityFlow,
     Apply: ApplyFlow,
     Account: AccountFlow,
   },
