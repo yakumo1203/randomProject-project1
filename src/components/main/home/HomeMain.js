@@ -329,7 +329,10 @@ class homeFront extends Component {
   renderSectionPostButton = () => {
     if (this.state.activeIndex === 0) {
       return (
-        <TouchableOpacity style={{ height: 50, width: 50, position: 'absolute', bottom: 10, right: 10, backgroundColor: '#00ccff', borderRadius: 30, alignItems: 'center', justifyContent: 'center' }}>
+        <TouchableOpacity
+          style={{ height: 50, width: 50, position: 'absolute', bottom: 10, right: 10, backgroundColor: '#00ccff', borderRadius: 30, alignItems: 'center', justifyContent: 'center' }}
+          onPress={() => this.props.navigation.navigate('CreateNewPost')}
+        >
           <Text style={{ color: 'white', fontSize: 25 }}> + </Text>
         </TouchableOpacity>
       )
@@ -337,7 +340,10 @@ class homeFront extends Component {
 
     else if (this.state.activeIndex === 1) {
       return (
-        <TouchableOpacity style={{ height: 50, width: 50, position: 'absolute', bottom: 10, right: 10, backgroundColor: '#00ccff', borderRadius: 30, alignItems: 'center', justifyContent: 'center' }}>
+        <TouchableOpacity
+          style={{ height: 50, width: 50, position: 'absolute', bottom: 10, right: 10, backgroundColor: '#00ccff', borderRadius: 30, alignItems: 'center', justifyContent: 'center' }}
+          onPress={() => this.props.navigation.navigate('CreateNewQuestion')}
+        >
           <Text style={{ color: 'white', fontSize: 20 }}> ? </Text>
         </TouchableOpacity>
       )

@@ -16,3 +16,6 @@ export const SAVE_TOKEN = 'save_token';
 export const REMOVE_TOKEN = 'remove_token';
 export const LOADING = 'loading';
 export const ERROR = 'error';
+
+export const PAGE_LOADING = 'page_loading';
+export const PAGE_CLICKED = 'page_clicked';

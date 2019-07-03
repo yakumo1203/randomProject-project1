@@ -2,7 +2,6 @@ module.exports = {
   dbConfigValues: {
     host: 'localhost',
     user: 'root',
-    password: 'password',
-    database: 'foris'
+    password: 'password'
   }
 };

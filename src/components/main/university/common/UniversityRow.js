@@ -1,53 +1,55 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import { Category } from '../common';
+import Category from './Category';
 
-const UniversityRow = ({ header, text, imgUri1, imgUri2, imgUri3, imgUri4, imgUri5, universityRowStyle, universityPage, navigation1,
-                          navigation2, navigation3, navigation4, navigation5 }) => {
-  const { containerStyle, textStyle } = styles;
+class UniversityRow extends React.Component {
+  constructor(props) {
+    super(props);
+    const universityRowStyle = props.universityRowStyle
+  }
 
-  return (
-    <View style={[containerStyle, universityRowStyle]}>
-      <Text style={textStyle}>{text}</Text>
-      <View style={{ height: 200, marginTop: 20 }}>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-        >
-          <Category
-            imageUri={imgUri1}
-            name={header}
-            navigation={navigation1}
-            universityPage={universityPage}
-          />
-          <Category
-            imageUri={imgUri2}
-            name={header}
-            navigation={navigation2}
-            universityPage={universityPage}
-          />
-          <Category
-            imageUri={imgUri3}
-            name={header}
-            navigation={navigation3}
-            universityPage={universityPage}
-          />
-          <Category
-            imageUri={imgUri4}
-            name={header}
-            navigation={navigation4}
-            universityPage={universityPage}
-          />
-          <Category
-            imageUri={imgUri5}
-            name={header}
-            navigation={navigation5}
-            universityPage={universityPage}
-          />
-        </ScrollView>
+  render() {
+    const { containerStyle, textStyle } = styles;
+
+    return (
+      <View style={[containerStyle, this.universityRowStyle]}>
+        <Text style={textStyle}>あなたにオススメの大学</Text>
+        <View style={{ height: 200, marginTop: 20 }}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          >
+            <Category
+              imageUri={require('../../../../img/UniversityOfWashington/FORIS_UW2.jpg')}
+              navigation='KansasStateUniversity'
+              navigationStack={this.props.navigation}
+            />
+
+            <Category
+              imageUri={require('../../../../img/ArizonaStateUniversity/FORIS_ASU.jpg')}
+              navigation='KansasStateUniversity'
+              navigationStack={this.props.navigation}
+            />
+
+            <Category
+              imageUri={require('../../../../img/Embry-RiddleAeronauticalUniversity/FORIS_ERAU.jpg')}
+              navigation='KansasStateUniversity'
+              navigationStack={this.props.navigation}
+            />
+            <Category
+              imageUri={require('../../../../img/SeattleUniversity/FORIS_SU.jpg')}
+              navigation='KansasStateUniversity'
+              navigationStack={this.props.navigation}
+            />
+            <Category
+              imageUri={require('../../../../img/UCBerkeley/FORIS_UCBerkeley.png')}
+              navigation='KansasStateUniversity'
+              navigationStack={this.props.navigation}
+            />
+          </ScrollView>
+        </View>
       </View>
-    </View>
-  );
+  )};
 };
 
 

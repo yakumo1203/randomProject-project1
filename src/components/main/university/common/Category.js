@@ -1,13 +1,14 @@
 import React from 'react';
+import { withNavigation } from 'react-navigation';
 import { Image, View, Text, TouchableHighlight } from 'react-native';
 
-const Category = ({ universityPage, imageUri, name, navigation }) => {
+const Category = ({ imageUri, name, navigation, navigationStack }) => {
   const { containerStyle, imageStyle } = styles;
 
   return (
     <View>
       <TouchableHighlight
-        onPress={() => this.props.navigation.navigate({ navigation })}
+        onPress={() => navigationStack.navigate(navigation)}
         underlayColor='white'
       >
         <View style={containerStyle}>
@@ -43,4 +44,4 @@ const styles = {
   }
 };
 
-export { Category };
+export default withNavigation(Category);
