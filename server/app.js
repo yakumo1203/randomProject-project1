@@ -1,20 +1,12 @@
-const mysql = require('mysql');
 const express = require('express');
-const db = require('./db');
+const helmet = require('helmet');
 
 const app = express();
-const port = 3000;
-const host = '127.0.0.1';
 
-app.use('/comments', require('./controllers/comments'));
-app.use('/users', require('./controllers/users'));
+app.use(helmet());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-db.connect(db.MODE_PRODUCTION, (err) => {
-  if (err) {
-    console.log('Unable to connect to Mysql...');
-    process.exit(1);
-  }
-  app.listen(port, host, () => {
-    console.log(`Server running at http://${host}:${port}/`);
-  });
+app.listen(3306, () => {
+  console.log('Express connected...');
 });

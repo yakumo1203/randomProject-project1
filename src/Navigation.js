@@ -13,7 +13,6 @@ import { Dimensions } from 'react-native';
 
 import { Icon } from 'react-native-elements';
 
-
 // Importing all screens used in navigation
 // setupPage
 import AuthLoading from './components/setupPage/AuthLoading';
@@ -27,6 +26,8 @@ import ChangeUserName from './components/setupPage/ChangeUserName';
 
 //main/home
 import HomeMain from './components/main/home/HomeMain';
+import CreateNewPost from './components/main/home/CreateNewPost';
+import CreateNewQuestion from './components/main/home/CreateNewQuestion';
 
 // main/info
 import InfoMain from './components/main/info/InfoMain';
@@ -97,6 +98,12 @@ const HomeNavigator = createStackNavigator({
     navigationOptions: {
       header: null,
     }
+  },
+  CreateNewPost: {
+    screen: CreateNewPost
+  },
+  CreateNewQuestion: {
+    screen: CreateNewQuestion
   }
 });
 

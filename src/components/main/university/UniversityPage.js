@@ -9,21 +9,7 @@ class UniversityPage extends Component {
       <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
         <ScrollView scrollEventThrottle={16}>
           <View>
-            <UniversityRow
-              text='あなたが見た大学'
-              header='Kansas State University'
-              imgUri1={require('../../../img/UniversityOfWashington/FORIS_UW2.jpg')}
-              imgUri2={require('../../../img/ArizonaStateUniversity/FORIS_ASU.jpg')}
-              imgUri3={require('../../../img/Embry-RiddleAeronauticalUniversity/FORIS_ERAU.jpg')}
-              imgUri4={require('../../../img/SeattleUniversity/FORIS_SU.jpg')}
-              imgUri5={require('../../../img/UCBerkeley/FORIS_UCBerkeley.png')}
-              universityPage='KansasStateUniversity'
-              navigation1='KansasStateUniversity'
-              navigation2='KansasStateUniversity'
-              navigation3='KansasStateUniversity'
-              navigation4='KansasStateUniversity'
-              navigation5='KansasStateUniversity'
-            />
+            <UniversityRow />
 
             <UniversityRow
               text='あなたにおすすめ'
