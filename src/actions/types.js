@@ -17,5 +17,12 @@ export const REMOVE_TOKEN = 'remove_token';
 export const LOADING = 'loading';
 export const ERROR = 'error';
 
-export const PAGE_LOADING = 'page_loading';
-export const PAGE_CLICKED = 'page_clicked';
+// Home flow
+// --> University Flow
+export const UNIVERSITY_PAGE_REDIRECT = 'university_page_redirect';
+export const UNIVERSITY_PAGE_REDIRECT_SUCCESS = 'university_page_redirect_success';
+export const UNIVERSITY_PAGE_REDIRECT_FAIL = 'university_page_redirect_fail';
+
+export const UNIVERSITY_PAGE_FACILITIES_REDIRECT = 'university_page_facilities_redirect';
+export const UNIVERSITY_PAGE_FACILITIES_REDIRECT_SUCCESS = 'university_page_facilities_redirect_success';
+export const UNIVERSITY_PAGE_FACILITIES_REDIRECT_FAIL = 'university_page_facilities_redirect_fai;';
