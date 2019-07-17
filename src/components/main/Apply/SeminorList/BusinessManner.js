@@ -1,27 +1,60 @@
 import React, { Component } from 'react';
-import { View, Text, Image, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
-import { Card, CardItem, Content, Left, Thumbnail, Body, Icon } from 'native-base';
+import { View, Text, Image, SafeAreaView, ScrollView, TouchableOpacity, Linking, StyleSheet } from 'react-native';
+import { Card, CardItem, Content, Left, Thumbnail, Body, Icon, Container, Header, ActionSheet, Right } from 'native-base';
+
+var BUTTONS = ["Option 0", "Option 1", "Option 2", "Delete", "Cancel"];
+var DESTRUCTIVE_INDEX = 3;
+var CANCEL_INDEX = 4;
 
 class BusinessManner extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
+      <Container>
+        <Header>
+          <Left>
+            <Icon name='arrow-round-back' style={styles.iconColor} onPress={() => this.props.navigation.goBack()} />
+          </Left>
+
+          <Right>
+            <Icon name='more' style={styles.iconColor} onPress={() =>
+            ActionSheet.show(
+              {
+                options: BUTTONS,
+                cancelButtonIndex: CANCEL_INDEX,
+                destructiveButtonIndex: DESTRUCTIVE_INDEX,
+                title: "Testing ActionSheet"
+              },
+              buttonIndex => {
+                this.setState({ clicked: BUTTONS[buttonIndex] });
+              }
+            )}/>
+          </Right>
+        </Header>
+
+      <Content>
       <SafeAreaView>
         <ScrollView>
 
           <View>
             <Image source={require('../../../../img/FORIS_BusinessManner.jpg')}
-                   style={{ height: 200, width: '100%' }}/>
+                   style={styles.imageView} />
           </View>
 
-          <View style={{ borderBottomWidth: 1, borderBottomColor: '#dddddd' }} >
-            <Text style={{ fontSize: 30, color: 'gray', fontWeigh: '400' }}>ビジネスマナー講義</Text>
+          <View style={styles.titleView} >
+            <Text style={styles.titleText}>ビジネスマナー講義</Text>
           </View>
 
-          <View style={{ alignItems: 'center', marginTop: 20 }}>
-            <Text style={{ color: '#00ccff', fontWeight: '300', fontSize: 30 }}>-概要-</Text>
+          <View style={styles.subTitleView}>
+            <Text style={styles.subTitleText}>-概要-</Text>
           </View>
 
-          <View style={{ marginLeft: 20, marginRight: 20, borderBottomWidth: 1, borderBottomColor: '#dddddd' }}>
+          <View style={styles.contentView}>
             <Text>
               {'\n'}
               留学生にとって、現在、就職において最も重視されるのがビジネスマナーです。{'\n'}
@@ -35,26 +68,26 @@ class BusinessManner extends Component {
               このセミナーが皆様の就職活動に大きく役立つもので御座います。{'\n'}
             </Text>
 
-            <View style={{ marginLeft: 20, marginRight: 20, marginBottom: 20 }}>
-              <TouchableOpacity style={{ borderColor: '#00ccff', marginTop: 20, alignItems: 'center', borderWidth: 1, justifyContent: 'center', height: 30 }}
+            <View style={styles.applyButtonView}>
+              <TouchableOpacity style={styles.applyButtonTouchableOpacity}
                                 onPress={() => Linking.openURL('https://studyabroadsguide.com/2019/02/26/kansas-state-university/')}>
-                <Text style={{ fontWeight: '100', color: 'black' }}>Apply</Text>
+                <Text style={styles.applyButtonText}>Apply</Text>
               </TouchableOpacity>
             </View>
 
           </View>
 
           <Card>
-          <View style={{ marginTop: 20, alignItems: 'center' }}>
-            <Text style={{ color: '#00ccff', fontWeight: '300', fontSize: 30 }}>-講師紹介-</Text>
+          <View style={styles.subTitleView}>
+            <Text style={styles.subTitleText}>-講師紹介-</Text>
           </View>
 
           <Card>
-          <View style={{ marginTop: 20, flexDirection: 'row', marginRight: 5, marginBottom: 20 }}>
-            <Image style={{ height: 200, width: '50%' }}
+          <View style={styles.cardView}>
+            <Image style={styles.cardImageView}
                    source={require('../../../../img/FORIS_BusinessMannerInstructor.jpg')} />
 
-            <View style={{ width: '50%', borderBottomWidth: 1, borderBottomColor: '#dddddd'  }}>
+            <View style={styles.introducingView}>
               <Text>
                 最所　千依（さいしょちえ）
                 {'\n'}
@@ -70,20 +103,20 @@ class BusinessManner extends Component {
           </Card>
           </Card>
 
-          <View style={{ alignItems: 'center' }}>
-            <Text style={{ color: '#00ccff', fontWeight: '300', fontSize: 30 }}>参加予定ユーザー</Text>
+          <View style={styles.subTitleView}>
+            <Text style={styles.subTitleText}>参加予定ユーザー</Text>
           </View>
 
-          <View style={{ paddingLeft: 20, paddingTop: 20, paddingRight: 20 }}>
+          <View style={styles.customerView}>
             <Card>
               <CardItem>
                 <Left>
                   <Thumbnail source={require('../../../../img/FORIS_HomeGeneral.jpg')} />
                   <Body>
                     <Text>Yakumo Asano</Text>
-                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                    <Text note style={{ color: 'gray', fontSize: 10 }}>
-                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                    <Text note style={styles.customerText}> Seattle Central College / Computer Science </Text>
+                    <Text note style={styles.customerText}>
+                      <Icon name='ios-pin' style={styles.iconStyle} /> Seattle, WA</Text>
                   </Body>
                 </Left>
               </CardItem>
@@ -94,9 +127,9 @@ class BusinessManner extends Component {
                   <Thumbnail source={require('../../../../img/FORIS_HomeGeneral.jpg')} />
                   <Body>
                     <Text>Yakumo Asano</Text>
-                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                    <Text note style={{ color: 'gray', fontSize: 10 }}>
-                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                    <Text note style={styles.customerText}> Seattle Central College / Computer Science </Text>
+                    <Text note style={styles.customerText}>
+                      <Icon name='ios-pin' style={styles.iconStyle} /> Seattle, WA</Text>
                   </Body>
                 </Left>
               </CardItem>
@@ -107,9 +140,9 @@ class BusinessManner extends Component {
                   <Thumbnail source={require('../../../../img/FORIS_HomeGeneral.jpg')} />
                   <Body>
                     <Text>Yakumo Asano</Text>
-                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                    <Text note style={{ color: 'gray', fontSize: 10 }}>
-                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                    <Text note style={styles.customerText}> Seattle Central College / Computer Science </Text>
+                    <Text note style={styles.customerText}>
+                      <Icon name='ios-pin' style={styles.iconStyle} /> Seattle, WA</Text>
                   </Body>
                 </Left>
               </CardItem>
@@ -120,19 +153,116 @@ class BusinessManner extends Component {
                   <Thumbnail source={require('../../../../img/FORIS_HomeGeneral.jpg')} />
                   <Body>
                     <Text>Yakumo Asano</Text>
-                    <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                    <Text note style={{ color: 'gray', fontSize: 10 }}>
-                      <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
+                    <Text note style={styles.customerText}> Seattle Central College / Computer Science </Text>
+                    <Text note style={styles.customerText}>
+                      <Icon name='ios-pin' style={styles.iconStyle} /> Seattle, WA</Text>
                   </Body>
                 </Left>
               </CardItem>
             </Card>
           </View>
-
         </ScrollView>
       </SafeAreaView>
+      </Content>
+
+      </Container>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  iconColor: {
+    color: 'gray'
+  },
+
+  imageView: {
+    height: 200,
+    width: '100%',
+  },
+
+  titleView: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#dddddd'
+  },
+
+  titleText: {
+    fontSize: 30,
+    color: 'gray',
+    fontWeight: '400'
+  },
+
+  subTitleView: {
+    alignItems: 'center',
+    marginTop: 20
+  },
+
+  subTitleText: {
+    color: '#00ccff',
+    fontWeight: '300',
+    fontSize: 30
+  },
+
+  contentView: {
+    marginLeft: 20,
+    marginRight: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#dddddd'
+  },
+
+  applyButtonView: {
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20
+  },
+
+  applyButtonTouchableOpacity: {
+    borderColor: '#00ccff',
+    marginTop: 20,
+    alignItems: 'center',
+    borderWidth: 1,
+    justifyContent: 'center',
+    height: 30
+  },
+
+  applyButtonText: {
+    fontWeight: '100',
+    color: 'black'
+  },
+
+  cardView: {
+    marginTop: 20,
+    flexDirection: 'row',
+    marginRight: 5,
+    marginBottom: 20
+  },
+
+  cardImageView: {
+    height: 200,
+    width: '50%'
+  },
+
+  introducingView: {
+    width: '50%',
+    borderBottomWidth: 1,
+    borderBottomColor: '#dddddd'
+  },
+
+  customerView: {
+    paddingLeft: 20,
+    paddingTop: 20,
+    paddingRight: 20
+  },
+
+  customerText: {
+    color: 'gray',
+    fontSize: 10
+  },
+
+  iconStyle: {
+    fontSize: 10,
+    color: 'gray'
+  },
+
+})
 
 export default BusinessManner;

@@ -5,6 +5,7 @@ import {
   createAppContainer,
   DrawerNavigator,
   createDrawerNavigator,
+  createMaterialTopTabNavigator,
 } from 'react-navigation';
 
 import React from 'react';
@@ -28,12 +29,16 @@ import ChangeUserName from './components/setupPage/ChangeUserName';
 import HomeMain from './components/main/home/HomeMain';
 import CreateNewPost from './components/main/home/CreateNewPost';
 import CreateNewQuestion from './components/main/home/CreateNewQuestion';
+import MenuDrawerHome from './components/main/home/MenuDrawerHome';
 
 // main/info
 import InfoMain from './components/main/info/InfoMain';
+import SUArticles from './components/main/info/eachArticles/SeattleUniversityArticles';
 
 // main/university
 import UniversityPage from './components/main/university/UniversityPage';
+import MenuDrawerUniversity from './components/main/university/MenuDrawerUniversity';
+import MyLists from './components/main/university/MyLists';
 import KansasStateUniversity from './components/main/university/universityLists/KansasStateUniversity';
 
 // main/apply
@@ -92,7 +97,16 @@ const AuthFlow = createSwitchNavigator(
 
 // Main
 // ---Home
-const HomeNavigator = createStackNavigator({
+const WIDTH = Dimensions.get('window').width;
+
+const DrawerConfigHome = {
+  drawerWidth: WIDTH * 0.83,
+  contentComponent: ({ navigation }) => {
+    return (<MenuDrawerHome navigation={navigation} />)
+  }
+};
+
+const HomeNavigator = createDrawerNavigator({
   HomeMain: {
     screen: HomeMain,
     navigationOptions: {
@@ -100,12 +114,20 @@ const HomeNavigator = createStackNavigator({
     }
   },
   CreateNewPost: {
-    screen: CreateNewPost
+    screen: CreateNewPost,
+    navigationOptions: {
+      header: null,
+    }
   },
   CreateNewQuestion: {
-    screen: CreateNewQuestion
-  }
-});
+    screen: CreateNewQuestion,
+    navigationOptions: {
+      header: null,
+    }
+  },
+},
+DrawerConfigHome,
+);
 
 const HomeFlow = createStackNavigator({
     Home: {
@@ -122,8 +144,17 @@ const HomeFlow = createStackNavigator({
 // ---Info
 const InfoNavigator = createStackNavigator({
   InfoMain: {
-    screen: InfoMain
-   }
+    screen: InfoMain,
+    navigationOptions: {
+      header: null,
+    }
+  },
+  SUArticles: {
+    screen: SUArticles,
+    navigationOptions: {
+      header: null,
+    }
+  },
 });
 
 const InfoFlow = createStackNavigator(
@@ -139,9 +170,23 @@ const InfoFlow = createStackNavigator(
 );
 
 // ---University
-const UniversityNavigator = createStackNavigator({
-  UniversityPage: { screen: UniversityPage },
-});
+const DrawerConfigUniversity = {
+  drawerWidth: WIDTH * 0.83,
+  contentComponent: ({ navigation }) => {
+    return (<MenuDrawerUniversity navigation={navigation} />)
+  }
+};
+
+const UniversityNavigator = createDrawerNavigator({
+  UniversityPage: {
+    screen: UniversityPage,
+    navigationOptions: {
+      header: null,
+    }
+   },
+},
+DrawerConfigUniversity,
+);
 
 const UniversityFlow = createStackNavigator(
   {
@@ -150,7 +195,13 @@ const UniversityFlow = createStackNavigator(
       navigationOptions: {
         header: null
       }
-    }
+    },
+    MyLists: {
+      screen: MyLists,
+      navigationOptions: {
+        header: null,
+      }
+    },
   },
   { initialRouterName: 'University' }
 );
@@ -202,9 +253,7 @@ const ApplyFlow = createStackNavigator(
 );
 
 // ---account
-const WIDTH = Dimensions.get('window').width;
-
-const DrawerConfig = {
+const DrawerConfigAccount = {
   drawerWidth: WIDTH * 0.83,
   contentComponent: ({ navigation }) => {
     return (<MenuDrawer navigation={navigation} />)
@@ -231,7 +280,7 @@ const AccountNavigator = createDrawerNavigator({
     // }
   }
 },
-DrawerConfig,
+DrawerConfigAccount,
 );
 
 const AccountFlow = createStackNavigator({
@@ -247,13 +296,56 @@ const AccountFlow = createStackNavigator({
 
 const BottomTabNavigator = createBottomTabNavigator(
   {
-    Home: HomeFlow,
-    Search: InfoFlow,
-    University: UniversityFlow,
+    Home: {
+      screen: HomeFlow,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) =>
+        (<Icon name='home' color='#00ccff' />)
+      }
+    },
+    Search: {
+      screen: InfoFlow,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) =>
+        (<Icon name='search' color='#00ccff' />)
+      }
+    },
+    University: {
+      screen: UniversityFlow,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) =>
+        (<Icon name='school' color='#00ccff' />)
+      }
+    },
     Kansas: KansasStateUniversityFlow,
-    Apply: ApplyFlow,
-    Account: AccountFlow,
+    Apply: {
+      screen: ApplyFlow,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) =>
+        (<Icon name='bookmark' color='#00ccff' />)
+      }
+    },
+    Account: {
+      screen: AccountFlow,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) =>
+        (<Icon name='person' color='#00ccff' />)
+      }
+    },
   },
+
+  {
+    order: ['Home', 'Search', 'University', 'Kansas', 'Apply', 'Account'],
+    tabBarOptions: {
+      showIcon: true,
+      activeTintColor: '#D4AF37',
+      inactiveTintColor: 'gray',
+      style: {
+        backgroundColor: 'white',
+      }
+    },
+  },
+
   { initialRouteName: 'Home' }
 );
 

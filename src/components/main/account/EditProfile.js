@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, Image, TextInput } from 'react-native';
-import { Container, Header, Left, Icon, Body, Right, Content, Card } from 'native-base';
+import { Text, View, Image, TextInput, StyleSheet } from 'react-native';
+import { Container, Header, Left, Body, Right, Content, Card } from 'native-base';
 
 class EditProfile extends Component {
 
@@ -24,23 +24,23 @@ class EditProfile extends Component {
           <Left>
             <Text onPress={() => this.props.navigation.goBack()}> Close </Text>
           </Left>
-          <Body><Text style={{ fontWeight: '300', fontSize: 20 }}>Edit My Profile</Text></Body>
+          <Body><Text style={styles.bodyText}>Edit My Profile</Text></Body>
           <Right>
-            <Text style={{ color: '#00ccff' }}>Done</Text>
+            <Text style={styles.rightText}>Done</Text>
           </Right>
         </Header>
 
         <Content>
 
           <Card>
-            <View style={{ flex: 1 }}>
-              <View style={{ flexDirection: 'column', alignItems: 'center', paddingTop: 5 }}>
+            <View style={styles.changeImageView1}>
+              <View style={styles.changeImageView2}>
                 <Image
                   source={require('../../../img/FORIS_Aviation.jpg')}
-                  style={{ height: 75, width: 75, borderRadius: 37.5 }}
+                  style={styles.changeImage}
                 />
                 <Text
-                  style={{ color: '#00ccff', paddingTop: 10, paddingBottom: 5}}
+                  style={styles.changeImageText}
                 >
                   Chenge My Picture
                 </Text>
@@ -48,12 +48,12 @@ class EditProfile extends Component {
             </View>
           </Card>
 
-          <Card style={{ height: 40 }}>
-            <View style={{ flex: 1 }}>
-              <View style={{ flexDirection: 'row', paddingTop: 10, paddingLeft: 20 }}>
-                <Text style={{ fontWeight: '400' }}>Name: </Text>
+          <Card style={styles.cardDistance}>
+            <View style={styles.cardView}>
+              <View style={styles.cardContent}>
+                <Text style={styles.eachText}>Name: </Text>
                 <View style={{ paddingLeft: 48 }}>
-                  <TextInput style={{ borderBottomWidth: 1, borderColor: '#00ccff' }}
+                  <TextInput style={styles.eachTextInput}
                              onChangeText={(name) => this.setState({name})}
                              value={this.state.name}
                              />
@@ -62,12 +62,12 @@ class EditProfile extends Component {
             </View>
           </Card>
 
-          <Card style={{ height: 40 }}>
-            <View style={{ flex: 1 }}>
-              <View style={{ flexDirection: 'row', paddingTop: 10, paddingLeft: 20 }}>
-                <Text style={{ fontWeight: '400' }}>Username: </Text>
+          <Card style={styles.cardDistance}>
+            <View style={styles.cardView}>
+              <View style={styles.cardContent}>
+                <Text style={styles.eachText}>Username: </Text>
                 <View style={{ paddingLeft: 20 }}>
-                  <TextInput style={{ borderBottomWidth: 1, borderColor: '#00ccff' }}
+                  <TextInput style={styles.eachTextInput}
                              onChangeText={(username) => this.setState({username})}
                              value={this.state.username}
                              />
@@ -76,12 +76,12 @@ class EditProfile extends Component {
             </View>
           </Card>
 
-          <Card style={{ height: 40 }}>
-            <View style={{ flex: 1 }}>
-              <View style={{ flexDirection: 'row', paddingTop: 10, paddingLeft: 20 }}>
-                <Text style={{ fontWeight: '400' }}>Password: </Text>
+          <Card style={styles.cardDistance}>
+            <View style={styles.cardView}>
+              <View style={styles.cardContent}>
+                <Text style={styles.eachText}>Password: </Text>
                 <View style={{ paddingLeft: 21 }}>
-                  <TextInput style={{ borderBottomWidth: 1, borderColor: '#00ccff' }}
+                  <TextInput style={styles.eachTextInput}
                              onChangeText={(password) => this.setState({password})}
                              value={this.state.password}
                              />
@@ -90,12 +90,12 @@ class EditProfile extends Component {
             </View>
           </Card>
 
-          <Card style={{ height: 40 }}>
-            <View style={{ flex: 1 }}>
-              <View style={{ flexDirection: 'row', paddingTop: 10, paddingLeft: 20 }}>
-                <Text style={{ fontWeight: '400' }}>School: </Text>
+          <Card style={styles.cardDistance}>
+            <View style={styles.cardView}>
+              <View style={styles.cardContent}>
+                <Text style={styles.eachText}>School: </Text>
                 <View style={{ paddingLeft: 37 }}>
-                  <TextInput style={{ borderBottomWidth: 1, borderColor: '#00ccff' }}
+                  <TextInput style={styles.eachTextInput}
                              onChangeText={(school) => this.setState({school})}
                              value={this.state.school}
                              />
@@ -104,12 +104,12 @@ class EditProfile extends Component {
             </View>
           </Card>
 
-          <Card style={{ height: 40 }}>
-            <View style={{ flex: 1 }}>
-              <View style={{ flexDirection: 'row', paddingTop: 10, paddingLeft: 20 }}>
-                <Text style={{ fontWeight: '400' }}>Major: </Text>
+          <Card style={styles.cardDistance}>
+            <View style={styles.cardView}>
+              <View style={styles.cardContent}>
+                <Text style={styles.eachText}>Major: </Text>
                 <View style={{ paddingLeft: 45 }}>
-                  <TextInput style={{ borderBottomWidth: 1, borderColor: '#00ccff' }}
+                  <TextInput style={styles.eachTextInput}
                              onChangeText={(major) => this.setState({major})}
                              value={this.state.major}
                              />
@@ -118,13 +118,13 @@ class EditProfile extends Component {
             </View>
           </Card>
 
-          <Card style={{ height: 40 }}>
-            <View style={{ flex: 1 }}>
-              <View style={{ flexDirection: 'row', paddingTop: 10, paddingLeft: 20 }}>
-                <Text style={{ fontWeight: '400' }}>Birthday: </Text>
-                <View style={{ paddingLeft: 26 }}>
-                  <TextInput style={{ borderBottomWidth: 1, borderColor: '#00ccff' }}
-                             onChangeText={(birthday) => this.setState({birthday})}
+          <Card style={styles.cardDistance}>
+            <View style={styles.cardView}>
+              <View style={styles.cardContent}>
+                <Text style={styles.eachText}>Birthday: </Text>
+                <View style={{ paddingLeft: 27 }}>
+                  <TextInput style={styles.eachTextInput}
+                             onChangeText={(birthday) => this.setState({ birthday })}
                              value={this.state.birthday}
                              />
                 </View>
@@ -137,5 +137,61 @@ class EditProfile extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  bodyText: {
+    fontWeight: '300',
+    fontSize: 20
+  },
+
+  rightText: {
+    color: '#00ccff'
+  },
+
+  changeImageView1: {
+    flex: 1,
+  },
+
+  changeImageView2: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingTop: 5
+  },
+
+  changeImage: {
+    height: 75,
+    width: 75,
+    borderRadius: 37.5
+  },
+
+  changeImageText: {
+    color: '#00ccff',
+    paddingTop: 10,
+    paddingBottom: 5
+  },
+
+  cardDistance: {
+    height: 40,
+  },
+
+  cardContent: {
+    flexDirection: 'row',
+    paddingTop: 10,
+    paddingLeft: 20
+  },
+
+  cardView: {
+    flex: 1,
+  },
+
+  eachText: {
+    fontWeight: '400',
+  },
+
+  eachTextInput: {
+    borderBottomWidth: 1,
+    borderColor: '#00ccff'
+  },
+})
 
 export default EditProfile;

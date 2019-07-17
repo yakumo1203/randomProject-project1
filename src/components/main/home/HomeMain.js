@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Actions, Modal, AppRegistry, Image, Text, Dimensions, SafeAreaView, ScrollView, View, TouchableHighlight } from 'react-native';
 import { Fab, Header, Right, CardItem, Left, Thumbnail, Body, Button, Icon, Card, Content, Container } from 'native-base';
+import { DrawerNavigator } from 'react-navigation';
+import HomePost from '../home/HomePost.js';
 
 var { width, height } = Dimensions.get('window');
 
@@ -40,141 +42,10 @@ class homeFront extends Component {
         <View>
         <View>
         <View style={{ position: 'relative' }}>
-          <Card>
+          <HomePost imageSource="1" likes="101" />
+          <HomePost imageSource="2" likes="201" />
+          <HomePost imageSource="3" likes="301" />
 
-            <CardItem>
-              <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
-                <Body>
-                  <Text>Yakumo Asano</Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}>
-                    <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
-                </Body>
-              </Left>
-            </CardItem>
-
-            <CardItem>
-              <Image source={require('../../../img/FORIS_General2.jpg')}
-                     style={{ height: 250, width: '100%' }}/>
-            </CardItem>
-
-            <CardItem>
-              <Text style={{ color: 'gray' }}>100likes</Text>
-            </CardItem>
-
-            <CardItem>
-              <Text style={{ color: 'gray' }}>
-               wsddiwcygedou
-               sdicwouhd
-               isybwcdiuh
-               wecowuhih
-               wdgiuegfiouhu
-               weougfoi
-               e[fgeriguh]
-              </Text>
-            </CardItem>
-
-            <CardItem>
-              <Left>
-                <Icon name='ios-heart' />
-                <Text>    </Text>
-                <Icon name='ios-send' />
-              </Left>
-
-              <Right>
-                <Text style={{ color: 'gray' }}>Read more...</Text>
-              </Right>
-            </CardItem>
-          </Card>
-
-          <Card>
-
-            <CardItem>
-              <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
-                <Body>
-                  <Text>Yakumo Asano</Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}>
-                    <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
-                </Body>
-              </Left>
-            </CardItem>
-
-            <CardItem>
-              <Image source={require('../../../img/FORIS_General2.jpg')}
-                     style={{ height: 250, width: '100%' }}/>
-            </CardItem>
-
-            <CardItem>
-              <Text style={{ color: 'gray' }}>
-               wsddiwcygedou
-               sdicwouhd
-               isybwcdiuh
-               wecowuhih
-               wdgiuegfiouhu
-               weougfoi
-               e[fgeriguh]
-              </Text>
-            </CardItem>
-
-            <CardItem>
-              <Left>
-                <Icon name='ios-heart' />
-                <Text>    </Text>
-                <Icon name='ios-send' />
-              </Left>
-
-              <Right>
-                <Text style={{ color: 'gray' }}>Read more...</Text>
-              </Right>
-            </CardItem>
-          </Card>
-
-          <Card>
-
-            <CardItem>
-              <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
-                <Body>
-                  <Text>Yakumo Asano</Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}>
-                    <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
-                </Body>
-              </Left>
-            </CardItem>
-
-            <CardItem>
-              <Image source={require('../../../img/FORIS_General2.jpg')}
-                     style={{ height: 250, width: '100%' }}/>
-            </CardItem>
-
-            <CardItem>
-              <Text style={{ color: 'gray' }}>
-               wsddiwcygedou
-               sdicwouhd
-               isybwcdiuh
-               wecowuhih
-               wdgiuegfiouhu
-               weougfoi
-               e[fgeriguh]
-              </Text>
-            </CardItem>
-
-            <CardItem>
-              <Left>
-                <Icon name='ios-heart' />
-                <Text>    </Text>
-                <Icon name='ios-send' />
-              </Left>
-
-              <Right>
-                <Text style={{ color: 'gray' }}>Read more...</Text>
-              </Right>
-            </CardItem>
-          </Card>
         </View>
         </View>
 
@@ -381,28 +252,9 @@ class homeFront extends Component {
                        borderColor: '#eae5e5', borderBottomColor: '#eae5e5', marginTop: 50 }}>
 
           <View>
-            <Button style={{ backgroundColor: 'white' }} onPress={() => this.togglePicker()} >
-              <Icon name='menu' size={10} style={{ color: 'gray', backgroundColor: 'white'}} />
+            <Button style={{ backgroundColor: 'white' }} onPress={() => this.props.navigation.toggleDrawer()} >
+              <Icon name='menu' size={10} style={{ color: 'gray', backgroundColor: 'white' }} />
             </Button>
-
-            <View style={{ flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center' }}>
-              <ScrollView>
-              <Modal visible={this.state.pickerDisplayed} animationType={'slide'} transparent >
-              <View style={{ marginTop: 20, backgroundColor: 'white', top: 30, bottom: 10, left: 0, right: 0, alignItems: 'center', position: 'absolute'}}>
-              {pickerValues.map((value, index) => {
-                return <TouchableHighlight underlayColor='white' key={index} onPress={() => this.setPickerValue(value.value)} style={{ paddingTop: 20, paddingBottom: 4 }}>
-                        <Text>{value.title}</Text>
-                      </TouchableHighlight>
-              })}
-
-              <TouchableHighlight onPress={() => this.togglePicker()} style={{ paddingTop: 20, paddingBottom: 4 }}>
-                <Text style={{ color: '#00ccff' }}>Cancel</Text>
-              </TouchableHighlight>
-
-              </View>
-              </Modal>
-              </ScrollView>
-            </View>
           </View>
 
 
