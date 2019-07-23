@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, FlatList, View, Text, Dimensions, ScrollView, Image, ImageBackground } from 'react-native';
-import { Button, Card, CardItem, Left, Body, Right, Thumbnail, Icon, Container, Content } from 'native-base';
-import { Header, SearchBar } from 'react-native-elements';
+import { TouchableHighlight, FlatList, View, Text, Dimensions, ScrollView, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { Button, Card, CardItem, Left, Body, Right, Thumbnail, Icon, Container, Content, Header, Item, Input } from 'native-base';
+import { SearchBar } from 'react-native-elements';
 import { getNews } from './News.js';
 import Article from './Article.js';
 import SearchBarElement from './SearchBarElement';
@@ -44,6 +44,19 @@ class InfoMain extends Component {
     if (this.state.activeIndex === 0) {
       return (
         <View>
+          <Card>
+            <TouchableOpacity onPress={() => this.suy()}>
+            <View style={{ backgroundColor: 'white', height: 200 }}>
+              <ImageBackground source={require('../../../img/Embry-RiddleAeronauticalUniversity/FORIS_ERAUNews.jpg')}
+                               style={{ height: '100%', width: '100%' }}>
+              <Text style={{ color: 'white', fontWeight: '700', paddingLeft: 15, paddingTop: 15, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}> ERAU </Text>
+              <Text style={{ marginTop: 120, fontSize: 22, color: 'white', fontWeight: '700', paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>ERAUがフライトコンテストで優勝</Text>
+              <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
+              </ImageBackground>
+            </View>
+            </TouchableOpacity>
+          </Card>
+          
           <Card>
 
             <CardItem>
@@ -186,6 +199,7 @@ class InfoMain extends Component {
       return (
         <View>
           <Card>
+            <TouchableOpacity onPress={() => this.suy()}>
             <View style={{ backgroundColor: 'white', height: 200 }}>
               <ImageBackground source={require('../../../img/Embry-RiddleAeronauticalUniversity/FORIS_ERAUNews.jpg')}
                                style={{ height: '100%', width: '100%' }}>
@@ -194,9 +208,11 @@ class InfoMain extends Component {
               <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
               </ImageBackground>
             </View>
+            </TouchableOpacity>
           </Card>
 
           <Card>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('SUArticles')}>
             <View style={{ backgroundColor: 'white', height: 200 }}>
               <ImageBackground source={require('../../../img/SeattleUniversity/FORIS_SUNews.jpg')}
                                style={{ height: '100%', width: '100%' }}>
@@ -205,9 +221,11 @@ class InfoMain extends Component {
               <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
               </ImageBackground>
             </View>
+            </TouchableOpacity>
           </Card>
 
           <Card>
+            <TouchableOpacity onPress={() => this.suy()}>
             <View style={{ backgroundColor: 'white', height: 200 }}>
               <ImageBackground source={require('../../../img/UniversityOfWashington/FORIS_UWNews.jpg')}
                                style={{ height: '100%', width: '100%' }}>
@@ -216,6 +234,7 @@ class InfoMain extends Component {
               <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
               </ImageBackground>
             </View>
+            </TouchableOpacity>
           </Card>
         </View>
 
@@ -303,6 +322,17 @@ class InfoMain extends Component {
     return (
 
       <Container>
+        <Header searchBar rounded>
+          <Item>
+            <Icon name="ios-search" />
+            <Input placeholder="Search" />
+            <Icon name="ios-people" />
+          </Item>
+          <Button transparent>
+            <Text style={{ color: '#00ccff' }}>Search</Text>
+          </Button>
+        </Header>
+
         <View style={{ flexDirection: 'row', justifyContent: 'space-around', borderTopColor: 'gray',
                        backgroundColor: 'white', marginTop: 17 }}>
 

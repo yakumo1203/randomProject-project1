@@ -85,9 +85,7 @@ class ApplyMain extends Component {
                                     borderRadius: 4,
                                     transform: [{ translateX }] }} />
 
-              <TouchableOpacity style={{ flex: 1, alignItems: 'center', justifyContent: 'center', borderWidth: 1,
-                                        borderColor: '#00ccff', borderRightWidth: 0, borderTopRightWidth: 0,
-                                        borderBottomRightRadius: 0, borderRadius: 4 }}
+              <TouchableOpacity style={styles.buttonTouchableOpacity1}
                                 onLayout={event => this.setState({ xTabOne: event.nativeEvent.layout.x })}
                                 onPress={ () => this.setState({ active: 0 }, () => this.handleSlide(xTabOne))}>
                 <Text>企業</Text>
@@ -115,51 +113,15 @@ class ApplyMain extends Component {
 
             <Animated.View style={{ justifyContent: 'center', transform: [{ translateX: translateXTabTwo },
                                   { translateY: -translateY }] }}>
-
-              <View style={{ borderBottomWidth: 1, borderBottomColor: 'gray' }} />
-              <SeminorElement
-                seminorNext='KansasStateUniversity'
-                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
-                seminorTitle="ボスキャリ対策講座"
-                seminorText="10000￥"
-              />
-
               <View style={styles.borderBetweenSeminor} />
               <SeminorElement
-                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
+                seminorImage={require('../../../img/FORIS_BusinessManner.jpg')}
                 seminorTitle="ビジネスマナー対策講座"
-                seminorText="10000yen"
+                seminorText="￥10000"
                 seminorPage='KansasStateUniversity'
               />
 
               <View style={styles.borderBetweenSeminor} />
-              <SeminorElement
-                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
-                seminorTitle="ビジネスマナー対策講座"
-                seminorText="10000yen"
-              />
-
-              <View style={styles.borderBetweenSeminor} />
-              <SeminorElement
-                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
-                seminorTitle="ビジネスマナー対策講座"
-                seminorText="10000yen"
-              />
-
-              <View style={styles.borderBetweenSeminor} />
-              <SeminorElement
-                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
-                seminorTitle="ビジネスマナー対策講座"
-                seminorText="10000yen"
-              />
-
-              <View style={styles.borderBetweenSeminor} />
-              <SeminorElement
-                seminorImage={require('../../../img/FORIS_HomeGeneral.jpg')}
-                seminorTitle="ビジネスマナー対策講座"
-                seminorText="10000yen"
-              />
-
 
             </Animated.View>
           </ScrollView>
@@ -192,6 +154,28 @@ const styles = StyleSheet.create({
   borderBetweenSeminor: {
     borderBottomWidth: 1,
     borderBottomColor: 'gray',
+  },
+
+  buttonTouchableOpacity1: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#00ccff',
+    borderRightWidth: 0,
+    borderBottomRightRadius: 0,
+    borderRadius: 4
+  },
+
+  buttonTouchableOpacity2: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#00ccff',
+    borderLeftWidth: 0,
+    borderBottomLeftRadius: 0,
+    borderRadius: 4
   },
 
 });
