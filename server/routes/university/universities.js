@@ -1,7 +1,6 @@
 const express = require('express');
 const con = require('../../db');
-
-const router = express.Router();
+const app = express();
 
 const recommendationEngine = (uid, callback) => {
   // fill in with actual recommendation engine

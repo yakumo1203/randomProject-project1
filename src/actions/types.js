@@ -26,3 +26,7 @@ export const UNIVERSITY_PAGE_REDIRECT_FAIL = 'university_page_redirect_fail';
 export const UNIVERSITY_PAGE_FACILITIES_REDIRECT = 'university_page_facilities_redirect';
 export const UNIVERSITY_PAGE_FACILITIES_REDIRECT_SUCCESS = 'university_page_facilities_redirect_success';
 export const UNIVERSITY_PAGE_FACILITIES_REDIRECT_FAIL = 'university_page_facilities_redirect_fai;';
+
+export const UNIVERSITY_PAGE_MAJORS_REDIRECT = 'university_page_majors_redirect';
+export const UNIVERSITY_PAGE_MAJORS_REDIRECT_SUCCESS = 'university_page_majors_redirect_success';
+export const UNIVERSITY_PAGE_MAJORS_REDIRECT_FAIL = 'university_page_majors_redirect_fail';
