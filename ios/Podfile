@@ -2,12 +2,7 @@
 platform :ios, '12.2'
 
 target 'project1' do
-
-  # Pods for project1
-  pod 'Firebase'
-  pod 'FirebaseAuth', :modular_headers => true
-  pod 'Firebase/Core', :modular_headers => true
-  pod 'Firebase/Analytics', '~> 4.2.0'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
 
   target 'project1-tvOSTests' do
     inherit! :search_paths

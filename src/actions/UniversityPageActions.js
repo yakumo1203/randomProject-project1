@@ -2,7 +2,6 @@ import {
   UNIVERSITY_PAGE_REDIRECT,
   UNIVERSITY_PAGE_REDIRECT_SUCCESS,
   UNIVERSITY_PAGE_REDIRECT_FAIL,
-  UNIVERSITY_PAGE_CLICKED
 } from './types';
 
 const fetch = require('node-fetch');
@@ -16,8 +15,8 @@ export const pageClicked = ({ university_id, uid }) => (dispatch) => {
         return;
       }
       res.json().then((data) => {
-        universityPageRedirectSuccess(dispatch, university_id, uid, data));
-      }
+        universityPageRedirectSuccess(dispatch, university_id, uid, data);
+      });
     })
     .catch((err) => universityPageRedirectFail(dispatch, err));
 };

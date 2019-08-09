@@ -1,7 +1,6 @@
 const express = require('express');
 const con = require('../../db');
-
-const router = express.Router();
+const app = express();
 
 const recommendationEngine = (uid, callback) => {
   // fill in with actual recommendation engine
@@ -22,7 +21,7 @@ const jumpBackInQuery = (uid, callback) => {
   });
 };
 
-router.get('/for_you/:uid', (req, res, next) => {
+app.get('/for_you/:uid', (req, res, next) => {
   const uid = req.params.uid;
   recommendationEngine(uid, (result) => {
     res.render('for_you', {
@@ -32,7 +31,7 @@ router.get('/for_you/:uid', (req, res, next) => {
   });
 });
 
-router.get('/jump_back_in/:uid', (req, res, next) => {
+app.get('/jump_back_in/:uid', (req, res, next) => {
   const uid = req.params.uid;
   jumpBackInQuery(uid, (result) => {
     res.render('jump_back_in', {
@@ -42,4 +41,9 @@ router.get('/jump_back_in/:uid', (req, res, next) => {
   });
 });
 
-module.exports = router;
+app.get('/jump_back_in/:uid', (req, res, next) => {
+  const uid = req.params.uid;
+  const queryText = `SELECT `
+})
+
+module.exports = app;
