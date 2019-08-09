@@ -51,6 +51,9 @@ import Account from './components/main/account/AccountMain';
 import SettingScreen from './components/main/account/SettingScreen';
 import MenuDrawer from './components/main/account/MenuDrawer';
 import EditProfile from './components/main/account/EditProfile';
+import Follows from './components/main/account/Follows';
+import Followers from './components/main/account/Followers';
+import NotificationSetting from './components/main/account/NotificationSetting';
 
 // AuthFlow
 const AuthLoadingNavigator = createStackNavigator(
@@ -278,7 +281,22 @@ const AccountNavigator = createDrawerNavigator({
     // navigationOptions: {
     //   header: null
     // }
-  }
+  },
+  Follows: {
+    screen: Follows,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  Followers: {
+    screen: Followers,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  NotificationSetting: {
+    screen: NotificationSetting,
+  },
 },
 DrawerConfigAccount,
 );

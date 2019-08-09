@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, ImageBackground, Text } from 'react-native';
+import { View, TouchableOpacity, ImageBackground, Text, StyleSheet } from 'react-native';
 import { Card, Container, Content, CardItem, Header, Right, Left, Icon, ActionSheet, Button } from 'native-base';
 
 var BUTTONS = ["Option 0", "Option 1", "Option 2", "Delete", "Cancel"];
@@ -18,10 +18,10 @@ class SUArticles extends Component {
       <Container>
         <Header>
           <Left>
-            <Icon name='arrow-round-back' style={{ color: 'gray' }} onPress={() => this.props.navigation.goBack()} />
+            <Icon name='arrow-round-back' style={styles.iconColor} onPress={() => this.props.navigation.goBack()} />
           </Left>
           <Right>
-            <Icon name='more' style={{ color: 'gray' }} onPress={() =>
+            <Icon name='more' style={styles.iconColor} onPress={() =>
             ActionSheet.show(
               {
                 options: BUTTONS,
@@ -38,19 +38,19 @@ class SUArticles extends Component {
 
         <Content>
           <Card>
-            <View style={{ backgroundColor: 'white', height: 200 }}>
+            <View style={styles.backgroundView}>
               <ImageBackground source={require('../../../../img/SeattleUniversity/FORIS_SUNews.jpg')}
-                               style={{ height: '100%', width: '100%' }}>
-              <Text style={{ color: 'white', fontWeight: '700', paddingLeft: 15, paddingTop: 15, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}> SU </Text>
-              <Text style={{ marginTop: 120, fontSize: 22, color: 'white', fontWeight: '700', paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>Seattle Universityでの生活</Text>
-              <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
+                               style={styles.backgroundImageStyle}>
+              <Text style={styles.universityInitial}> SU </Text>
+              <Text style={styles.title}>Seattle Universityでの生活</Text>
+              <Text style={styles.viewers}>1,149Views</Text>
               </ImageBackground>
             </View>
           </Card>
 
           <Card>
-            <Text style={{ color: 'gray', paddingLeft: 20 }}>Published by Yakumo Asano</Text>
-            <Text style={{ color: 'gray', paddingLeft: 20 }}>2019.7.2  15:17</Text>
+            <Text style={styles.introduction}>Published by Yakumo Asano</Text>
+            <Text style={styles.introduction}>2019.7.2  15:17</Text>
           </Card>
 
           <CardItem>
@@ -79,8 +79,8 @@ class SUArticles extends Component {
           </CardItem>
 
           <CardItem>
-            <TouchableOpacity style={{ height: 30, width: '100%', alignItems: 'center', justifyContent: 'center', backgroundColor: '#dddddd' }}>
-              <Text style={{ color: 'black' }}>次のページへ</Text>
+            <TouchableOpacity style={styles.nextButtonView}>
+              <Text>次のページへ</Text>
             </TouchableOpacity>
           </CardItem>
         </Content>
@@ -90,3 +90,61 @@ class SUArticles extends Component {
 }
 
 export default SUArticles;
+
+const styles = StyleSheet.create({
+  iconColor: {
+    color: 'gray',
+  },
+
+  backgroundView: {
+    backgroundColor: 'white',
+    height: 200,
+  },
+
+  backgroundImageStyle: {
+    height: '100%',
+    width: '100%'
+  },
+
+  universityInitial: {
+    color: 'white',
+    fontWeight: '700',
+    paddingLeft: 15,
+    paddingTop: 15,
+    textShadowColor: 'black',
+    textShadowOffset: { height: 3, width: 3 },
+  },
+
+  title: {
+    marginTop: 120,
+    fontSize: 22,
+    color: 'white',
+    fontWeight: '700',
+    paddingLeft: 20,
+    textShadowColor: 'black',
+    textShadowOffset: { height: 3, width: 3 }
+  },
+
+  viewers: {
+    color: 'white',
+    fontWeight: '700',
+    fontSize: 10,
+    paddingLeft: 20,
+    textShadowColor: 'black',
+    textShadowOffset: { height: 3, width: 3 }
+  },
+
+  introduction: {
+    color: 'gray',
+    paddingLeft: 20
+  },
+
+  nextButtonView: {
+    height: 30,
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#dddddd'
+  },
+
+})

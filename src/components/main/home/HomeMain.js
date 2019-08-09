@@ -13,21 +13,7 @@ class homeFront extends Component {
 
     this.state = {
       activeIndex: 0,
-      pickerSelection: 'Default value!',
-      pickerDisplayed: false,
     }
-  }
-
-  setPickerValue(newValue) {
-    this.setState({
-      pickerSelection: newValue,
-    });
-  }
-
-  togglePicker() {
-    this.setState({
-      pickerDisplayed: !this.state.pickerDisplayed
-    })
   }
 
   segmentClicked = (index) => {
@@ -42,9 +28,33 @@ class homeFront extends Component {
         <View>
         <View>
         <View style={{ position: 'relative' }}>
-          <HomePost imageSource="1" likes="101" />
-          <HomePost imageSource="2" likes="201" />
-          <HomePost imageSource="3" likes="301" />
+          <HomePost
+            name="Yakumo Asano"
+            university="Seattle Central College"
+            major="Conputer Science"
+            location="Seattle, WA"
+            imageSource="1"
+            likes="101"
+            content="souhousdou"
+          />
+          <HomePost
+            name="Yakumo Asano"
+            university="Seattle Central College"
+            major="Conputer Science"
+            location="Seattle, WA"
+            imageSource="2"
+            likes="201"
+            content="souhousdou"
+          />
+          <HomePost
+            name="Yakumo Asano"
+            university="Seattle Central College"
+            major="Conputer Science"
+            location="Seattle, WA"
+            imageSource="3"
+            likes="301"
+            content="souhousdou"
+          />
 
         </View>
         </View>
@@ -222,39 +232,13 @@ class homeFront extends Component {
   }
 
   render() {
-
-    const pickerValues = [
-      {
-        title: 'Computer Science',
-        value: 'computersience',
-      },
-      {
-        title: 'Aviation',
-        value: 'dsb',
-      },
-      {
-        title: 'Physics',
-        value: 'sdb',
-      },
-      {
-        title: 'Physics',
-        value: 'sdb',
-      },
-      {
-        title: 'Physics',
-        value: 'sdb',
-      },
-    ]
-
 		return (
       <Container>
         <View style={{ flexDirection: 'row', justifyContent: 'space-around', borderWidth: 1, borderTopColor: '#eae5e5',
                        borderColor: '#eae5e5', borderBottomColor: '#eae5e5', marginTop: 50 }}>
 
           <View>
-            <Button style={{ backgroundColor: 'white' }} onPress={() => this.props.navigation.toggleDrawer()} >
-              <Icon name='menu' size={10} style={{ color: 'gray', backgroundColor: 'white' }} />
-            </Button>
+            <Image source={require('../../../img/FORISLOGO1.jpg')} style={{ height: 45, width: 45 }}/>
           </View>
 
 

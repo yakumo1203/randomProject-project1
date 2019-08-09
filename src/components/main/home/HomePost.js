@@ -18,10 +18,10 @@ class HomePost extends Component {
           <Left>
             <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
             <Body>
-              <Text>Yakumo Asano</Text>
-              <Text note style={styles.customerText}> Seattle Central College / Computer Science </Text>
+              <Text>{this.props.name}</Text>
+              <Text note style={styles.customerText}> {this.props.university} / {this.props.major} </Text>
               <Text note style={styles.customerText}>
-                <Icon name='ios-pin' style={styles.customerIcon} /> Seattle, WA</Text>
+                <Icon name='ios-pin' style={styles.customerIcon} /> {this.props.location}</Text>
             </Body>
           </Left>
         </CardItem>
@@ -32,18 +32,12 @@ class HomePost extends Component {
         </CardItem>
 
         <CardItem>
-          <Text style={styles.likesText}>100likes</Text>
+          <Text style={styles.likesText}>{this.props.likes} likes</Text>
         </CardItem>
 
         <CardItem>
           <Text style={styles.postText}>
-           wsddiwcygedou
-           sdicwouhd
-           isybwcdiuh
-           wecowuhih
-           wdgiuegfiouhu
-           weougfoi
-           e[fgeriguh]
+           {this.props.content}
           </Text>
         </CardItem>
 

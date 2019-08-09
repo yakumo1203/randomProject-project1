@@ -437,8 +437,7 @@ class Account extends Component {
 
    else if (this.state.activeIndex === 3) {
      return (
-       <Container>
-        <Content>
+       <Content>
           <Card>
             <CardItem>
               <Left>
@@ -475,7 +474,6 @@ class Account extends Component {
             </CardItem>
           </Card>
         </Content>
-       </Container>
      )
    }
 }
@@ -510,42 +508,50 @@ render() {
 
         <View style={styles.textView}>
           <Text style={styles.nameText}>Kohei Sano</Text>
-          <Text style={styles.universityNameText}>Kansas State University</Text>
-          <View style={styles.introducingView}>
-            <Swiper style={styles.wrapper} showsButtons={true} autoplay={true} activeDotColor='#00ccff' >
-              <View style={styles.slide1}>
-                <Text style={styles.text}>専攻: Aviation</Text>
-              </View>
-              <View style={styles.slide2}>
-                <Text style={styles.text}>誕生日: 1998/12/03</Text>
-              </View>
-              <View style={styles.slide3}>
-                <Text style={styles.text}>趣味: Playing something</Text>
-              </View>
-            </Swiper>
-          </View>
-
-          <Text>{'\n'}{'\n'}</Text>
-
+        </View>
+        <View style={styles.followView}>
+          <Text onPress={() => this.props.navigation.navigate('Follows')}>Follows</Text>
+          <Text style={{ color: 'gray' }}> 500  |</Text>
+          <Text onPress={() => this.props.navigation.navigate('Followers')}> Followers</Text>
+          <Text style={{ color: 'gray' }}> 200</Text>
+        </View>
+        <View style={styles.introduction}>
+          <Icon name='school' style={styles.introductionIcon}>
+          </Icon>
+          <Text style={styles.introductionText}>Kansas State University</Text>
+        </View>
+        <View style={styles.introduction}>
+          <Icon name='globe' style={styles.introductionIcon}>
+          </Icon>
+          <Text style={styles.introductionText}>FORIS</Text>
+        </View>
+        <View style={styles.introduction}>
+          <Icon name='navigate' style={styles.introductionIcon}>
+          </Icon>
+          <Text style={styles.introductionText}>Kansas, United States</Text>
         </View>
 
         <View>
           <View style={styles.buttonView}>
 
             <Button transparent onPress={() => this.segmentClicked(0)} active={this.state.activeIndex === 0}>
-              <Text style={[this.state.activeIndex === 0 ? { color: '#00ccff' } : { color: 'gray' }]}>Home</Text>
+              <Text style={[this.state.activeIndex === 0 ? { color: '#00ccff', borderBottomWidth: 1, borderBottomColor: '#00ccff' } : { color: 'gray' }]}>ホーム</Text>
             </Button>
 
             <Button transparent onPress={() => this.segmentClicked(1)} active={this.state.activeIndex === 1}>
-              <Text style={[this.state.activeIndex === 1 ? { color: '#00ccff' } : { color: 'gray' }]}>Answers</Text>
+              <Text style={[this.state.activeIndex === 1 ? { color: '#00ccff' } : { color: 'gray' }]}>回答</Text>
             </Button>
 
             <Button transparent onPress={() => this.segmentClicked(2)} active={this.state.activeIndex === 2}>
-              <Text style={[this.state.activeIndex === 2 ? { color: '#00ccff' } : { color: 'gray' }]}>Likes</Text>
+              <Text style={[this.state.activeIndex === 2 ? { color: '#00ccff' } : { color: 'gray' }]}>いいね</Text>
             </Button>
 
             <Button transparent onPress={() => this.segmentClicked(3)} active={this.state.activeIndex === 3}>
-              <Text style={[this.state.activeIndex === 3 ? { color: '#00ccff' } : { color: 'gray' }]}>Lists</Text>
+              <Text style={[this.state.activeIndex === 3 ? { color: '#00ccff' } : { color: 'gray' }]}>マイリスト</Text>
+            </Button>
+
+            <Button transparent onPress={() => this.segmentClicked(4)} active={this.state.activeIndex === 4}>
+              <Text style={[this.state.activeIndex === 4 ? { color: '#00ccff' } : { color: 'gray' }]}>通知</Text>
             </Button>
 
           </View>
@@ -590,14 +596,14 @@ const styles = StyleSheet.create({
   },
 
   topImageView: {
-    marginTop: -37.5,
+    marginTop: -50,
     alignItems: 'center'
   },
 
   topImage: {
-    width: 75,
-    height: 75,
-    borderRadius: 37.5,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
   },
 
   backgroundImage: {
@@ -627,12 +633,30 @@ const styles = StyleSheet.create({
 
   textView: {
     alignItems: 'center',
-    marginTop: 20
+    marginTop: 20,
+    marginBottom: 15
   },
 
   nameText: {
     fontWeight: '300',
     fontSize: 25
+  },
+
+  introduction: {
+    paddingLeft: 85,
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingBottom: 10
+  },
+
+  introductionIcon: {
+    color: 'gray',
+    fontSize: 20
+  },
+
+  introductionText: {
+    color: 'gray',
+    paddingLeft: 10
   },
 
   universityNameText: {
@@ -664,9 +688,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     borderWidth: 1,
-    borderTopColor: 'black',
-    borderColor: '#eae5e5',
-    borderBottomColor: '#eae5e5'
+    borderTopColor: 'white',
+    borderColor: '#00ccff',
+    borderBottomColor: '#00ccff'
+  },
+
+  followView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    paddingBottom: 20
   },
 })
 

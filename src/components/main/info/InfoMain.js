@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, FlatList, View, Text, Dimensions, ScrollView, Image, ImageBackground, TouchableOpacity } from 'react-native';
-import { Button, Card, CardItem, Left, Body, Right, Thumbnail, Icon, Container, Content, Header, Item, Input } from 'native-base';
-import { SearchBar } from 'react-native-elements';
-import { getNews } from './News.js';
-import Article from './Article.js';
-import SearchBarElement from './SearchBarElement';
+import { TouchableHighlight,
+         View,
+         Text,
+         Dimensions,
+         Image,
+         ImageBackground,
+         TouchableOpacity
+        } from 'react-native';
+import { Button,
+         Card,
+         CardItem,
+         Left,
+         Body,
+         Right,
+         Thumbnail,
+         Icon,
+         Container,
+         Content,
+         Header,
+         Item,
+         Input
+        } from 'native-base';
+import HomePost from '../home/HomePost';
+import InfoElement from '../info/InfoElement';
 
 var { width, height } = Dimensions.get('window');
 
@@ -12,230 +30,72 @@ class InfoMain extends Component {
   constructor(props) {
     super(props);
     this.state = { articles: [], refreshing: true, activeIndex: 0 };
-    this.fetchNews = this.fetchNews.bind(this);
   }
 
-  componentDidMount() {
-    this.fetchNews();
-   }
-
-   segmentClicked = (index) => {
+  segmentClicked = (index) => {
      this.setState({
        activeIndex: index,
      })
    }
 
-  fetchNews() {
-    getNews()
-      .then(articles => this.setState({ articles, refreshing: false }))
-      .catch(() => this.setState({ refreshing: false }));
-  }
-
-  handleRefresh() {
-    this.setState(
-      {
-        refreshing: true
-    },
-      () => this.fetchNews()
-    );
-  }
-
   renderSection = () => {
     if (this.state.activeIndex === 0) {
       return (
         <View>
-          <Card>
-            <TouchableOpacity onPress={() => this.suy()}>
-            <View style={{ backgroundColor: 'white', height: 200 }}>
-              <ImageBackground source={require('../../../img/Embry-RiddleAeronauticalUniversity/FORIS_ERAUNews.jpg')}
-                               style={{ height: '100%', width: '100%' }}>
-              <Text style={{ color: 'white', fontWeight: '700', paddingLeft: 15, paddingTop: 15, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}> ERAU </Text>
-              <Text style={{ marginTop: 120, fontSize: 22, color: 'white', fontWeight: '700', paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>ERAUがフライトコンテストで優勝</Text>
-              <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
-              </ImageBackground>
-            </View>
-            </TouchableOpacity>
-          </Card>
-          
-          <Card>
+          <InfoElement
+            universityImage="ERAU"
+            universityInitial="ERAU"
+            title="ERAUがフライトコンテストで優勝"
+            viewers="1,141"
+          />
 
-            <CardItem>
-              <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
-                <Body>
-                  <Text>Yakumo Asano</Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}>
-                    <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
-                </Body>
-              </Left>
-            </CardItem>
+          <HomePost
+            name="Yakumo Asano"
+            university="Seattle Central College"
+            major="Conputer Science"
+            location="Seattle, WA"
+            imageSource="3"
+            likes="301"
+            content="souhousdou"
+          />
 
-            <CardItem>
-              <Image source={require('../../../img/FORIS_General2.jpg')}
-                     style={{ height: 250, width: '100%' }}/>
-            </CardItem>
+          <HomePost
+            name="Yakumo Asano"
+            university="Seattle Central College"
+            major="Conputer Science"
+            location="Seattle, WA"
+            imageSource="2"
+            likes="10"
+            content="souhousdou"
+          />
 
-            <CardItem>
-              <Text style={{ color: 'gray' }}>100likes</Text>
-            </CardItem>
-
-            <CardItem>
-              <Text style={{ color: 'gray' }}>
-               wsddiwcygedou
-               sdicwouhd
-               isybwcdiuh
-               wecowuhih
-               wdgiuegfiouhu
-               weougfoi
-               e[fgeriguh]
-              </Text>
-            </CardItem>
-
-            <CardItem>
-              <Left>
-                <Icon name='ios-heart' />
-                <Text>    </Text>
-                <Icon name='ios-send' />
-              </Left>
-
-              <Right>
-                <Text style={{ color: 'gray' }}>Read more...</Text>
-              </Right>
-            </CardItem>
-          </Card>
-
-          <Card>
-
-            <CardItem>
-              <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
-                <Body>
-                  <Text>Yakumo Asano</Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}>
-                    <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
-                </Body>
-              </Left>
-            </CardItem>
-
-            <CardItem>
-              <Image source={require('../../../img/FORIS_General2.jpg')}
-                     style={{ height: 250, width: '100%' }}/>
-            </CardItem>
-
-            <CardItem>
-              <Text style={{ color: 'gray' }}>
-               wsddiwcygedou
-               sdicwouhd
-               isybwcdiuh
-               wecowuhih
-               wdgiuegfiouhu
-               weougfoi
-               e[fgeriguh]
-              </Text>
-            </CardItem>
-
-            <CardItem>
-              <Left>
-                <Icon name='ios-heart' />
-                <Text>    </Text>
-                <Icon name='ios-send' />
-              </Left>
-
-              <Right>
-                <Text style={{ color: 'gray' }}>Read more...</Text>
-              </Right>
-            </CardItem>
-          </Card>
-
-          <Card>
-
-            <CardItem>
-              <Left>
-                <Thumbnail source={require('../../../img/FORIS_HomeGeneral.jpg')} />
-                <Body>
-                  <Text>Yakumo Asano</Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}> Seattle Central College / Computer Science </Text>
-                  <Text note style={{ color: 'gray', fontSize: 10 }}>
-                    <Icon name='ios-pin' style={{ fontSize: 10, color: 'gray' }} /> Seattle, WA</Text>
-                </Body>
-              </Left>
-            </CardItem>
-
-            <CardItem>
-              <Image source={require('../../../img/FORIS_General2.jpg')}
-                     style={{ height: 250, width: '100%' }}/>
-            </CardItem>
-
-            <CardItem>
-              <Text style={{ color: 'gray' }}>
-               wsddiwcygedou
-               sdicwouhd
-               isybwcdiuh
-               wecowuhih
-               wdgiuegfiouhu
-               weougfoi
-               e[fgeriguh]
-              </Text>
-            </CardItem>
-
-            <CardItem>
-              <Left>
-                <Icon name='ios-heart' />
-                <Text>    </Text>
-                <Icon name='ios-send' />
-              </Left>
-
-              <Right>
-                <Text style={{ color: 'gray' }}>Read more...</Text>
-              </Right>
-            </CardItem>
-          </Card>
         </View>
       )
     }
     else if (this.state.activeIndex === 1) {
       return (
         <View>
-          <Card>
-            <TouchableOpacity onPress={() => this.suy()}>
-            <View style={{ backgroundColor: 'white', height: 200 }}>
-              <ImageBackground source={require('../../../img/Embry-RiddleAeronauticalUniversity/FORIS_ERAUNews.jpg')}
-                               style={{ height: '100%', width: '100%' }}>
-              <Text style={{ color: 'white', fontWeight: '700', paddingLeft: 15, paddingTop: 15, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}> ERAU </Text>
-              <Text style={{ marginTop: 120, fontSize: 22, color: 'white', fontWeight: '700', paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>ERAUがフライトコンテストで優勝</Text>
-              <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
-              </ImageBackground>
-            </View>
-            </TouchableOpacity>
-          </Card>
+          <InfoElement
+            universityImage="ERAU"
+            universityInitial="ERAU"
+            title="ERAUがフライトコンテストで優勝"
+            viewers="1,141"
+          />
 
-          <Card>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('SUArticles')}>
-            <View style={{ backgroundColor: 'white', height: 200 }}>
-              <ImageBackground source={require('../../../img/SeattleUniversity/FORIS_SUNews.jpg')}
-                               style={{ height: '100%', width: '100%' }}>
-              <Text style={{ color: 'white', fontWeight: '700', paddingLeft: 15, paddingTop: 15, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}> SU </Text>
-              <Text style={{ marginTop: 120, fontSize: 22, color: 'white', fontWeight: '700', paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>Seattle Universityでの生活</Text>
-              <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
-              </ImageBackground>
-            </View>
-            </TouchableOpacity>
-          </Card>
+          <InfoElement
+            universityImage="SU"
+            link="SU"
+            universityInitial="SU"
+            title="Seattle University life"
+            viewers="1,141"
+          />
 
-          <Card>
-            <TouchableOpacity onPress={() => this.suy()}>
-            <View style={{ backgroundColor: 'white', height: 200 }}>
-              <ImageBackground source={require('../../../img/UniversityOfWashington/FORIS_UWNews.jpg')}
-                               style={{ height: '100%', width: '100%' }}>
-              <Text style={{ color: 'white', fontWeight: '700', paddingLeft: 15, paddingTop: 15, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}> UW </Text>
-              <Text style={{ marginTop: 120, fontSize: 22, color: 'white', fontWeight: '700', paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>UWへの転学の仕方</Text>
-              <Text style={{ color: 'white', fontWeight: '700', fontSize: 10, paddingLeft: 20, textShadowColor: 'black', textShadowOffset: { height: 3, width: 3 } }}>1,149Views</Text>
-              </ImageBackground>
-            </View>
-            </TouchableOpacity>
-          </Card>
+          <InfoElement
+            universityImage="UW"
+            universityInitial="UW"
+            title="Transfer to UW"
+            viewers="1,141"
+          />
         </View>
 
       )
