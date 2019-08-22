@@ -2,6 +2,7 @@
 platform :ios, '12.2'   
 
 target 'project1' do
+
   pod 'React', :path => '../node_modules/react-native'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
@@ -27,13 +28,17 @@ target 'project1' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios/RNFirebase.podspec'
+  pod 'Firebase/Core'
+
   target 'project1-tvOSTests' do
+
     inherit! :search_paths
     # Pods for testing
 
     # pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
 
-    pod 'BugsnagReactNative', :path => '../node_modules/bugsnag-react-native'
+    # pod 'BugsnagReactNative', :path => '../node_modules/bugsnag-react-native'
 
   end
 
