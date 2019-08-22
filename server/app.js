@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const app = express();
 
 app.use(helmet());
-app.use(morgan('combined'));
+app.use(morgan('short'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
