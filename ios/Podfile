@@ -30,7 +30,6 @@ target 'project1' do
 
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios/RNFirebase.podspec'
   pod 'Firebase/Core'
-
   target 'project1-tvOSTests' do
 
     inherit! :search_paths
