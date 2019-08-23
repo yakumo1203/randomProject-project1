@@ -1,5 +1,5 @@
 const express = require('express');
-const con = require('../../db');
+const conn = require('../../db');
 const app = express();
 
 const recommendationEngine = (uid, callback) => {
@@ -43,7 +43,12 @@ app.get('/jump_back_in/:uid', (req, res, next) => {
 
 app.get('/jump_back_in/:uid', (req, res, next) => {
   const uid = req.params.uid;
-  const queryText = `SELECT `
+  const queryText = `SELECT * FROM universities ORDER BY last_time_seen `; 
+  conn.query(queryText, (error, result) => {
+    if (error) throw error;
+    res.json(result);
+  })
 })
+
 
 module.exports = app;

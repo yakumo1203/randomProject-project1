@@ -6,7 +6,7 @@
  */
 
 @import UIKit;
-#import <Firebase/Firebase.h>
+#import "Firebase.h"
 #import "AppDelegate.h"
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>

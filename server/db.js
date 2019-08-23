@@ -1,13 +1,14 @@
 const mysql = require('mysql');
 const config = require('./config');
 
-const db = config.dbConfigValues;
+// const db = config.dbConfigValues;
 
 const connection = mysql.createConnection({
-  host: db.host,
-  user: db.user,
-  password: db.password,
-  database: db.database
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'password',
+  database: 'foris'
 });
 
 connection.connect((err) => {
