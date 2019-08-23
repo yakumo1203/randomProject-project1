@@ -250,7 +250,7 @@ class KansasStateUniversity extends Component {
             <View style={{ marginLeft: 10, marginRight: 10, marginTop: 10 }}>
               <Text>
                 1998年に設立されたUniversity of California, Berkeleyは世界No.１のPublic Universityです。
-                35，000人以上もの学生が３５０種類のプログラムの中から、自分に合った専攻をそれぞれ受講しています。
+                35，000人以上の学生が３５０種類のプログラムの中から、それぞれが自分に合った専攻を受講しています。
               </Text>
             </View>
 
