@@ -19,7 +19,7 @@
     "moment": "^2.24.0",
     "mysql": "^2.17.1",
     "native-base": "^2.13.5",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "npm": "^6.11.1",
     "react": "^16.9.0",
     "react-base": "^0.2.0",
